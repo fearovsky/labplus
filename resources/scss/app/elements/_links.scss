@@ -1,0 +1,37 @@
+.link-more {
+  $link: &;
+  font-size: pxToRem(16);
+  padding: 12px 20px 11px;
+  &__text {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #1b4845;
+      transition: transform 0.3s ease;
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    &__text::after {
+      transform: scaleX(1);
+    }
+  }
+
+  &--small {
+    font-size: pxToRem(14);
+    padding: 8px 16px 7px;
+  }
+
+  &--large {
+    font-size: pxToRem(18);
+  }
+}

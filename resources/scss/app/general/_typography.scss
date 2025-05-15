@@ -71,3 +71,18 @@ figcaption {
     line-height: 1.6em;
   }
 }
+
+.display {
+  &-small,
+  &-big {
+    line-height: 1.2em;
+  }
+
+  &-small {
+    font-size: pxToRem(82);
+  }
+
+  &-big {
+    font-size: pxToRem(110);
+  }
+}
