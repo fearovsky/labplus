@@ -1,0 +1,42 @@
+// Primary Colors
+$colorEmerald: #1f5a57;
+$colorPearl: #f1f1f1;
+$colorIvory: #fdfdf0;
+
+// Secondary Colors
+$colorAqua: #9d95ae;
+$colorSage: #acead7;
+$colorDepth: #003364;
+$colorBlush: #ff9e95;
+
+// Additional Colors
+$colorDarkForest: #064b46;
+$colorMarine: #1d7e7b;
+$colorGrass: #00c8aa;
+$colorMint: #4a0fb1;
+$colorSeaFoam: #e8fff7;
+$colorBlack: #000000;
+$colorWhite: #ffffff;
+
+// Gradients Colors:
+$colorGHeading: radial-gradient(50% 50% at 50% 50%, #74d2ad 0%, #1f5a57 100%);
+$colorGHeadingOrange: radial-gradient(
+  50% 50% at 50% 50%,
+  #fefdfd 0%,
+  #b6e8d7 100%
+);
+$colorGSilver: radial-gradient(50% 50% at 50% 50%, #b6e8d7 0%, #1f5a57 100%);
+$colorGButton: radial-gradient(50% 50% at 50% 50%, #fefdfd 0%, #74d2ad 100%);
+$colorGButtonFill: radial-gradient(
+  50% 50% at 50% 50%,
+  #74d2ad 0%,
+  #fefdfd 100%
+);
+$colorGButtonPurple: radial-gradient(
+  50% 50% at 50% 50%,
+  #b6e8d7 0%,
+  #fefdfd 100%
+);
+
+$baseFontSize: 14px;
+$baseFontFamily: Inter, sans-serif;

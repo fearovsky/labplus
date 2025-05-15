@@ -1,0 +1,73 @@
+h1,
+.h1 {
+  font-size: pxToRem(64);
+  line-height: 1.15em;
+}
+
+h2,
+.h2 {
+  font-size: pxToRem(45);
+  line-height: 1.2em;
+}
+
+h3,
+.h3 {
+  font-size: pxToRem(35);
+  line-height: 1.3em;
+}
+
+h4,
+.h4 {
+  font-size: pxToRem(29);
+  line-height: 1.35em;
+}
+
+h5,
+.h5 {
+  font-size: pxToRem(22);
+  line-height: 1.35em;
+}
+
+h6,
+.h6 {
+  font-size: pxToRem(19);
+  line-height: 1.4em;
+}
+
+.text {
+  &-subheader {
+    font-size: pxToRem(21);
+    line-height: 1.5em;
+  }
+}
+
+.large {
+  font-size: pxToRem(18);
+}
+
+.small {
+  font-size: pxToRem(14);
+}
+
+.large,
+.small,
+p {
+  line-height: 1.5em;
+}
+
+.caption,
+figcaption {
+  font-size: pxToRem(12);
+  line-height: 1.6em;
+}
+
+.caption {
+  &-small {
+    font-size: pxToRem(10);
+    line-height: 1.6em;
+  }
+  &-large {
+    font-size: pxToRem(14);
+    line-height: 1.6em;
+  }
+}

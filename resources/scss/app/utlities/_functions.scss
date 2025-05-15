@@ -1,0 +1,7 @@
+@function pxToRem($size) {
+  @if type-of($size) ==number {
+    $size: $size * 1px;
+  }
+
+  @return calc($size / $baseFontSize) * 1rem;
+}

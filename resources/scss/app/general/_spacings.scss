@@ -1,0 +1,8 @@
+// 2, 4, 8, 12, 16, 20, 24,  ... 160 use for
+@for $i from 1 through 20 {
+  $value: $i * 4;
+  $rem: pxToRem($value);
+  .spacing-#{$value} {
+    margin: $rem;
+  }
+}

@@ -1,0 +1,39 @@
+// Container Variables
+$containerMaxWidth: 1440px;
+$containerPadding: 72px;
+$tabletPadding: 48px;
+$mobilePadding: 16px;
+
+// Breakpoints
+$breakpointTablet: 768px;
+$breakpointMobile: 576px;
+
+// Container Class
+.container {
+  width: 100%;
+  max-width: $containerMaxWidth;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $containerPadding;
+  padding-right: $containerPadding;
+  box-sizing: border-box;
+
+  // Tablet sizing
+  @media (max-width: $breakpointTablet) {
+    padding-left: $tabletPadding;
+    padding-right: $tabletPadding;
+  }
+
+  // Mobile sizing
+  @media (max-width: $breakpointMobile) {
+    padding-left: $mobilePadding;
+    padding-right: $mobilePadding;
+  }
+
+  &-fluid {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+}
