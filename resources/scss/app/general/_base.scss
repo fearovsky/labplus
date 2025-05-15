@@ -1,3 +1,28 @@
+@use '../utlities/variables' as *;
+
 body {
   font-size: pxToRem(16);
+  font-family: $baseFontFamily;
+  background-color: $colorWhite;
+  color: $colorEmerald;
+}
+
+a {
+  color: $colorEmerald;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+b,
+strong,
+.bold {
+  font-weight: 900;
+}
+
+.semi {
+  font-weight: 600;
 }
