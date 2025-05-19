@@ -1,0 +1,38 @@
+.nav {
+  ul {
+    list-style-type: none;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+
+    & > li {
+      margin-right: 16px;
+      &:last-child {
+        margin-right: 0;
+      }
+      & > a {
+        display: block;
+        padding: 12px 20px;
+      }
+    }
+  }
+
+  .menu-item-has-children {
+    & > a {
+      &::after {
+        content: '';
+        background: url('@images/icon/arrow-bottom.svg');
+        width: 10px;
+        height: 7px;
+        display: inline-flex;
+        margin-left: 8px;
+      }
+    }
+  }
+
+  .sub-menu {
+    display: none;
+  }
+}

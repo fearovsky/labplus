@@ -1,6 +1,8 @@
 @use '../utlities/variables' as *;
 
 .header {
+  position: sticky;
+  top: 0;
   &-top {
     background-color: $colorEmerald;
     color: $colorWhite;
@@ -22,6 +24,24 @@
       flex-direction: row;
       align-items: center;
       list-style: none;
+    }
+  }
+
+  &-main {
+    padding: 20px 0;
+    background-color: $colorPearl;
+
+    &-logo {
+      margin-right: 36px;
+      &__image {
+        height: 34px;
+      }
+    }
+
+    &-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
   }
 }

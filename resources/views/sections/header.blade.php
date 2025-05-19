@@ -18,16 +18,26 @@
             </div>
         </div>
     </div>
-</header>
 
-<header class="banner">
-    <a class="brand" href="{{ home_url('/') }}">
-        {!! $siteName !!}
-    </a>
+    <div class="header-main">
+        <div class="container">
+            <div class="header-main-content">
+                <a class="header-main-logo" href="{{ home_url('/') }}">
+                    {{ get_svg('resources.images.logo.logo', ['class' => 'header-main-logo__image']) }}
+                </a>
 
-    @if (has_nav_menu('primary_navigation'))
-        <nav class="nav-primary" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
-            {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
-        </nav>
-    @endif
+                @if (has_nav_menu('primary_navigation'))
+                    <nav class="header-main-nav nav" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
+                        {!! wp_nav_menu([
+                            'theme_location' => 'primary_navigation',
+                            'menu_class' => 'nav__list',
+                            //wrapper
+                            'container' => null,
+                            'echo' => false,
+                        ]) !!}
+                    </nav>
+                @endif
+            </div>
+        </div>
+    </div>
 </header>
