@@ -1,18 +1,22 @@
 <header class="header">
     <div class="header-top">
-        @include('components.language-switcher')
+        <div class="container">
+            <div class="header-top-content">
+                @include('components.language-switcher', ['classes' => 'header-top-switcher'])
 
-        @if (!empty($socialMedia))
-            <ul class="header-top-social">
-                @foreach ($socialMedia as $item)
-                    <li class="header-top-social__item">
-                        <a class="header-top-social__link" href="{{ $item['link'] }}">
-                            <img src="{{ $item['icon'] }}" class="" alt="header-top-social__icon">
-                        </a>
-                    </li>
-                @endforeach
-            </ul>
-        @endif
+                @if (!empty($socialMedia))
+                    <ul class="header-top-social">
+                        @foreach ($socialMedia as $item)
+                            <li class="header-top-social__item">
+                                <a class="header-top-social__link" href="{{ $item['link'] }}">
+                                    <img src="{{ $item['icon'] }}" class="" alt="header-top-social__icon">
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                @endif
+            </div>
+        </div>
     </div>
 </header>
 

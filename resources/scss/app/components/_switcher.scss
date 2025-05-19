@@ -1,0 +1,92 @@
+@use '../utlities/variables' as *;
+
+.switcher {
+  position: relative;
+  $switcher: &;
+
+  &:hover {
+    #{$switcher}__list {
+      opacity: 1;
+      transform: translateX(-50%);
+      visibility: visible;
+    }
+
+    #{$switcher}__name {
+      &::before {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  &__name {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 1px;
+      background-color: $colorWhite;
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      z-index: 1;
+    }
+
+    &::after {
+      content: '';
+      background: url('@images/icon/arrow-bottom.svg');
+      width: 10px;
+      height: 7px;
+      display: inline-flex;
+      margin-left: 8px;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: $colorEmerald;
+    color: $colorWhite;
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  li {
+    &.current-lang {
+      order: -1;
+
+      a {
+        &::after {
+          content: '';
+          background: url('@images/icon/checked.svg');
+          width: 16px;
+          height: 16px;
+          display: block;
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+
+  a {
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    color: inherit;
+  }
+}
