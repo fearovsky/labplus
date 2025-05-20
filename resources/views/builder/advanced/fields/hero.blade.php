@@ -36,6 +36,18 @@
                 </p>
 
                 @if (!empty($field['logos']['items']))
+                    <div class="splide logos-carousel">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                @foreach ($field['logos']['items'] as $logo)
+                                    <li class="splide__slide hero-logos-item">
+                                        <img src="{{ $logo['url'] }}" alt="{{ $logo['alt'] }}"
+                                            class="hero-logos-item__image">
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
                 @endif
             </div>
         @endif
