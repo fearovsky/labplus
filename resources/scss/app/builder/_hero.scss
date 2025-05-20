@@ -1,9 +1,13 @@
 @use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
 
 .hero {
   background-color: $colorEmerald;
+  color: $colorWhite;
   padding: 64px 0 32px;
   position: relative;
+  overflow: hidden;
+  border-radius: 0 0 64px 64px;
 
   &-background {
     position: absolute;
@@ -11,7 +15,36 @@
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     object-position: top;
+    z-index: 1;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 48px;
+    align-items: center;
+  }
+
+  &-content {
+    font-size: pxToRem(18);
+    &__heading {
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+
+    &__button {
+      margin-top: 48px;
+    }
+  }
+
+  &-logos {
+    margin-top: 48px;
   }
 }

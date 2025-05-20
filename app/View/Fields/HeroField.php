@@ -65,7 +65,7 @@ class HeroField extends BaseField
 
         return [
             'title' => $title,
-            'images' => $this->processLogos($this->field['logos']),
+            'items' => $this->processLogos($this->field['logos']),
         ];
     }
 

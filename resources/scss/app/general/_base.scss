@@ -1,7 +1,7 @@
 @use '../utlities/variables' as *;
 
 body {
-  font-size: pxToRem(16);
+  font-size: $baseFontSize;
   font-family: $baseFontFamily;
   background-color: $colorPearl;
   color: $colorEmerald;

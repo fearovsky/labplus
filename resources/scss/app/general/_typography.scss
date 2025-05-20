@@ -1,3 +1,6 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+
 h1,
 .h1 {
   font-size: pxToRem(64);
@@ -38,6 +41,10 @@ h6,
   &-subheader {
     font-size: pxToRem(21);
     line-height: 1.5em;
+    text-transform: uppercase;
+    font-family: $headingFontFamily;
+    font-weight: 600;
+    text-align: center;
   }
 }
 
@@ -85,4 +92,29 @@ figcaption {
   &-big {
     font-size: pxToRem(110);
   }
+}
+
+p {
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: $headingFontFamily;
 }
