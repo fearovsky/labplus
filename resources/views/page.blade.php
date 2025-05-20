@@ -3,6 +3,6 @@
 @section('content')
     @while (have_posts())
         @php(the_post())
-        @include('builder.fields.builder-advanced')
+        @include('builder.advanced.builder-advanced')
     @endwhile
 @endsection

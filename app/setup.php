@@ -128,6 +128,8 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#customize-selective-refresh-widgets
      */
     add_theme_support('customize-selective-refresh-widgets');
+
+    add_image_size('full', 1920, 1080, true);
 }, 20);
 
 /**

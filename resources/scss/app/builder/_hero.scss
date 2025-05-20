@@ -1,0 +1,17 @@
+@use '../utlities/variables' as *;
+
+.hero {
+  background-color: $colorEmerald;
+  padding: 64px 0 32px;
+  position: relative;
+
+  &-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+}

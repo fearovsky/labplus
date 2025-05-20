@@ -20,7 +20,7 @@ class BuilderComposer extends Composer
      * @var array
      */
     protected static $views = [
-        'builder.fields.builder-advanced'
+        'builder.advanced.builder-advanced'
     ];
 
     /**
@@ -55,9 +55,9 @@ class BuilderComposer extends Composer
         }
 
         foreach ($this->fields as $index => $field) {
-            $layout = $this->snakeToCamel(
+            $layout = sprintf('%sField', $this->snakeToCamel(
                 $field['acf_fc_layout']
-            );
+            ));
 
             if (!$this->templateExists($layout)) {
                 continue;

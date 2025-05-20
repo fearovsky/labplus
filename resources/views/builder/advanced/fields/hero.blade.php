@@ -1,0 +1,32 @@
+<section class="hero">
+    @if (!empty($field['background']))
+        <img src="{{ $field['background']['url'] }}" alt="{{ $field['background']['alt'] }}" class="hero-background">
+    @endif
+    <div class="container">
+        <div class="hero-row">
+            <div class="hero-content">
+                <h1 class="hero-content__heading">
+                    {{ $field['heading'] }}
+                </h1>
+
+                <p class="hero-content__text">
+                    {{ $field['content'] }}
+                </p>
+
+                @if (!empty($field['button']))
+                    <a class="hero-content__button btn btn--secondary" href="{{ $field['button']['url'] }}"
+                        target="{{ $field['button']['target'] }}">
+                        {{ $field['button']['text'] }}
+                    </a>
+                @endif
+            </div>
+
+            @if (!empty($field['image']))
+                <div class="hero-image">
+                    <img src="{{ $field['image']['url'] }}" alt="{{ $field['image']['alt'] }}" class="hero-image__img">
+
+                </div>
+            @endif
+        </div>
+    </div>
+</section>
