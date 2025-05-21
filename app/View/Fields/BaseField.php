@@ -41,4 +41,40 @@ abstract class BaseField
             'alt' => $image['alt'] ?? '',
         ];
     }
+
+    protected function getItemImage(array $item, string $imageKey, $imageSize)
+    {
+        if (empty($item[$imageKey])) {
+            return null;
+        }
+
+        $image = $item[$imageKey];
+
+        if (empty($image['sizes'])) {
+            return null;
+        }
+
+        return [
+            'url' => $image['sizes'][$imageSize],
+            'alt' => $image['alt'] ?? '',
+        ];
+    }
+
+    protected function getFieldGroupIfHasKeyWithFields(array $group, string $key, array $groupFields): ?array
+    {
+        if (empty($group[$key])) {
+            return null;
+        }
+
+        $output = [];
+        foreach ($groupFields as $field) {
+            if (empty($group[$field])) {
+                continue;
+            }
+
+            $output[$field] = $group[$field];
+        }
+
+        return $output;
+    }
 }
