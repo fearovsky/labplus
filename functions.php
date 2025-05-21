@@ -36,6 +36,7 @@ Application::configure()
         App\Providers\ThemeServiceProvider::class,
         App\Providers\FileServiceProvider::class,
         App\Providers\ACFSettingsProvider::class,
+        App\Providers\PostTypeServiceProvider::class,
     ])
     ->boot();
 

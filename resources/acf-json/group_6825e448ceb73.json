@@ -412,6 +412,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_682dc0133d79f": {
+                    "key": "layout_682dc0133d79f",
+                    "name": "testimonial",
+                    "label": "Testimonial",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_682dc01c3d7a0",
+                            "label": "Testimonial",
+                            "name": "item",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "testimonial"
+                            ],
+                            "taxonomy": "",
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "return_format": "id",
+                            "ui": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Dodaj wiersz",
@@ -425,6 +457,11 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "post"
+            },
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "testimonial"
             }
         ],
         [
@@ -432,6 +469,11 @@
                 "param": "post_type",
                 "operator": "!=",
                 "value": "post"
+            },
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "testimonial"
             }
         ]
     ],
@@ -445,5 +487,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1747819798
+    "modified": 1747828794
 }
