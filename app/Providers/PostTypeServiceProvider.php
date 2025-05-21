@@ -2,14 +2,18 @@
 
 namespace App\Providers;
 
-use App\PostType\BasePostType;
-use App\PostType\TestimonialPostType;
+use App\PostType\{
+    BasePostType,
+    TestimonialPostType,
+    MemberPostType
+};
 use Illuminate\Support\ServiceProvider;
 
 class PostTypeServiceProvider extends ServiceProvider
 {
     private array $postTypes = [
         TestimonialPostType::class,
+        MemberPostType::class
     ];
 
     /**

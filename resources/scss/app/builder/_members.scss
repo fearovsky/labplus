@@ -1,0 +1,61 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+
+.members {
+  padding: 64px 0;
+  &-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 48px;
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__avatar {
+      position: relative;
+      margin-bottom: 24px;
+
+      &-image {
+        object-fit: contain;
+        width: 160px;
+        height: 160px;
+        object-position: bottom center;
+        display: block;
+      }
+
+      &-icon {
+        position: absolute;
+        width: 52px;
+        height: 52px;
+        object-fit: contain;
+        bottom: 0;
+        right: -20px;
+        z-index: 1;
+      }
+    }
+
+    &__name {
+      font-size: pxToRem(18);
+      font-weight: bold;
+    }
+
+    &__content,
+    &__achievements {
+      text-align: center;
+    }
+
+    &__content {
+      margin: 0;
+    }
+
+    &__achievements {
+      margin: 24px 0 0;
+    }
+  }
+}
