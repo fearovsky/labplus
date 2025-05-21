@@ -1,0 +1,30 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+
+.easy-supported-integration {
+  &-box {
+    box-shadow: 0px 0px 15px rgba(31, 90, 87, 0.25);
+    border-radius: 64px;
+    background-color: $colorWhite;
+    padding: 64px 48px;
+
+    &__numbers {
+      padding: 32px 0;
+    }
+  }
+
+  &-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
+    grid-gap: 48px;
+    margin-top: 64px;
+  }
+
+  &-content {
+    &__text {
+      font-size: pxToRem(18);
+      margin: 0 0 24px;
+    }
+  }
+}

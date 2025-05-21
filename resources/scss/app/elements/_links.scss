@@ -1,9 +1,16 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+
 .link-more {
   $link: &;
   font-size: pxToRem(16);
   padding: 12px 20px 11px;
+  margin-left: -20px;
+  font-weight: 500;
   &__text {
     position: relative;
+    display: flex;
+    align-items: center;
 
     &::after {
       content: '';
@@ -19,10 +26,17 @@
     }
   }
 
+  &__icon {
+    margin-left: 4px;
+  }
+
   &:hover,
   &:focus {
-    &__text::after {
-      transform: scaleX(1);
+    text-decoration: none;
+    #{$link}__text {
+      &::after {
+        transform: scaleX(1);
+      }
     }
   }
 
