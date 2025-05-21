@@ -11,6 +11,7 @@
     grid-gap: 48px;
     margin-bottom: 96px;
     font-size: pxToRem(18);
+    align-items: flex-start;
     $item: &;
     &:last-child {
       margin-bottom: 0;
@@ -57,9 +58,30 @@
       }
     }
 
+    &__thumbnail {
+      position: relative;
+      display: block;
+
+      &-icon {
+        position: absolute;
+        width: 240px;
+        height: 240px;
+        object-fit: contain;
+        right: -90px;
+        bottom: 0;
+      }
+    }
+
     &--right {
       #{$item}__thumbnail {
         order: -1;
+
+        &-icon {
+          right: initial;
+          bottom: initial;
+          left: -90px;
+          top: 0;
+        }
       }
     }
   }

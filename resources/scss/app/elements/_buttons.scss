@@ -90,4 +90,10 @@
   &:focus {
     text-decoration: none;
   }
+
+  &-icon {
+    &__img {
+      margin-left: 8px;
+    }
+  }
 }
