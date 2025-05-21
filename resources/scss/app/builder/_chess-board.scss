@@ -1,0 +1,66 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+
+.chess-board {
+  padding: 64px 0 96px;
+  background-color: $colorWhite;
+  border-radius: 64px;
+  &-item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 48px;
+    margin-bottom: 96px;
+    font-size: pxToRem(18);
+    $item: &;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &__content {
+      padding: 32px 0;
+    }
+
+    &__pretitle {
+      margin-top: 0;
+      margin-bottom: 8px;
+      color: #113264;
+    }
+
+    &__title {
+      margin-top: 0;
+      margin-bottom: 48px;
+    }
+
+    &__text {
+      margin-bottom: 48px;
+
+      p {
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &__summary {
+      margin-bottom: 48px;
+      display: flex;
+      align-items: center;
+      &-name {
+        font-family: $headingFontFamily;
+        font-size: pxToRem(29);
+        font-weight: 900;
+        margin-right: 16px;
+      }
+    }
+
+    &--right {
+      #{$item}__thumbnail {
+        order: -1;
+      }
+    }
+  }
+}

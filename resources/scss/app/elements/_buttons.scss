@@ -12,10 +12,12 @@
   font-weight: 500;
 
   &-primary {
+    color: $colorWhite;
     background: $colorEmerald;
     box-shadow: 0px 1px 2px rgba(8, 8, 8, 0.2), 0px 4px 4px rgba(8, 8, 8, 0.08),
       0px 7px 0px -12px #ff9b26, inset 0px 1px 1px rgba(255, 255, 255, 0.2),
       inset 0px 6px 12px rgba(255, 255, 255, 0.12);
+    border: 1.5px solid transparent;
 
     &:hover,
     &:focus {
@@ -26,7 +28,6 @@
     }
 
     &:focus {
-      border: 1.5px solid transparent;
       border-image: linear-gradient(to right, #4cd964, #41a0f4) 1;
     }
   }

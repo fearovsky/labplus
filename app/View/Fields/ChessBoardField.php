@@ -23,12 +23,12 @@ class ChessBoardField extends BaseField
 
     private function getHeading(): string
     {
-        return $this->field['heading'];
+        return wp_kses_post($this->field['heading'] ?? '');
     }
 
     private function getBoardSections(): array
     {
-        $sections = $this->field['boardSections'] ?? [];
+        $sections = $this->field['board'] ?? [];
         if (empty($sections)) {
             return [];
         }
@@ -42,12 +42,12 @@ class ChessBoardField extends BaseField
 
         foreach ($sections as $index => $section) {
             $output[$index] = [
-                'pretitle' => $section['pretile'] ?? null,
+                'pretitle' => $section['pretitle'] ?? null,
                 'title' => $section['title'],
-                'content' => $section['content'],
+                'content' => wp_kses_post($section['content']),
                 'summary' => $this->getFieldGroupIfHasKeyWithFields(
-                    $section,
-                    'summary',
+                    $section['summary'],
+                    'number',
                     [
                         'number',
                         'content',
