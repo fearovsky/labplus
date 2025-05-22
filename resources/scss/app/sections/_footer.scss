@@ -37,12 +37,33 @@
     margin-bottom: 32px;
 
     &-box {
-      flex: 0 0 140px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 0 0 124px;
+      max-width: 124px;
+    }
+
+    &-social {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      &__item {
+        margin-right: 20px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
     }
   }
 
   &-logo {
+    margin-bottom: 20px;
     &__image {
+      width: auto;
       height: 41px;
     }
   }

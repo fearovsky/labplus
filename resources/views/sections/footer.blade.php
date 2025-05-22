@@ -34,6 +34,18 @@
                 <a class="footer-logo" href="{{ home_url('/') }}">
                     {{ get_svg('resources.images.logo.logo-white-accent', ['class' => 'footer-logo__image']) }}
                 </a>
+
+                @if (!empty($socialMedia))
+                    <ul class="footer-main-social">
+                        @foreach ($socialMedia as $item)
+                            <li class="footer-main-social__item">
+                                <a class="footer-main-social__link" href="{{ $item['link'] }}">
+                                    <img src="{{ $item['icon'] }}" class="" alt="footer-main-social__icon">
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                @endif
             </div>
         </div>
 

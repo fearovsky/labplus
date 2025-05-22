@@ -33,6 +33,7 @@ class FooterComposer extends Composer
             'boxes' => $this->getBoxes(),
             'informationBoxes' => $this->getInformationBoxes(),
             'informationNav' => $this->getInformationNav(),
+            'socialMedia' => $this->getSocialMedia()
         ];
     }
 
@@ -80,5 +81,15 @@ class FooterComposer extends Composer
         }
 
         return $footerBoxes;
+    }
+
+    private function getSocialMedia(): array
+    {
+        $social = get_field('socialMedia', 'option');
+        if (empty($social)) {
+            return [];
+        }
+
+        return $social;
     }
 }
