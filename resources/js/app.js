@@ -27,4 +27,26 @@ import Splide from '@splidejs/splide';
       }).mount();
     });
   }
+
+  const testimonialCaseStudyCarousel = document.querySelectorAll(
+    '.splide.case-study-testimonial'
+  );
+  if (testimonialCaseStudyCarousel.length) {
+    testimonialCaseStudyCarousel.forEach((slider) => {
+      console.log(slider);
+
+      new Splide(slider, {
+        type: 'loop',
+        perPage: 1,
+        perMove: 1,
+        autoplay: true,
+        interval: 3000,
+        pauseOnHover: true,
+        arrows: false,
+        pagination: false,
+        padding: '20%',
+        gap: '100px',
+      }).mount();
+    });
+  }
 })();

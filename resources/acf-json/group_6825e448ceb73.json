@@ -1,6 +1,6 @@
 {
     "key": "group_6825e448ceb73",
-    "title": "Treść",
+    "title": "Content",
     "fields": [
         {
             "key": "field_6825e59695f8c",
@@ -898,7 +898,7 @@
                     "sub_fields": [
                         {
                             "key": "field_682eea1a461a9",
-                            "label": "Title",
+                            "label": "Heading",
                             "name": "title",
                             "type": "text",
                             "instructions": "",
@@ -1074,6 +1074,62 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_682f4a8a991ad": {
+                    "key": "layout_682f4a8a991ad",
+                    "name": "case-study-testimonial",
+                    "label": "Case studies with testimonial",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_682f4aa8991af",
+                            "label": "Heading",
+                            "name": "heading",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "new_lines": "br"
+                        },
+                        {
+                            "key": "field_682f4ab2991b0",
+                            "label": "Case study",
+                            "name": "item",
+                            "type": "relationship",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "case_study"
+                            ],
+                            "taxonomy": "",
+                            "filters": [
+                                "search",
+                                "post_type",
+                                "taxonomy"
+                            ],
+                            "elements": "",
+                            "min": "",
+                            "max": "",
+                            "return_format": "id"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Dodaj wiersz",
@@ -1100,5 +1156,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1747905261
+    "modified": 1747930581
 }

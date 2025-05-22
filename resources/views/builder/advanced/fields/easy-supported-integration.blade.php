@@ -75,8 +75,6 @@
                                     {{ $field['resource']['read_now']['title'] }}
                                     {{ get_svg('resources.images.icon.arrow-left-accent', ['class' => 'link-more__icon']) }}
                                 </span>
-
-
                             </a>
                         @endif
                     </div>

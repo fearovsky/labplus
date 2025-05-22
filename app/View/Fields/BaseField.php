@@ -78,9 +78,10 @@ abstract class BaseField
         return $output;
     }
 
-    protected function getImageBySize(array $image, string $size): ?array
+    protected function getImageBySize(?array $image, string $size): ?array
     {
-        if (empty($image['sizes'])) {
+
+        if (empty($image) || empty($image['sizes'])) {
             return null;
         }
 
