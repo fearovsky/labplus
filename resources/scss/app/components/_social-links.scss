@@ -1,0 +1,30 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+
+.social-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: pxToRem(14);
+
+  &__item {
+    margin-bottom: 16px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #b6e8d7;
+
+    &-icon {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      margin-right: 12px;
+    }
+  }
+}

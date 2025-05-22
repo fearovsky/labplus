@@ -1,0 +1,68 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+
+.get-in-touch {
+  padding: 64px 0 110px;
+  &-banner {
+    padding: 48px 64px;
+    background: linear-gradient(180deg, #74d2ad -70.98%, #1f5a57 99.95%);
+    box-shadow: 0px 0px 15px rgba(31, 90, 87, 0.5);
+    border-radius: 64px;
+    color: $colorPearl;
+    font-size: pxToRem(18);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+
+    &__plus {
+      position: absolute;
+      bottom: -60px;
+      right: -60px;
+      width: 160px;
+      height: 160px;
+    }
+  }
+
+  &-content {
+    &__title {
+      margin: 0 0 32px;
+    }
+
+    &__text {
+      margin: 0 0 40px;
+    }
+  }
+
+  &-additional {
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+  }
+
+  &-imageContent {
+    align-self: center;
+    &__title {
+      margin: 0 0 4px;
+    }
+
+    &__text {
+      margin: 0;
+    }
+  }
+
+  &-social {
+    margin-top: 24px;
+  }
+
+  &-image {
+    position: relative;
+
+    &__img {
+      position: absolute;
+      bottom: -48px;
+      left: 50%;
+      transform: translateX(-50%);
+      height: calc(100% + px);
+      max-width: calc(100% + 200px);
+    }
+  }
+}

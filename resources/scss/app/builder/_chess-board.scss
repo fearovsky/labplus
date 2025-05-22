@@ -60,7 +60,10 @@
 
     &__thumbnail {
       position: relative;
-      display: block;
+
+      &-img {
+        display: block;
+      }
 
       &-icon {
         position: absolute;
