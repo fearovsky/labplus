@@ -34,6 +34,14 @@ class ACFSettingsProvider extends ServiceProvider
                 'page_title' => __('Ustawienia motywu', 'labplus'),
                 'menu_title' => __('Ustawienia motywu', 'labplus'),
                 'menu_slug' => 'theme-settings',
+                'capability' => 'edit_posts',
+                'redirect' => false,
+            ]);
+
+            acf_add_options_sub_page([
+                'page_title' => __('Ustawienia stopki', 'labplus'),
+                'menu_title' => __('Stopka', 'labplus'),
+                'parent_slug' => 'theme-settings',
             ]);
         }
     }

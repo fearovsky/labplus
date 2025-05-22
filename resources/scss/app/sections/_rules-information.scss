@@ -1,0 +1,8 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+
+.rules-information {
+  margin-top: 75px;
+  font-size: pxToRem(14);
+  line-height: 1.5em;
+}

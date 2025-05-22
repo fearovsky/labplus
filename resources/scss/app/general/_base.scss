@@ -5,6 +5,7 @@ body {
   font-family: $baseFontFamily;
   background-color: $colorPearl;
   color: $colorEmerald;
+  line-height: 1.5;
 }
 
 a {
@@ -42,4 +43,8 @@ img {
 
 .aligncenter {
   text-align: center !important;
+}
+
+p {
+  line-height: 1.5;
 }

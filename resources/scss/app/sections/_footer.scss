@@ -1,0 +1,131 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+
+.footer {
+  margin-top: 75px;
+  background-color: $colorEmerald;
+  color: #fefdfd;
+  padding: 48px 0 16px;
+  border-radius: 64px 64px 0px 0px;
+  font-size: pxToRem(14);
+
+  p {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    color: #b6e8d7;
+  }
+
+  &-copy {
+    margin: 32px 0 0;
+    text-align: center;
+  }
+
+  &-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #1b4845;
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+
+    &-box {
+      flex: 0 0 140px;
+    }
+  }
+
+  &-logo {
+    &__image {
+      height: 41px;
+    }
+  }
+
+  &-boxes {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-gap: 48px;
+    &-item {
+      &__title {
+        margin: 0 0 16px;
+      }
+
+      &__list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        &-item {
+          margin-bottom: 16px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &-informations {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    &-boxes {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0;
+      margin: 0;
+      max-width: 850px;
+      position: relative;
+      flex-grow: 1;
+      &__item {
+        padding: 0;
+        margin: 0 30px 0 0;
+        list-style: none;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &--first {
+          flex: 0 0 140px;
+        }
+
+        &--second {
+          flex: 0 1 37%;
+        }
+
+        &--third {
+          flex: 0 1 30%;
+        }
+      }
+    }
+
+    &-nav {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 70px;
+      border-left: 1px solid#1b4845;
+      padding-left: 70px;
+      &__list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        &-item {
+          margin-bottom: 16px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
