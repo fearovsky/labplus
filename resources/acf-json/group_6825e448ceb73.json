@@ -190,7 +190,7 @@
                             "key": "field_682f5fc691d3f",
                             "label": "Heading",
                             "name": "heading",
-                            "type": "text",
+                            "type": "textarea",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -201,9 +201,9 @@
                             },
                             "default_value": "",
                             "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
+                            "maxlength": "",
+                            "rows": 2,
+                            "new_lines": "br"
                         },
                         {
                             "key": "field_682f5fd591d40",
@@ -1292,5 +1292,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1747935230
+    "modified": 1747939062
 }

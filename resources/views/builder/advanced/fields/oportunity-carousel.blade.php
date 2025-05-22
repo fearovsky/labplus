@@ -2,7 +2,7 @@
     @if ($field['heading'])
         <div class="section-title">
             <h2 class="section-title__text">
-                {{ $field['heading'] }}
+                {!! $field['heading'] !!}
             </h2>
         </div>
     @endif
