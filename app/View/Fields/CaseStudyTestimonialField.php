@@ -2,16 +2,20 @@
 
 namespace App\View\Fields;
 
+use App\PostType\CaseStudyPostType;
+
 class CaseStudyTestimonialField extends BaseField
 {
     private string $heading;
     private array $items;
+    private array $button;
 
     public function __invoke(): array
     {
         return [
             'heading' => $this->heading,
             'items' => $this->items,
+            'button' => $this->button,
         ];
     }
 
@@ -19,6 +23,7 @@ class CaseStudyTestimonialField extends BaseField
     {
         $this->heading = $this->getHeading();
         $this->items = $this->getCaseStudyItems();
+        $this->button = $this->getButton();
     }
 
     private function getHeading(): string
@@ -70,6 +75,17 @@ class CaseStudyTestimonialField extends BaseField
         }
 
         return $this->getImageBySize($logo, 'full');
+    }
+
+    private function getButton(): array
+    {
+        $caseStudyArchive = get_post_type_archive_link(CaseStudyPostType::getPostType());
+
+        return [
+            'title' => __('See all case studies', 'labplus'),
+            'url' => $caseStudyArchive,
+            'target' => '_blank',
+        ];
     }
 
 }

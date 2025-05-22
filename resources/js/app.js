@@ -29,7 +29,7 @@ import Splide from '@splidejs/splide';
   }
 
   const testimonialCaseStudyCarousel = document.querySelectorAll(
-    '.splide.case-study-testimonial'
+    '.case-study-testimonial .splide'
   );
   if (testimonialCaseStudyCarousel.length) {
     testimonialCaseStudyCarousel.forEach((slider) => {
@@ -43,9 +43,9 @@ import Splide from '@splidejs/splide';
         interval: 3000,
         pauseOnHover: true,
         arrows: false,
-        pagination: false,
-        padding: '20%',
-        gap: '100px',
+        pagination: true,
+        padding: '17%',
+        gap: '0px',
       }).mount();
     });
   }
