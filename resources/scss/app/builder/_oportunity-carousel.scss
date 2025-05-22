@@ -1,0 +1,72 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+
+.oportunity-carousel {
+  padding: 64px 0 128px;
+
+  .splide__slide {
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+
+    &.is-active {
+      opacity: 1;
+    }
+  }
+
+  .splide,
+  .splide__track,
+  .splide__list {
+    height: 100%;
+  }
+
+  &-row {
+    display: flex;
+    // align-items: center;
+    gap: 100px;
+  }
+
+  &-slider {
+    width: calc(66.66% - 50px);
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      font-size: pxToRem(18);
+      min-height: 100%;
+      box-sizing: border-box;
+
+      &-image {
+        width: 64px;
+        height: 64px;
+        object-fit: contain;
+        object-position: center;
+      }
+
+      &-title {
+        margin: 48px 0 0;
+      }
+    }
+  }
+
+  &-image {
+    width: calc(33.33% - 50px);
+    position: relative;
+    &__thumbnail {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 32px;
+
+      &-icon {
+        width: 120px;
+        height: 120px;
+        position: absolute;
+        bottom: 0;
+        right: -45px;
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+}

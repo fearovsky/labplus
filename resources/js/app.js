@@ -49,4 +49,29 @@ import Splide from '@splidejs/splide';
       }).mount();
     });
   }
+
+  const oportunityCarousel = document.querySelectorAll(
+    '.oportunity-carousel .splide'
+  );
+  if (oportunityCarousel.length) {
+    oportunityCarousel.forEach((slider) => {
+      console.log(slider);
+
+      new Splide(slider, {
+        type: 'loop',
+        perPage: 1,
+        perMove: 1,
+        autoplay: true,
+        interval: 23000,
+        pauseOnHover: false,
+        arrows: false,
+        pagination: false,
+        padding: {
+          right: '40%',
+          left: '0',
+        },
+        gap: '50px',
+      }).mount();
+    });
+  }
 })();
