@@ -39,6 +39,12 @@ class ACFSettingsProvider extends ServiceProvider
             ]);
 
             acf_add_options_sub_page([
+                'page_title' => __('Ustawienia 404', 'labplus'),
+                'menu_title' => __('404', 'labplus'),
+                'parent_slug' => 'theme-settings',
+            ]);
+
+            acf_add_options_sub_page([
                 'page_title' => __('Ustawienia stopki', 'labplus'),
                 'menu_title' => __('Stopka', 'labplus'),
                 'parent_slug' => 'theme-settings',
