@@ -1,0 +1,36 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+
+.counter-boxes {
+  padding: 64px 0;
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-gap: 24px;
+    counter-reset: counter-boxes;
+    margin: 64px 0 0;
+    padding: 0;
+    list-style-type: none;
+
+    &__item {
+      font-size: pxToRem(18);
+      &::before {
+        content: counter(counter-boxes);
+        counter-increment: counter-boxes;
+        font-size: pxToRem(45);
+        font-weight: 900;
+        font-family: $headingFontFamily;
+        margin-bottom: 24px;
+        color: #74d2ad;
+      }
+
+      &-title {
+        margin-bottom: 16px;
+        font-weight: 600;
+        font-family: $headingFontFamily;
+        color: $colorEmerald;
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 .contact-form {
   &-content {
+    padding: 64px 0;
     &-row {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
