@@ -3,7 +3,9 @@
         <div class="easy-supported-integration-box">
             @if ($field['heading'])
                 <div class="section-title aligncenter">
-                    <h2>{{ $field['heading'] }}</h2>
+                    <h2 class="section-title__text">
+                        {{ $field['heading'] }}
+                    </h2>
                 </div>
             @endif
 
