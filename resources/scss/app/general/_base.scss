@@ -1,5 +1,11 @@
 @use '../utlities/variables' as *;
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body,
 html {
   overflow-x: hidden;

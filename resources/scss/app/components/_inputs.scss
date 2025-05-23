@@ -1,0 +1,91 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='url'],
+input[type='search'],
+input[type='number'],
+input[type='tel'],
+input[type='date'],
+input[type='datetime'],
+textarea {
+  padding: 12px 16px;
+  background: #1b4845;
+  border: 1px solid rgba(241, 241, 241, 0.5);
+  box-shadow: inset 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  color: $colorPearl;
+  font-size: 1rem;
+  width: 100%;
+  &::placeholder {
+    color: $colorPearl;
+  }
+}
+
+label {
+  padding: 0px 0px 0px 8px;
+  margin-bottom: 4px;
+  display: block;
+  font-size: pxToRem(14);
+}
+
+.form {
+  &__title {
+    margin-bottom: 32px;
+  }
+  &-single {
+    margin-bottom: 24px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.wpcf7-list-item {
+  margin: 0;
+
+  input[type='checkbox'] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  input[type='checkbox']:checked + .wpcf7-list-item-label {
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  .wpcf7-list-item-label {
+    position: relative;
+    padding-left: 32px;
+    display: block;
+    font-size: pxToRem(14);
+    &::before {
+      border: 2px solid $colorIvory;
+      background-color: transparent;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      width: 22px;
+      height: 22px;
+      position: absolute;
+      top: -4px;
+      left: 0px;
+      border-radius: 5px;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+
+    &::after {
+      background: url('@images/icon/checked.svg') no-repeat center center,
+        #74d2ad;
+      opacity: 0;
+    }
+  }
+}

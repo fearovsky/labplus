@@ -1,0 +1,23 @@
+.contact-form {
+  &-content {
+    &-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 48px;
+      font-size: pxToRem(18);
+      align-items: center;
+    }
+
+    &-content {
+      padding: 64px 0;
+      &__title {
+        margin-top: 0;
+        margin-bottom: 48px;
+      }
+
+      &__person {
+        margin-top: 48px;
+      }
+    }
+  }
+}

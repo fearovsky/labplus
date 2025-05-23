@@ -1,0 +1,53 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+
+.contact-person {
+  &-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 72px;
+  }
+
+  &__title {
+    margin: 0 0 4px;
+  }
+
+  &__role {
+    margin: 0;
+    font-size: pxToRem(18);
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    &__social {
+      margin-top: 24px;
+    }
+  }
+
+  &-avatar {
+    position: relative;
+
+    &__image {
+      width: 100%;
+      object-fit: contain;
+      object-position: left bottom;
+      display: block;
+
+      &-icon {
+        width: 96px;
+        height: 96px;
+        position: absolute;
+        bottom: 0;
+        left: -36px;
+      }
+    }
+  }
+
+  a {
+    color: $colorEmerald;
+  }
+}
+
+// $colorEmerald
