@@ -2,15 +2,23 @@
 
 namespace App\View\Composers;
 
+use App\Services\PostService;
 use Roots\Acorn\View\Composer;
 
 class Page404Composer extends Composer
 {
+    private PostService $postService;
     /**
      * List of views served by this composer.
      *
      * @var string[]
      */
+
+    public function __construct(PostService $postService)
+    {
+        $this->postService = $postService;
+    }
+
     protected static $views = [
         '404',
     ];
@@ -18,7 +26,8 @@ class Page404Composer extends Composer
     public function with(): array
     {
         return [
-            'posts404' => $this->get404Posts()
+            'posts404' => $this->get404Posts(),
+            'blogUrl' => $this->getBlogUrl(),
         ];
     }
 
@@ -29,14 +38,16 @@ class Page404Composer extends Composer
             return [];
         }
 
-        return array_map(function ($post) {
-            return [
-                'title' => get_the_title($post),
-                'thumbnail' => get_the_post_thumbnail($post, 'large', [
-                    'class' => 'boxes-grid-item__image-thumbnail',
-                ]),
-                'permalink' => get_permalink($post),
-            ];
-        }, $posts);
+        return $this->postService->transformListToBoxes($posts);
+    }
+
+    private function getBlogUrl(): string
+    {
+        $blogPageId = get_option('page_for_posts');
+        if (!$blogPageId) {
+            return '';
+        }
+
+        return get_permalink($blogPageId);
     }
 }

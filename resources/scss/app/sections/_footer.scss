@@ -2,12 +2,14 @@
 @use '../utlities/functions' as *;
 
 .footer {
-  margin-top: 75px;
-  background-color: $colorEmerald;
-  color: #fefdfd;
-  padding: 48px 0 16px;
-  border-radius: 64px 64px 0px 0px;
-  font-size: pxToRem(14);
+  &-inner {
+    margin-top: 75px;
+    background-color: $colorEmerald;
+    color: #fefdfd;
+    padding: 48px 0 16px;
+    border-radius: 64px 64px 0px 0px;
+    font-size: pxToRem(14);
+  }
 
   p {
     &:first-child {

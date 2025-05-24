@@ -16,6 +16,100 @@
                 "id": ""
             },
             "layouts": {
+                "layout_6831976c70461": {
+                    "key": "layout_6831976c70461",
+                    "name": "separator",
+                    "label": "Separator",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6831977670462",
+                            "label": "Mobile",
+                            "name": "mobile",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "2": "2",
+                                "4": "4",
+                                "8": "8",
+                                "12": "12",
+                                "16": "16",
+                                "20": "20",
+                                "24": "24",
+                                "28": "28",
+                                "32": "32",
+                                "36": "36",
+                                "40": "40",
+                                "48": "48",
+                                "56": "56",
+                                "64": "64",
+                                "72": "72",
+                                "96": "96",
+                                "120": "120",
+                                "144": "144",
+                                "160": "160"
+                            },
+                            "default_value": false,
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_683197da70463",
+                            "label": "Desktop",
+                            "name": "desktop",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "2": "2",
+                                "4": "4",
+                                "8": "8",
+                                "12": "12",
+                                "16": "16",
+                                "20": "20",
+                                "24": "24",
+                                "28": "28",
+                                "32": "32",
+                                "36": "36",
+                                "40": "40",
+                                "48": "48",
+                                "56": "56",
+                                "64": "64",
+                                "72": "72",
+                                "96": "96",
+                                "120": "120",
+                                "144": "144",
+                                "160": "160"
+                            },
+                            "default_value": false,
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_6825e59b4611e": {
                     "key": "layout_6825e59b4611e",
                     "name": "hero",
@@ -1542,6 +1636,150 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_68319a2887d90": {
+                    "key": "layout_68319a2887d90",
+                    "name": "box-posts",
+                    "label": "Box with posts",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_68319a4087d92",
+                            "label": "Heading",
+                            "name": "heading",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "new_lines": "br"
+                        },
+                        {
+                            "key": "field_68319a5187d94",
+                            "label": "Posts",
+                            "name": "posts",
+                            "type": "relationship",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "post"
+                            ],
+                            "taxonomy": "",
+                            "filters": [
+                                "search",
+                                "post_type",
+                                "taxonomy"
+                            ],
+                            "elements": "",
+                            "min": "",
+                            "max": "",
+                            "return_format": "id"
+                        },
+                        {
+                            "key": "field_68319a4b87d93",
+                            "label": "Link",
+                            "name": "link",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6831abe661e2c": {
+                    "key": "layout_6831abe661e2c",
+                    "name": "heading-content",
+                    "label": "Heading + Content",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6831abee61e2e",
+                            "label": "Heading",
+                            "name": "heading",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "new_lines": "br"
+                        },
+                        {
+                            "key": "field_6831abf961e2f",
+                            "label": "Content",
+                            "name": "content",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_6831abff61e30",
+                            "label": "Container size",
+                            "name": "containerSize",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "std": "Standard",
+                                "small": "Small"
+                            },
+                            "default_value": false,
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Dodaj wiersz",
@@ -1568,5 +1806,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1748040104
+    "modified": 1748085779
 }
