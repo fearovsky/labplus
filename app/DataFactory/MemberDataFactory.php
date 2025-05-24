@@ -12,6 +12,8 @@ class MemberDataFactory
     private ?string $content;
     private ?string $achievements;
     private ?array $socials;
+    private ?string $email;
+    private ?string $phone;
 
     public function __construct(private int $memberId)
     {
@@ -25,6 +27,8 @@ class MemberDataFactory
             'name' => $this->name,
             'role' => $this->role,
             'content' => $this->content,
+            'email' => $this->email,
+            'phone' => $this->phone,
             'achievements' => $this->achievements,
             'socials' => $this->socials,
         ];
@@ -36,6 +40,8 @@ class MemberDataFactory
         $this->name = $this->getName();
         $this->role = $this->getRole();
         $this->content = $this->getContent();
+        $this->email = $this->getEmail();
+        $this->phone = $this->getPhone();
         $this->achievements = $this->getAchievements();
         $this->socials = $this->getSocials();
     }
@@ -63,6 +69,16 @@ class MemberDataFactory
     private function getContent(): ?string
     {
         return get_field('content', $this->memberId);
+    }
+
+    private function getEmail(): ?string
+    {
+        return get_field('email', $this->memberId);
+    }
+
+    private function getPhone(): ?string
+    {
+        return get_field('phone', $this->memberId);
     }
 
     private function getAchievements(): ?string

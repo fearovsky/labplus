@@ -19,3 +19,18 @@
   background-color: $colorWhite;
   padding: 64px 48px;
 }
+
+.box-white-small {
+  background: rgba(254, 253, 253, 0.5);
+  border: 2px solid #fefdfd;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+  border-radius: 24px 24px 0px 24px;
+  position: relative;
+  &__plus {
+    position: absolute;
+    bottom: -38px;
+    right: -2px;
+    width: 96px;
+    height: 96px;
+  }
+}
