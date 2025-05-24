@@ -1,0 +1,43 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+
+.hero-image {
+  padding: 128px 0px 86px;
+  background: linear-gradient(173.54deg, #74d2ad -104.98%, #1f5a57 94.91%);
+  border-radius: 0px 0px 64px 64px;
+  color: $colorWhite;
+
+  &-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-content,
+  &-thumbnail {
+    flex: 0 0 49%;
+  }
+
+  &-content {
+    &__heading {
+      color: inherit;
+      margin: 0 0 16px;
+    }
+
+    &__text {
+      margin: 0 0 48px;
+    }
+  }
+
+  &-thumbnail {
+    position: relative;
+
+    &__image {
+      left: 0;
+      max-width: 770px;
+      border-radius: 50px;
+      overflow: hidden;
+    }
+  }
+}
