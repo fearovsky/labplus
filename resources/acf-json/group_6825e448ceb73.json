@@ -1780,6 +1780,57 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_6831b3579f2c7": {
+                    "key": "layout_6831b3579f2c7",
+                    "name": "contact-member-information",
+                    "label": "Contact member information",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6831b36b9f2c8",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_6831b3719f2c9",
+                            "label": "Member",
+                            "name": "member",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "member"
+                            ],
+                            "taxonomy": "",
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "return_format": "object",
+                            "ui": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Dodaj wiersz",
@@ -1806,5 +1857,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1748085779
+    "modified": 1748087686
 }

@@ -1,0 +1,20 @@
+.custom-separator {
+  margin-top: var(--desktop, 40px);
+  margin-bottom: var(--desktop, 40px);
+  padding: 0;
+  clear: both;
+}
+
+.custom-separator hr {
+  margin: 0;
+  border: none;
+  border-top: 1px solid #cccccc;
+  height: 0;
+}
+
+@media (max-width: 768px) {
+  .custom-separator {
+    margin-top: var(--mobile, 20px);
+    margin-bottom: var(--mobile, 20px);
+  }
+}
