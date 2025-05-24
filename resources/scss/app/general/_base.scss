@@ -79,3 +79,22 @@ p {
     padding-bottom: 0;
   }
 }
+
+// ul without class
+ul:not([class]) {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    &::before {
+      content: '+';
+      font-size: 16px;
+      font-weight: 600;
+      color: #74d2ad;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  }
+}
