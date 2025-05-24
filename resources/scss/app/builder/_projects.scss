@@ -1,0 +1,63 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+
+.projects {
+  padding: 64px 0;
+  $projects: &;
+
+  &-subtitle {
+    margin-top: 0;
+    margin-bottom: 32px;
+  }
+
+  &-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 48px;
+    align-items: center;
+    margin-bottom: 64px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &--alt {
+      align-items: flex-start;
+      padding: 64px 0;
+
+      #{$projects}-right {
+        border-left: 1px solid rgba(0, 0, 0, 0.1);
+        padding-left: 24px;
+      }
+    }
+  }
+
+  &-left {
+    &__title {
+      margin: 0 0 48px;
+    }
+
+    &__content {
+      margin: 0;
+      font-size: pxToRem(18);
+      & > p {
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &-right {
+    &__content {
+      font-size: pxToRem(18);
+    }
+
+    &__boxes {
+      margin-top: 48px;
+    }
+  }
+}

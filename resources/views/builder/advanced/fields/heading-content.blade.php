@@ -31,8 +31,7 @@
 
                 @if ($field['information']['link'])
                     <div class="information-box-button">
-                        <a href="{{ $field['information']['link']['url'] }}"
-                            class="btn btn-primary btn--small">
+                        <a href="{{ $field['information']['link']['url'] }}" class="btn btn-primary btn--small">
                             {{ $field['information']['link']['title'] }}
                         </a>
                     </div>
@@ -40,8 +39,10 @@
             </div>
         @endif
 
-        <div class="heading-content__text">
-            {!! $field['content'] !!}
-        </div>
+        @if ($field['content'])
+            <div class="heading-content__text">
+                {!! $field['content'] !!}
+            </div>
+        @endif
     </div>
 </section>
