@@ -32,4 +32,10 @@
             @endif
         </div>
     </div>
+
+    @if (!empty($field['submissionRedirect']))
+        @include('builder.advanced.fields.subfields.form-redirect-script', [
+            'submissionRedirect' => $field['submissionRedirect'],
+        ])
+    @endif
 </div>

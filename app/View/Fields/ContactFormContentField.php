@@ -10,6 +10,7 @@ class ContactFormContentField extends BaseField
     private string $content;
     private array $contactPerson;
     private ?string $formShortcode;
+    private ?string $submissionRedirect;
 
     public function __invoke(): array
     {
@@ -18,6 +19,7 @@ class ContactFormContentField extends BaseField
             'content' => $this->content,
             'contactPerson' => $this->contactPerson,
             'formShortcode' => $this->formShortcode,
+            'submissionRedirect' => $this->submissionRedirect,
         ];
     }
 
@@ -27,6 +29,7 @@ class ContactFormContentField extends BaseField
         $this->content = $this->getContent();
         $this->contactPerson = $this->getContactPerson();
         $this->formShortcode = $this->getFormShortcode();
+        $this->submissionRedirect = $this->getSubmissionRedirect();
     }
 
     private function getHeading(): string
@@ -65,4 +68,13 @@ class ContactFormContentField extends BaseField
         return sprintf('[contact-form-7 id="%d"]', absint($form));
     }
 
+    private function getSubmissionRedirect(): ?string
+    {
+        $redirect = $this->field['submissionRedirect'] ?? null;
+        if (!$redirect) {
+            return null;
+        }
+
+        return get_permalink(absint($redirect));
+    }
 }
