@@ -1,0 +1,39 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+
+.testimonials-carousel-posts {
+  .splide {
+    width: calc(100% + 104px);
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 92px;
+  }
+
+  .splide__track {
+    margin: -30px 0;
+  }
+
+  .splide__slide {
+    padding: 30px 0;
+  }
+
+  .splide__pagination {
+    margin-top: 16px;
+    position: initial;
+
+    li {
+      margin-right: 16px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .splide__pagination__page {
+    margin: 0;
+
+    &.is-active {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+}

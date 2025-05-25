@@ -129,4 +129,24 @@ import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
       });
     });
   }
+
+  const testimonialFromPosts = document.querySelectorAll(
+    '.testimonials-carousel-posts .splide'
+  );
+  if (testimonialFromPosts.length) {
+    testimonialFromPosts.forEach((slider) => {
+      new Splide(slider, {
+        type: 'loop',
+        perPage: 1,
+        perMove: 1,
+        autoplay: true,
+        interval: 3000,
+        pauseOnHover: true,
+        arrows: false,
+        pagination: true,
+        padding: '25%',
+        gap: '48px',
+      }).mount();
+    });
+  }
 })();

@@ -81,6 +81,10 @@ p {
 // }
 
 // ul without class
+ol:not([class]) {
+  padding-left: 1rem;
+}
+
 ul:not([class]) {
   list-style: none;
   padding: 0;

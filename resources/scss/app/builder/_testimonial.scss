@@ -40,6 +40,7 @@
     &-footer {
       display: flex;
       align-items: center;
+      $footer: &;
 
       &__avatar {
         width: 64px;
@@ -52,6 +53,14 @@
 
       &__author {
         padding: 8px 0;
+
+        &--thin {
+          #{$footer}__author-name {
+            font-family: $headingFontFamily;
+            font-weight: 400;
+          }
+        }
+
         &-name,
         &-role {
           margin: 0;

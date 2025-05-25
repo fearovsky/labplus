@@ -2733,6 +2733,144 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_68330810afbe6": {
+                    "key": "layout_68330810afbe6",
+                    "name": "testimonials-carousel-posts",
+                    "label": "Testimonials carousel with posts",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_68330827afbe7",
+                            "label": "Heading",
+                            "name": "heading",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "new_lines": "br"
+                        },
+                        {
+                            "key": "field_6833085bafbea",
+                            "label": "Testimonials",
+                            "name": "testimonials",
+                            "type": "relationship",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "testimonial"
+                            ],
+                            "taxonomy": "",
+                            "filters": [
+                                "search",
+                                "post_type",
+                                "taxonomy"
+                            ],
+                            "elements": "",
+                            "min": "",
+                            "max": "",
+                            "return_format": "id"
+                        },
+                        {
+                            "key": "field_6833087eafbeb",
+                            "label": "Resource text name",
+                            "name": "resourceName",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_683308f99428b",
+                            "label": "Resource link text",
+                            "name": "resourceText",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_68330838afbe9",
+                            "label": "Posts",
+                            "name": "posts",
+                            "type": "relationship",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "case_study",
+                                "post",
+                                "page"
+                            ],
+                            "taxonomy": "",
+                            "filters": [
+                                "search",
+                                "post_type",
+                                "taxonomy"
+                            ],
+                            "elements": "",
+                            "min": "",
+                            "max": "",
+                            "return_format": "id"
+                        },
+                        {
+                            "key": "field_68330831afbe8",
+                            "label": "Link",
+                            "name": "link",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Dodaj wiersz",
@@ -2759,5 +2897,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1748171591
+    "modified": 1748175372
 }
