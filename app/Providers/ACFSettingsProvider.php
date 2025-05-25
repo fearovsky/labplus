@@ -45,6 +45,12 @@ class ACFSettingsProvider extends ServiceProvider
             ]);
 
             acf_add_options_sub_page([
+                'page_title' => __('Ustawienia kalkulatora', 'labplus'),
+                'menu_title' => __('Kalkulator', 'labplus'),
+                'parent_slug' => 'theme-settings',
+            ]);
+
+            acf_add_options_sub_page([
                 'page_title' => __('Ustawienia stopki', 'labplus'),
                 'menu_title' => __('Stopka', 'labplus'),
                 'parent_slug' => 'theme-settings',
