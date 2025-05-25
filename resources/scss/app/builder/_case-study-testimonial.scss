@@ -4,6 +4,7 @@
 .case-study {
   &-testimonial {
     padding: 64px 0;
+    overflow-x: hidden;
     .splide__slide {
       padding: 50px;
     }
