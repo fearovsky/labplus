@@ -1,0 +1,86 @@
+.benefits-overview {
+  padding: 64px 0;
+  position: relative;
+  &-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: flex-start;
+    grid-gap: 48px;
+  }
+
+  &-boxes {
+    position: relative;
+
+    &-item {
+      margin-bottom: 48px;
+      padding: 32px;
+      background: rgba(254, 253, 253, 0.5);
+      border: 2px solid #fefdfd;
+      box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+      border-radius: 48px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &-content {
+    position: sticky;
+    top: 200px;
+    &__subheading {
+      margin: 0 0 8px;
+    }
+
+    &__heading {
+      margin: 0 0 48px;
+    }
+
+    &__btn {
+      margin-top: 48px;
+    }
+  }
+
+  &-boxes {
+    &__list {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+      padding: 64px 0;
+    }
+
+    &__item {
+      padding: 32px;
+      background: rgba(254, 253, 253, 0.5);
+      border: 2px solid #fefdfd;
+      box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+      border-radius: 48px;
+      margin-bottom: 48px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      &-icon {
+        margin-right: 12px;
+      }
+
+      &-title {
+        margin: 0;
+      }
+    }
+
+    &__text {
+      margin: 16px 0 0;
+    }
+
+    &__btn {
+      margin-top: 24px;
+    }
+  }
+}
