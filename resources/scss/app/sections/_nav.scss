@@ -1,3 +1,7 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+@use '../general/container' as *;
+
 .nav {
   font-weight: 500;
   ul {
@@ -31,11 +35,88 @@
         height: 7px;
         display: inline-flex;
         margin-left: 8px;
+        transition: transform 0.2s ease-in-out;
       }
     }
-  }
 
-  .sub-menu {
-    display: none;
+    &:hover {
+      & > a::after {
+        transform: rotate(180deg);
+      }
+    }
+
+    &.mega {
+      &:hover {
+        .sub-menu {
+          visibility: visible;
+          opacity: 1;
+          transition: opacity 0.3s ease-in-out;
+        }
+      }
+
+      .sub-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 48px;
+        @extend .container;
+        padding-top: 50px;
+        padding-bottom: 32px;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0s ease-in-out;
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          max-width: 1296px;
+          top: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          border-top: 1px solid rgba(182, 232, 215, 0.5);
+        }
+        &::before {
+          content: '';
+          width: calc(100vw - 16px);
+          height: 100%;
+          background-color: #f1f1f1;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: -1;
+        }
+      }
+
+      .menu-mega-item {
+        display: flex;
+        flex-direction: row;
+        padding: 8px;
+
+        &__icon {
+          margin-right: 15px;
+          height: 40px;
+          width: 40px;
+        }
+
+        &__text {
+          &-title {
+            color: $colorEmerald;
+          }
+
+          &-title,
+          &-description {
+            margin: 0;
+          }
+
+          &-description {
+            font-size: pxToRem(12);
+          }
+        }
+      }
+    }
   }
 }

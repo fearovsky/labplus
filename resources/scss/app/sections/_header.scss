@@ -32,6 +32,10 @@
     padding: 20px 0;
     background-color: $colorPearl;
 
+    .container {
+      position: relative;
+    }
+
     &-logo {
       margin-right: 36px;
       &__image {
