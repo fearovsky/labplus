@@ -103,7 +103,12 @@
       .menu-mega-item {
         display: flex;
         flex-direction: row;
-        padding: 8px;
+        padding: 13px;
+
+        &:hover {
+          text-decoration: none;
+          background-color: #fefdfd;
+        }
 
         &__icon {
           margin-right: 15px;
