@@ -1,15 +1,15 @@
-<section class="hero-image">
-    <div class="container hero-image-container">
-        <div class="hero-image-row">
-            <div class="hero-image-content">
+<section class="hero-section-image">
+    <div class="container hero-section-image-container">
+        <div class="hero-section-image-row">
+            <div class="hero-section-image-content">
                 @if ($field['heading'])
-                    <h1 class="hero-image-content__heading">
+                    <h1 class="hero-section-image-content__heading">
                         {!! $field['heading'] !!}
                     </h1>
                 @endif
 
                 @if ($field['content'])
-                    <div class="hero-image-content__text">
+                    <div class="hero-section-image-content__text">
                         {!! $field['content'] !!}
                     </div>
                 @endif
@@ -23,9 +23,9 @@
             </div>
 
             @if ($field['image'])
-                <div class="hero-image-thumbnail">
+                <div class="hero-section-image-thumbnail">
                     <img src="{{ $field['image']['url'] }}" alt="{{ $field['image']['alt'] }}"
-                        class="hero-image-thumbnail__image">
+                        class="hero-section-image-thumbnail__image">
                 </div>
             @endif
         </div>

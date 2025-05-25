@@ -74,11 +74,11 @@ p {
   }
 }
 
-.main {
-  & section:last-of-type {
-    padding-bottom: 0;
-  }
-}
+// .main {
+//   & section:last-of-type {
+//     padding-bottom: 0;
+//   }
+// }
 
 // ul without class
 ul:not([class]) {

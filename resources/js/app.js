@@ -1,5 +1,6 @@
 import.meta.glob(['../images/**', '../fonts/**']);
 import Splide from '@splidejs/splide';
+import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 
 (() => {
   const logosCarousel = document.querySelectorAll('.splide.logos-carousel');
@@ -72,6 +73,60 @@ import Splide from '@splidejs/splide';
         },
         gap: '50px',
       }).mount();
+    });
+  }
+
+  const partnersCarousels = document.querySelectorAll('.partners .splide');
+  if (partnersCarousels.length) {
+    partnersCarousels.forEach((slider) => {
+      console.log(slider);
+
+      new Splide(slider, {
+        type: 'loop',
+        perPage: 7,
+        perMove: 1,
+        autoplay: true,
+        interval: 5000,
+        pauseOnHover: true,
+        arrows: false,
+        pagination: false,
+        gap: '48px',
+        autoScroll: {
+          speed: 1,
+        },
+        breakpoints: {
+          1000: {
+            perPage: 3,
+          },
+          768: {
+            perPage: 2,
+          },
+        },
+      }).mount({ AutoScroll });
+    });
+  }
+
+  const accordion = document.querySelectorAll('.accordion-section-list');
+  if (accordion.length) {
+    accordion.forEach((item) => {
+      item.addEventListener('click', (e) => {
+        const target = e.target.closest('.accordion-section-list__item');
+        if (!target) {
+          return;
+        }
+
+        const currentActive = item.querySelector(
+          '.accordion-section-list__item--acitve'
+        );
+
+        if (currentActive && currentActive !== target) {
+          currentActive.classList.remove(
+            'accordion-section-list__item--acitve'
+          );
+        }
+
+        target.classList.toggle('accordion-section-list__item--acitve');
+      });
     });
   }
 })();

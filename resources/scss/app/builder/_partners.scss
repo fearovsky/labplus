@@ -1,0 +1,17 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+
+.partners {
+  padding: 64px 0;
+  background-color: $colorPearl;
+
+  &-carousel {
+    margin-top: 64px;
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

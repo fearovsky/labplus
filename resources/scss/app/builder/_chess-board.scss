@@ -63,6 +63,8 @@
 
       &-img {
         display: block;
+        box-shadow: 0px 0px 15px rgba(31, 90, 87, 0.25);
+        border-radius: 64px 64px 0px 64px;
       }
 
       &-icon {
@@ -78,6 +80,10 @@
     &--right {
       #{$item}__thumbnail {
         order: -1;
+
+        &-img {
+          border-radius: 0px 64px 64px 64px;
+        }
 
         &-icon {
           right: initial;
