@@ -1,0 +1,36 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+
+.grid-boxes {
+  padding: 64px 0;
+
+  &-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 32px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 48px;
+
+    &__item {
+      background: rgba(254, 253, 253, 0.5);
+      border: 2px solid #fefdfd;
+      box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+      border-radius: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 48px 24px;
+
+      &-title {
+        margin: 0 0 24px;
+      }
+
+      &-text {
+        font-size: pxToRem(18);
+      }
+    }
+  }
+}
