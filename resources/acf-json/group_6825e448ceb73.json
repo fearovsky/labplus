@@ -3078,61 +3078,21 @@
                             "new_lines": "br"
                         },
                         {
-                            "key": "field_68332c8693526",
-                            "label": "Tooltip - Commercial test orders volume per month",
-                            "name": "commercialTestTooltip",
-                            "type": "text",
+                            "key": "field_68336020501c2",
+                            "label": "Information",
+                            "name": "",
+                            "type": "message",
                             "instructions": "",
-                            "required": 1,
+                            "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_68332c9c93527",
-                            "label": "Tooltip - Average commercial test order value",
-                            "name": "commercialAvgTooltip",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_68332cb793528",
-                            "label": "Tooltip - How is this calculated",
-                            "name": "howCalculated",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
+                            "message": "Data to be completed in the admin panel under the calculator settings tab",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
                         }
                     ],
                     "min": "",
@@ -3163,5 +3123,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1748184257
+    "modified": 1748197420
 }
