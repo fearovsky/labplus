@@ -1,6 +1,7 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
 @use '../general/container' as *;
+@use '../elements/buttons' as *;
 
 .nav {
   font-weight: 500;
@@ -22,6 +23,14 @@
       & > a {
         display: block;
         padding: 12px 20px;
+      }
+
+      &.button-item {
+        & > a {
+          @extend .btn;
+          @extend .btn-primary;
+          @extend .btn--small;
+        }
       }
     }
   }
