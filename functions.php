@@ -38,6 +38,7 @@ Application::configure()
         App\Providers\ACFSettingsProvider::class,
         App\Providers\TinyMCEProvider::class,
         App\Providers\PostTypeServiceProvider::class,
+        App\Providers\TaxonomyServiceProvider::class,
         App\Providers\MenuProvider::class,
     ])
     ->boot();
