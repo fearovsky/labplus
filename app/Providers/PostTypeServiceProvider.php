@@ -7,7 +7,10 @@ use App\PostType\{
     TestimonialPostType,
     CaseStudyPostType,
     MemberPostType,
-    LogoPostType
+    LogoPostType,
+    NewsPostType,
+    PatientStoryPostType,
+    ResourcePostType
 };
 use Illuminate\Support\ServiceProvider;
 
@@ -18,6 +21,9 @@ class PostTypeServiceProvider extends ServiceProvider
         CaseStudyPostType::class,
         MemberPostType::class,
         LogoPostType::class,
+        NewsPostType::class,
+        ResourcePostType::class,
+        PatientStoryPostType::class,
     ];
 
     /**

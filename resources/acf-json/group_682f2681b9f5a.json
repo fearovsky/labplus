@@ -28,13 +28,16 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "post"
-            }
-        ],
-        [
+            },
             {
                 "param": "post_type",
-                "operator": "!=",
-                "value": "post"
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "case_study"
             }
         ]
     ],
@@ -46,5 +49,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1747920732
+    "modified": 1748290478
 }
