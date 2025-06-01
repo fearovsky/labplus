@@ -6,6 +6,11 @@ class ArchiveService
 {
     public function getCaseStudyPosts(?int $termId = null)
     {
+        global $wp_query;
+        wp_die(var_dump(
+            $wp_query
+        ));
+
         $args = [
             'post_type' => 'case_study',
             'posts_per_page' => -1,
@@ -28,7 +33,7 @@ class ArchiveService
         return $query->have_posts() ? $this->prepareForCaseStudy($query->posts) : [];
     }
 
-    private function prepareForCaseStudy(array $caseStudies): array
+    public function prepareForCaseStudy(array $caseStudies): array
     {
         if (empty($caseStudies)) {
             return [];

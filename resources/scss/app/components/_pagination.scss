@@ -1,0 +1,30 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style-type: none;
+  padding: 64px 0;
+  &__item {
+    margin-right: 4px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .page-numbers {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: pxToRem(18);
+
+    &.current {
+      background-color: #b6e8d7;
+    }
+  }
+}

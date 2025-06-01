@@ -35,33 +35,15 @@
                 @endif
 
                 @if (!empty($items))
-                    <ul class="archive-posts">
-                        @foreach ($items as $item)
-                            <li class="archive-posts-item">
-                                <a class="archive-posts-item__header" href="{{ $item['permalink'] }}">
-                                    {!! $item['thumbnail'] !!}
-                                </a>
+                    @include('partials.archive.case.archive-case-items', [
+                        'items' => $items,
+                    ])
+                @endif
 
-                                <div class="archive-posts-item__box">
-                                    <h3 class="archive-posts-item__title h6">
-                                        <a href="{{ $item['permalink'] }}" class="archive-posts-item__title-link">
-                                            {{ $item['title'] }}
-                                        </a>
-                                    </h3>
-
-                                    <p class="archive-posts-item__content">
-                                        {!! $item['excerpt'] !!}
-                                    </p>
-
-                                    @include('components.link-more-icon', [
-                                        'url' => $item['permalink'],
-                                        'target' => '_self',
-                                        'title' => __('Read case study', 'labplus'),
-                                    ])
-                                </div>
-                            </li>
-                        @endforeach
-                    </ul>
+                @if (!empty($pagination))
+                    @include('partials.archive.pagination', [
+                        'pagination' => $pagination,
+                    ])
                 @endif
             </div>
         </section>
