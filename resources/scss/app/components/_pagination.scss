@@ -22,8 +22,11 @@
     justify-content: center;
     border-radius: 4px;
     font-size: pxToRem(18);
+    transition: background-color 0.3s ease;
 
-    &.current {
+    &.current,
+    &:hover {
+      text-decoration: none;
       background-color: #b6e8d7;
     }
   }
