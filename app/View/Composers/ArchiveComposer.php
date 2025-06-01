@@ -2,8 +2,9 @@
 
 namespace App\View\Composers;
 
-use App\Services\TestimonialService;
+use App\Services\LogosService;
 use Roots\Acorn\View\Composer;
+use App\Services\TestimonialService;
 
 class ArchiveComposer extends Composer
 {
@@ -33,6 +34,7 @@ class ArchiveComposer extends Composer
     {
         return [
             'hero' => $this->getHero(),
+            'partners' => $this->getPartners()
         ];
     }
 
@@ -67,6 +69,25 @@ class ArchiveComposer extends Composer
                     'title' => get_the_archive_title(),
                     'description' => get_the_archive_description(),
                 ];
+        }
+    }
+
+    private function getPartners()
+    {
+        $logoServices = app(LogosService::class);
+
+        switch ($this->postType) {
+            case 'case_study':
+                $partners = get_field('casePartners', 'option') ?: [];
+                if (empty($partners)) {
+                    return [];
+                }
+
+                return $logoServices->getLogosByTaxonomy($partners, 'logoLight');
+            case 'post':
+                return get_field('blogPartners', 'option') ?: [];
+            default:
+                return [];
         }
     }
 }

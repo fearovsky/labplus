@@ -12,11 +12,16 @@
                     <ul class="splide__list">
                         @foreach ($field['partners'] as $partner)
                             <li class="splide__slide partners-item">
-                                <a class="partners-item__link" href="{{ $partner['link']['url'] }}"
-                                    target="{{ $partner['link']['target'] }}">
+                                @if (empty($partner['link']))
                                     <img class="partners-item__image" src="{{ $partner['logo']['url'] }}"
                                         alt="{{ $partner['logo']['alt'] }}">
-                                </a>
+                                @else
+                                    <a class="partners-item__link" href="{{ $partner['link']['url'] }}"
+                                        target="{{ $partner['link']['target'] }}">
+                                        <img class="partners-item__image" src="{{ $partner['logo']['url'] }}"
+                                            alt="{{ $partner['logo']['alt'] }}">
+                                    </a>
+                                @endif
                             </li>
                         @endforeach
                     </ul>

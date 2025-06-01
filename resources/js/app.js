@@ -93,7 +93,7 @@ import calculator from './calculator';
         pagination: false,
         gap: '48px',
         autoScroll: {
-          speed: 1,
+          speed: 0.5,
         },
         breakpoints: {
           1000: {

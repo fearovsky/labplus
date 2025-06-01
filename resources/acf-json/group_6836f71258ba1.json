@@ -147,6 +147,28 @@
             "return_format": "id"
         },
         {
+            "key": "field_683c430ee82db",
+            "label": "Partners",
+            "name": "casePartners",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "logo_group",
+            "field_type": "select",
+            "allow_null": 0,
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
             "key": "field_6836f7347f7f6",
             "label": "News",
             "name": "",
@@ -180,5 +202,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1748774028
+    "modified": 1748779830
 }
