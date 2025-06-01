@@ -55,6 +55,12 @@ class ACFSettingsProvider extends ServiceProvider
                 'menu_title' => __('Stopka', 'labplus'),
                 'parent_slug' => 'theme-settings',
             ]);
+
+            acf_add_options_sub_page([
+                'page_title' => __('Ustawienia archiwum', 'labplus'),
+                'menu_title' => __('Archiwum', 'labplus'),
+                'parent_slug' => 'theme-settings',
+            ]);
         }
     }
 }

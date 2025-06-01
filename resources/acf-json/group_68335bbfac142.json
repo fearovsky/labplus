@@ -1,6 +1,6 @@
 {
     "key": "group_68335bbfac142",
-    "title": "Calculator settings",
+    "title": "[Theme settings] Calculator settings",
     "fields": [
         {
             "key": "field_68335be8bcf83",
@@ -214,5 +214,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1748197249
+    "modified": 1748447777
 }

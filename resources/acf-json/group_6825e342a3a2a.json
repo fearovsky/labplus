@@ -1,6 +1,6 @@
 {
     "key": "group_6825e342a3a2a",
-    "title": "Ustawienia motywu",
+    "title": "[Theme settings] Ustawienia motywu",
     "fields": [
         {
             "key": "field_6825e359b7871",
@@ -99,5 +99,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1747482916
+    "modified": 1748447768
 }

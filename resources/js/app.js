@@ -151,5 +151,23 @@ import calculator from './calculator';
     });
   }
 
+  const heroSlider = document.querySelectorAll(
+    '.hero-section-image-slider .splide'
+  );
+  if (heroSlider.length) {
+    heroSlider.forEach((slider) => {
+      new Splide(slider, {
+        type: 'fade',
+        perPage: 1,
+        perMove: 1,
+        autoplay: true,
+        interval: 5000,
+        pauseOnHover: false,
+        arrows: false,
+        pagination: true,
+      }).mount();
+    });
+  }
+
   calculator('.calculator');
 })();

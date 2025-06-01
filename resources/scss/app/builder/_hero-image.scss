@@ -2,10 +2,15 @@
 @use '../utlities/functions' as *;
 
 .hero-section-image {
+  overflow-x: hidden;
   padding: 128px 0px 86px;
   background: linear-gradient(173.54deg, #74d2ad -104.98%, #1f5a57 94.91%);
   border-radius: 0px 0px 64px 64px;
   color: $colorWhite;
+
+  &--smallp {
+    padding: 64px 0 72px;
+  }
 
   &-row {
     display: flex;
@@ -15,8 +20,10 @@
   }
 
   &-content,
-  &-thumbnail {
+  &-thumbnail,
+  &-slider {
     flex: 0 0 49%;
+    width: 49%;
   }
 
   &-content {
@@ -38,6 +45,56 @@
       max-width: 770px;
       border-radius: 50px;
       overflow: hidden;
+    }
+  }
+
+  &-slider {
+    position: relative;
+
+    &::before {
+      content: '';
+      background: $colorGHeadingOrange;
+      color: #113264;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0px 0px 15px rgba(31, 90, 87, 0.25);
+      border-radius: 32px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50vw;
+      height: 100%;
+    }
+
+    .testimonial-box {
+      background: transparent;
+      box-shadow: none;
+      border: 0;
+    }
+
+    .splide__pagination {
+      padding-right: 0;
+      padding-left: 64px;
+      position: initial;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(24px, 1fr));
+      grid-gap: 4px;
+      line-height: 0;
+      margin-top: 8px;
+
+      .splide__pagination__page {
+        width: 100%;
+        height: 5px;
+        background: #ebfef8;
+        border-radius: 2px;
+        margin: 0;
+        padding: 0;
+
+        &.is-active,
+        &:hover {
+          transform: none;
+          opacity: 1;
+        }
+      }
     }
   }
 }
