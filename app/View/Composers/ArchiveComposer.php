@@ -43,7 +43,7 @@ class ArchiveComposer extends Composer
             'partners' => $this->getPartners(),
             'heading' => $this->getHeading(),
             'terms' => $this->getTerms(),
-            'posts' => $this->getPosts(),
+            'items' => $this->getItems(),
         ];
     }
 
@@ -136,7 +136,7 @@ class ArchiveComposer extends Composer
         }
     }
 
-    private function getPosts(): array
+    private function getItems(): array
     {
         switch ($this->postType) {
             case 'post':
