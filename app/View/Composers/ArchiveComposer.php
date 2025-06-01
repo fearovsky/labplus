@@ -4,16 +4,22 @@ namespace App\View\Composers;
 
 use App\Services\LogosService;
 use Roots\Acorn\View\Composer;
+use App\Services\ArchiveService;
+use App\Services\TaxonomyService;
+use App\PostType\CaseStudyPostType;
 use App\Services\TestimonialService;
+use App\Taxonomy\CaseStudyCategoryTaxonomy;
 
 class ArchiveComposer extends Composer
 {
     private string $postType;
+    private ArchiveService $archiveService;
 
 
     public function __construct()
     {
         $this->postType = get_post_type();
+        $this->archiveService = app(ArchiveService::class);
     }
 
     /**
@@ -34,7 +40,10 @@ class ArchiveComposer extends Composer
     {
         return [
             'hero' => $this->getHero(),
-            'partners' => $this->getPartners()
+            'partners' => $this->getPartners(),
+            'heading' => $this->getHeading(),
+            'terms' => $this->getTerms(),
+            'posts' => $this->getPosts(),
         ];
     }
 
@@ -86,6 +95,57 @@ class ArchiveComposer extends Composer
                 return $logoServices->getLogosByTaxonomy($partners, 'logoLight');
             case 'post':
                 return get_field('blogPartners', 'option') ?: [];
+            default:
+                return [];
+        }
+    }
+
+    private function getHeading(): string
+    {
+        switch ($this->postType) {
+            case 'post':
+                return __('Blog', 'labplus');
+            case 'page':
+                return __('Pages', 'labplus');
+            case 'case_study':
+                return __('Explore case studies', 'labplus');
+            default:
+                return get_the_archive_title();
+        }
+    }
+
+    private function getTerms(): array
+    {
+        $taxonomyService = app(TaxonomyService::class);
+
+        switch ($this->postType) {
+            case 'post':
+                return get_terms([
+                    'taxonomy' => 'category',
+                    'hide_empty' => true,
+                ]);
+            case 'case_study':
+                return [
+                    'taxonomy' => CaseStudyCategoryTaxonomy::getTaxonomy(),
+                    'terms' => $taxonomyService->getAllAndAddGlobalTerms(
+                        CaseStudyCategoryTaxonomy::getTaxonomy()
+                    )
+                ];
+            default:
+                return [];
+        }
+    }
+
+    private function getPosts(): array
+    {
+        switch ($this->postType) {
+            case 'post':
+                return get_posts([
+                    'post_type' => 'post',
+                    'posts_per_page' => -1,
+                ]);
+            case CaseStudyPostType::getPostType():
+                return $this->archiveService->getCaseStudyPosts();
             default:
                 return [];
         }

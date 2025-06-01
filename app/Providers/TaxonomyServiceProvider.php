@@ -2,14 +2,19 @@
 
 namespace App\Providers;
 
-use App\Taxonomy\BaseTaxonomy;
-use App\Taxonomy\LogoGroupTaxonomy;
+use App\Taxonomy\{
+    BaseTaxonomy,
+    LogoGroupTaxonomy,
+    CaseStudyCategoryTaxonomy
+};
+
 use Illuminate\Support\ServiceProvider;
 
 class TaxonomyServiceProvider extends ServiceProvider
 {
     private array $taxonomies = [
         LogoGroupTaxonomy::class,
+        CaseStudyCategoryTaxonomy::class
     ];
 
     /**

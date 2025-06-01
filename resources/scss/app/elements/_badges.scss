@@ -1,0 +1,11 @@
+.badge {
+  padding: 8px 16px;
+  background: #fefdfd;
+  border: 1px solid #b6e8d7;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: #b6e8d7;
+  }
+}

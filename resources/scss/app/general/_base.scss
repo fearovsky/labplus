@@ -69,13 +69,6 @@ p {
   }
 }
 
-// .main {
-//   & section:last-of-type {
-//     padding-bottom: 0;
-//   }
-// }
-
-// ul without class
 ol:not([class]) {
   padding-left: 1rem;
 }
@@ -96,4 +89,8 @@ ul:not([class]) {
       margin-right: 5px;
     }
   }
+}
+
+button {
+  cursor: pointer;
 }
