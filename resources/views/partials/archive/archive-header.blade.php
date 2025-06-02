@@ -77,7 +77,6 @@
                 </div>
             @endif
 
-
             @if (!empty($hero['post']))
                 <div class="hero-section-image-post">
                     <div class="hero-section-image-post-box">
@@ -111,11 +110,24 @@
                             @endif
 
                             @if (!empty($hero['post']['permalink']))
-                                @include('components.link-more-icon', [
-                                    'url' => $hero['post']['permalink'],
-                                    'target' => '_self',
-                                    'title' => $hero['post']['readMore'],
-                                ])
+                                <div class="hero-section-image-post-buttons">
+                                    @include('components.link-more-icon', [
+                                        'url' => $hero['post']['permalink'],
+                                        'target' => '_self',
+                                        'title' => $hero['post']['readMore'],
+                                    ])
+
+                                    @if (!empty($hero['fileToDownload']))
+                                        @include('components.link-more-icon', [
+                                            'url' => $hero['fileToDownload']['url'],
+                                            'target' => '_blank',
+                                            'title' => __('Download', 'labplus'),
+                                            'icon' => 'fetch',
+                                            'download' => true,
+                                        ])
+                                    @endif
+
+                                </div>
                             @endif
                         </div>
                     </div>

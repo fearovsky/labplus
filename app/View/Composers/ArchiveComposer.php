@@ -92,6 +92,7 @@ class ArchiveComposer extends Composer
                     'content' => get_field('resourceContent', 'option') ?: __('Explore our collection of downloadable guides, in-depth articles, and industry reports.', 'labplus'),
                     'button' => get_field('resourceLink', 'option') ?: [],
                     'post' => $resourcePost ? $resourceService->getPost($resourcePost, 'hero-section-image-post-box__thumbnail-image') : [],
+                    'fileToDownload' => get_field('downloadFile', $resourcePost) ?: null,
                 ];
             case 'case_study':
                 $testimonialService = app(TestimonialService::class);
