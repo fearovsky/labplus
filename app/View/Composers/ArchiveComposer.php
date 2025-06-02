@@ -118,10 +118,7 @@ class ArchiveComposer extends Composer
                     'post' => $news ? $newsService->getPost($news, 'hero-section-image-post-box__thumbnail-image') : [],
                 ];
             default:
-                return [
-                    'title' => get_the_archive_title(),
-                    'description' => get_the_archive_description(),
-                ];
+                return [];
         }
     }
 

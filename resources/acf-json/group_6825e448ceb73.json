@@ -2658,7 +2658,7 @@
                             "name": "heading",
                             "type": "textarea",
                             "instructions": "",
-                            "required": 1,
+                            "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
@@ -2677,7 +2677,7 @@
                             "name": "boxes",
                             "type": "repeater",
                             "instructions": "",
-                            "required": 0,
+                            "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
@@ -3123,5 +3123,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1748447829
+    "modified": 1748892561
 }

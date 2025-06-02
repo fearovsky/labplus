@@ -2,9 +2,11 @@
 
 @section('content')
     <main class="main" role="main">
-        @include('partials.archive.archive-header', [
-            'hero' => $hero,
-        ])
+        @if (!empty($hero))
+            @include('partials.archive.archive-header', [
+                'hero' => $hero,
+            ])
+        @endif
 
         @if (!empty($partners))
             @include('builder.advanced.fields.partners', [
