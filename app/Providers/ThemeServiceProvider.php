@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Roots\Acorn\Sage\SageServiceProvider;
 
+use function Roots\bundle;
+
 class ThemeServiceProvider extends SageServiceProvider
 {
     /**
@@ -28,7 +30,7 @@ class ThemeServiceProvider extends SageServiceProvider
         add_filter('use_block_editor_for_post', '__return_false');
         add_filter('use_widgets_block_editor', '__return_false');
 
-        add_action('wp_enqueue_scripts', [$this, 'dequeueBlocksAssets'], 100);
+        add_action('wp_enqueue_scripts', [$this, 'handleEnqueueAssets'], 100);
         add_action('admin_menu', [$this, 'removePatternsFromNav'], 100);
     }
 
@@ -37,11 +39,17 @@ class ThemeServiceProvider extends SageServiceProvider
         remove_submenu_page('themes.php', 'site-editor.php?p=/pattern');
     }
 
-    public function dequeueBlocksAssets(): void
+    public function handleEnqueueAssets(): void
     {
         wp_dequeue_style('wp-block-library');
         wp_dequeue_style('wp-block-library-theme');
         wp_dequeue_style('global-styles');
         wp_dequeue_style('classic-theme-styles');
+
+        // add localize
+        wp_localize_script('sage/main.js', 'sage', [
+            'ajaxUrl' => admin_url('admin-ajax.php'),
+            'nonce' => wp_create_nonce('sage_nonce'),
+        ]);
     }
 }

@@ -30,13 +30,16 @@
                         @include('partials.archive.archive-terms', [
                             'terms' => $terms['terms'],
                             'taxonomy' => $terms['taxonomy'],
+                            'postType' => $postType,
                         ])
                     </div>
                 @endif
 
                 @if (!empty($items))
-                    @include('partials.archive.case.archive-case-items', [
+                    @include('partials.archive.case.archive-case-list', [
                         'items' => $items,
+                        'paged' => $paged,
+                        'maxPages' => $maxPages,
                     ])
                 @endif
 

@@ -45,6 +45,9 @@ class ArchiveComposer extends Composer
             'terms' => $this->getTerms(),
             'items' => $this->getItems(),
             'pagination' => $this->getPagination(),
+            'postType' => $this->postType,
+            'paged' => max(1, get_query_var('paged')),
+            'maxPages' => $this->getMaxNumPages(),
         ];
     }
 
@@ -150,7 +153,6 @@ class ArchiveComposer extends Composer
     private function getPagination(): array
     {
         global $wp_query;
-
         if (!$wp_query->max_num_pages) {
             return [];
         }
@@ -168,5 +170,12 @@ class ArchiveComposer extends Composer
         }
 
         return $pagination;
+    }
+
+    private function getMaxNumPages(): int
+    {
+        global $wp_query;
+
+        return max(1, $wp_query->max_num_pages);
     }
 }

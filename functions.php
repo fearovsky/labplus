@@ -40,6 +40,7 @@ Application::configure()
         App\Providers\PostTypeServiceProvider::class,
         App\Providers\TaxonomyServiceProvider::class,
         App\Providers\MenuProvider::class,
+        App\Providers\AjaxProvider::class,
     ])
     ->boot();
 

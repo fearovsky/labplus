@@ -2,6 +2,7 @@ import.meta.glob(['../images/**', '../fonts/**']);
 import Splide from '@splidejs/splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import calculator from './calculator';
+import termsHandler from './termsHandler';
 
 (() => {
   const logosCarousel = document.querySelectorAll('.splide.logos-carousel');
@@ -170,4 +171,5 @@ import calculator from './calculator';
   }
 
   calculator('.calculator');
+  termsHandler();
 })();
