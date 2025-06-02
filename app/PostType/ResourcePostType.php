@@ -35,7 +35,7 @@ class ResourcePostType extends BasePostType
             'public' => true,
             'has_archive' => true,
             'show_ui' => true,
-            'supports' => ['title'],
+            'supports' => ['title', 'excerpt', 'thumbnail'],
             'menu_icon' => 'dashicons-portfolio',
         ];
     }

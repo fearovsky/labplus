@@ -25,29 +25,56 @@ class ArchiveService
 
         $query = new \WP_Query($args);
 
-        return $query->have_posts() ? $this->prepareForCaseStudy($query->posts) : [];
+        return $query->have_posts() ? $this->prepareForBoxes($query->posts) : [];
     }
 
-    public function prepareForCaseStudy(array $caseStudies): array
+    public function prepareForBoxes(array $posts): array
     {
-        if (empty($caseStudies)) {
+        if (empty($posts)) {
             return [];
         }
 
-        $caseStudiesOutput = [];
+        $postsOutput = [];
 
-        foreach ($caseStudies as $caseStudy) {
-            $caseStudiesOutput[] = [
+        foreach ($posts as $caseStudy) {
+            $postsOutput[] = [
+                'id' => $caseStudy->ID,
                 'title' => get_the_title($caseStudy),
                 'excerpt' => get_the_excerpt($caseStudy),
                 'thumbnail' => get_the_post_thumbnail($caseStudy, 'full', [
                     'class' => 'archive-posts-item__thumbnail',
                 ]),
                 'permalink' => get_permalink($caseStudy),
+                'readMoreText' => $this->getReadTextByPostType($caseStudy->post_type),
             ];
         }
 
-        return $caseStudiesOutput;
+        return $postsOutput;
+    }
+
+    public function prepareForBoxesAndTerms(array $posts, string $taxonomy): array
+    {
+        if (empty($posts)) {
+            return [];
+        }
+
+        $postsOutput = $this->prepareForBoxes($posts);
+
+        foreach ($postsOutput as &$post) {
+            $terms = get_the_terms($post['id'], $taxonomy);
+            if ($terms && !is_wp_error($terms)) {
+                $post['categories'] = array_map(function ($term) {
+                    return [
+                        'name' => $term->name,
+                        'link' => get_term_link($term),
+                    ];
+                }, $terms);
+            } else {
+                $post['categories'] = [];
+            }
+        }
+
+        return $postsOutput;
     }
 
     public function getPagination($query)
@@ -70,5 +97,21 @@ class ArchiveService
         }
 
         return $pagination;
+    }
+
+    public function getReadTextByPostType(string $postType)
+    {
+        switch ($postType) {
+            case 'case_study':
+                return __('Read case study', 'labplus');
+            case 'news':
+                return __('Read news', 'labplus');
+            case 'post':
+                return __('Read article', 'labplus');
+            case 'patient_story':
+                return __('Explore patient story', 'labplus');
+            default:
+                return __('Read more', 'labplus');
+        }
     }
 }

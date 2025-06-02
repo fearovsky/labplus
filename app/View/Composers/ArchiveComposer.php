@@ -2,12 +2,17 @@
 
 namespace App\View\Composers;
 
+use App\Services\NewsService;
 use App\Services\LogosService;
 use Roots\Acorn\View\Composer;
 use App\Services\ArchiveService;
+use App\Services\ResourceService;
 use App\Services\TaxonomyService;
 use App\PostType\CaseStudyPostType;
+use App\Services\CasestudyService;
 use App\Services\TestimonialService;
+use App\Taxonomy\NewsCategoryTaxonomy;
+use App\Taxonomy\ResourceCategoryTaxonomy;
 use App\Taxonomy\CaseStudyCategoryTaxonomy;
 
 class ArchiveComposer extends Composer
@@ -18,7 +23,7 @@ class ArchiveComposer extends Composer
 
     public function __construct()
     {
-        $this->postType = get_post_type();
+        $this->postType = $this->getPostType();
         $this->archiveService = app(ArchiveService::class);
     }
 
@@ -51,18 +56,42 @@ class ArchiveComposer extends Composer
         ];
     }
 
+    private function getPostType()
+    {
+        global $wp_query;
+
+        if (isset($wp_query->query['post_type']) && is_string($wp_query->query['post_type'])) {
+            return $wp_query->query['post_type'];
+        }
+
+        return 'post';
+    }
+
     private function getHero(): array
     {
         switch ($this->postType) {
-            case 'post':
-                return [
-                    'title' => __('Blog', 'labplus'),
-                    'description' => __('Latest news and updates', 'labplus'),
-                ];
             case 'page':
                 return [
                     'title' => __('Pages', 'labplus'),
                     'description' => __('Browse our pages', 'labplus'),
+                ];
+            case 'patient_story':
+                return [
+                    'title' => get_field('patientHeading', 'option') ?: __('Authentic use cases, responsibly shared', 'labplus'),
+                    'content' => get_field('patientContent', 'option') ?: __('Physician-verified patient stories1 highlighting the real-world value of LabTest Checker by Labplus®.', 'labplus'),
+                    'button' => get_field('patientLink', 'option') ?: [],
+                    'video' => get_field('patientVideo', 'option') ?: null,
+                    'boxes' => get_field('patientBoxes', 'option') ?: [],
+                ];
+            case 'resource':
+                $resourceService = app(ResourceService::class);
+                $resourcePost = get_field('resourceFeatured', 'option') ?: null;
+
+                return [
+                    'title' => get_field('resourceHeading', 'option') ?: __('Resources', 'labplus'),
+                    'content' => get_field('resourceContent', 'option') ?: __('Explore our collection of downloadable guides, in-depth articles, and industry reports.', 'labplus'),
+                    'button' => get_field('resourceLink', 'option') ?: [],
+                    'post' => $resourcePost ? $resourceService->getPost($resourcePost, 'hero-section-image-post-box__thumbnail-image') : [],
                 ];
             case 'case_study':
                 $testimonialService = app(TestimonialService::class);
@@ -76,6 +105,16 @@ class ArchiveComposer extends Composer
                     'content' => get_field('caseContent', 'option') ?: __('Discover how labs and healthcare providers benefited from partnering with Labplus.', 'labplus'),
                     'button' => get_field('caseLink', 'option') ?: [],
                     'testimonials' => $testimonials,
+                ];
+            case 'news':
+                $newsService = app(NewsService::class);
+                $news = get_field('newsFeatured', 'option') ?: [];
+
+                return [
+                    'title' => get_field('newsHeading', 'option') ?: __('News', 'labplus'),
+                    'content' => get_field('newsContent', 'option') ?: __('Stay informed with our latest product updates, press releases, and innovations shaping the future of lab testing.', 'labplus'),
+                    'button' => get_field('newsLink', 'option') ?: [],
+                    'post' => $news ? $newsService->getPost($news, 'hero-section-image-post-box__thumbnail-image') : [],
                 ];
             default:
                 return [
@@ -104,7 +143,7 @@ class ArchiveComposer extends Composer
         }
     }
 
-    private function getHeading(): string
+    private function getHeading(): ?string
     {
         switch ($this->postType) {
             case 'post':
@@ -114,7 +153,7 @@ class ArchiveComposer extends Composer
             case 'case_study':
                 return __('Explore case studies', 'labplus');
             default:
-                return get_the_archive_title();
+                return null;
         }
     }
 
@@ -135,6 +174,20 @@ class ArchiveComposer extends Composer
                         CaseStudyCategoryTaxonomy::getTaxonomy()
                     )
                 ];
+            case 'news':
+                return [
+                    'taxonomy' => NewsCategoryTaxonomy::getTaxonomy(),
+                    'terms' => $taxonomyService->getAllAndAddGlobalTerms(
+                        NewsCategoryTaxonomy::getTaxonomy()
+                    )
+                ];
+            case 'resource':
+                return [
+                    'taxonomy' => ResourceCategoryTaxonomy::getTaxonomy(),
+                    'terms' => $taxonomyService->getAllAndAddGlobalTerms(
+                        ResourceCategoryTaxonomy::getTaxonomy()
+                    )
+                ];
             default:
                 return [];
         }
@@ -147,7 +200,32 @@ class ArchiveComposer extends Composer
             return [];
         }
 
-        return (array) $this->archiveService->prepareForCaseStudy($wp_query->posts);
+        switch ($this->postType) {
+            case 'resource':
+                return $this->archiveService->prepareForBoxesAndTerms(
+                    $wp_query->posts,
+                    ResourceCategoryTaxonomy::getTaxonomy()
+                );
+            case 'news':
+                return $this->archiveService->prepareForBoxesAndTerms(
+                    $wp_query->posts,
+                    NewsCategoryTaxonomy::getTaxonomy()
+                );
+            case 'case_study':
+                $items = $this->archiveService->prepareForBoxes(
+                    $wp_query->posts
+                );
+
+                if (empty($items)) {
+                    return [];
+                }
+
+                $casestudyService = app(CasestudyService::class);
+                return $casestudyService->appendLogosToPosts($items);
+
+            default:
+                return $this->archiveService->prepareForBoxes($wp_query->posts);
+        }
     }
 
     private function getPagination(): array

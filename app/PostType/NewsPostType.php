@@ -35,7 +35,7 @@ class NewsPostType extends BasePostType
             'public' => true,
             'has_archive' => true,
             'show_ui' => true,
-            'supports' => ['title'],
+            'supports' => ['title', 'thumbnail', 'excerpt'],
             'menu_icon' => 'dashicons-media-document',
         ];
     }

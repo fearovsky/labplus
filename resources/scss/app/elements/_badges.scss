@@ -9,3 +9,20 @@
     background: #b6e8d7;
   }
 }
+
+.badges {
+  &-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+
+    &__item {
+      margin-right: 16px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

@@ -5,7 +5,9 @@ namespace App\Providers;
 use App\Taxonomy\{
     BaseTaxonomy,
     LogoGroupTaxonomy,
-    CaseStudyCategoryTaxonomy
+    CaseStudyCategoryTaxonomy,
+    ResourceCategoryTaxonomy,
+    NewsCategoryTaxonomy
 };
 
 use Illuminate\Support\ServiceProvider;
@@ -14,6 +16,8 @@ class TaxonomyServiceProvider extends ServiceProvider
 {
     private array $taxonomies = [
         LogoGroupTaxonomy::class,
+        NewsCategoryTaxonomy::class,
+        ResourceCategoryTaxonomy::class,
         CaseStudyCategoryTaxonomy::class
     ];
 

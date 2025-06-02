@@ -1,4 +1,5 @@
-<section class="hero-section-image hero-section-image--smallp">
+<section
+    class="hero-section-image hero-section-image--smallp{{ !empty($hero['patientBoxes']) ? ' hero-section-image--hasBoxes' : null }}">
     <div class="container hero-section-image-container">
         <div class="hero-section-image-row">
             <div class="hero-section-image-content">
@@ -21,6 +22,12 @@
                     </a>
                 @endif
             </div>
+
+            @if (!empty($hero['video']))
+                <div class="hero-section-image-thumbnail hero-section-image-thumbnail--video">
+                    {!! $hero['video'] !!}
+                </div>
+            @endif
 
             @if (!empty($hero['testimonials']))
                 <div class="hero-section-image-slider">
@@ -69,6 +76,69 @@
                     </div>
                 </div>
             @endif
+
+
+            @if (!empty($hero['post']))
+                <div class="hero-section-image-post">
+                    <div class="hero-section-image-post-box">
+                        @if ($hero['post']['thumbnail'])
+                            <div class="hero-section-image-post-box__thumbnail">
+                                {!! $hero['post']['thumbnail'] !!}
+                            </div>
+                        @endif
+
+                        <div class="hero-section-image-post-box__content">
+                            @if (!empty($hero['post']['categories']))
+                                <ul class="badges-list hero-section-image-post-box__badges">
+                                    @foreach ($hero['post']['categories'] as $category)
+                                        <li class="badges-list__item">
+                                            <span class="badge badge--secondary">
+                                                {{ $category['name'] }}
+                                            </span>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            @endif
+
+                            <h2 class="hero-section-image-post-box__content-title h6">
+                                {{ $hero['post']['title'] }}
+                            </h2>
+
+                            @if (!empty($hero['post']['excerpt']))
+                                <p class="hero-section-image-post-box__content-excerpt">
+                                    {!! $hero['post']['excerpt'] !!}
+                                </p>
+                            @endif
+
+                            @if (!empty($hero['post']['permalink']))
+                                @include('components.link-more-icon', [
+                                    'url' => $hero['post']['permalink'],
+                                    'target' => '_self',
+                                    'title' => $hero['post']['readMore'],
+                                ])
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            @endif
         </div>
+
+        @if (!empty($hero['boxes']))
+            <div class="hero-section-image-boxes">
+                <ul class="grid-boxes-list grid-boxes-list--white">
+                    @foreach ($hero['boxes'] as $box)
+                        <li class="grid-boxes-list__item">
+                            <p class="grid-boxes-list__item-title h2">
+                                {{ $box['title'] }}
+                            </p>
+
+                            <p class="grid-boxes-list__item-content">
+                                {!! $box['content'] !!}
+                            </p>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
     </div>
 </section>
