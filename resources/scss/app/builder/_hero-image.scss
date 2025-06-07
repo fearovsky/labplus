@@ -1,5 +1,6 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
+@use '../general/typography' as *;
 
 .hero-section-image {
   overflow-x: hidden;
@@ -7,6 +8,33 @@
   background: linear-gradient(173.54deg, #74d2ad -104.98%, #1f5a57 94.91%);
   border-radius: 0px 0px 64px 64px;
   color: $colorWhite;
+  $hero: &;
+
+  &--video {
+    #{$hero}-content__preheading {
+      color: #b6e8d7;
+      @extend .text-subheader;
+      text-align: left;
+      margin: 0 0 8px;
+    }
+
+    #{$hero}-content__heading {
+      margin-bottom: 48px;
+    }
+
+    #{$hero}-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 120px;
+    }
+
+    #{$hero}-content,
+    #{$hero}-thumbnail {
+      flex: initial;
+      width: initial;
+      min-width: 0;
+    }
+  }
 
   &--smallp {
     padding: 64px 0 72px;

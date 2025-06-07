@@ -361,6 +361,85 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_684426ac964b2": {
+                    "key": "layout_684426ac964b2",
+                    "name": "hero-video",
+                    "label": "Hero with video",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_684427f47ade9",
+                            "label": "Pre heading",
+                            "name": "preheading",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_684426bc964b3",
+                            "label": "Heading",
+                            "name": "heading",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "new_lines": "br"
+                        },
+                        {
+                            "key": "field_684426d0964b5",
+                            "label": "Button",
+                            "name": "button",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        },
+                        {
+                            "key": "field_6844271a964b6",
+                            "label": "Video",
+                            "name": "video",
+                            "type": "oembed",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "width": "",
+                            "height": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_6830f8ecb0f69": {
                     "key": "layout_6830f8ecb0f69",
                     "name": "hero-background",
@@ -3440,5 +3519,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1749293842
+    "modified": 1749297171
 }
