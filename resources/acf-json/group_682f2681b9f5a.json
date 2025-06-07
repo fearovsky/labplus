@@ -28,16 +28,34 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "post"
-            },
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "page"
-            },
+            }
+        ],
+        [
             {
                 "param": "post_type",
                 "operator": "==",
                 "value": "case_study"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "patient_story"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "resource"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
             }
         ]
     ],
@@ -49,5 +67,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1748447847
+    "modified": 1749290153
 }

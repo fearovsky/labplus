@@ -4,6 +4,13 @@
 .partners {
   padding: 64px 0;
   background-color: $colorPearl;
+  $partner: &;
+
+  &--taxonomy {
+    #{$partner}-carousel {
+      margin-top: 0;
+    }
+  }
 
   &-carousel {
     margin-top: 64px;
