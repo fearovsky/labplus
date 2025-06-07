@@ -2541,6 +2541,25 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_68441b0661f51",
+                            "label": "Heading",
+                            "name": "heading",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "new_lines": "br"
+                        },
+                        {
                             "key": "field_684409a8b371a",
                             "label": "Logos color",
                             "name": "logoColor",
@@ -3421,5 +3440,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1749290422
+    "modified": 1749293842
 }

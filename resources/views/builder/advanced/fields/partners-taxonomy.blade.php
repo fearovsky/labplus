@@ -1,5 +1,11 @@
 <section class="partners partners--taxonomy">
     <div class="container">
+        @if (!empty($field['heading']))
+            <p class="text-subheader">
+                {{ $field['heading'] }}
+            </p>
+        @endif
+
         @if (!empty($field['partners']))
             <div class="splide partners-carousel">
                 <div class="splide__track">
