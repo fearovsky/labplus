@@ -192,6 +192,23 @@ import termsHandler from './termsHandler';
     });
   }
 
+  const boxCarousel = document.querySelectorAll('.box-carousel-splide');
+  // only 1 per page, pagination arrows true
+  if (boxCarousel.length) {
+    boxCarousel.forEach((slider) => {
+      new Splide(slider, {
+        type: 'fade',
+        perPage: 1,
+        perMove: 1,
+        autoplay: true,
+        interval: 5000,
+        pauseOnHover: true,
+        arrows: true,
+        pagination: true,
+      }).mount();
+    });
+  }
+
   calculator('.calculator');
   termsHandler();
 })();

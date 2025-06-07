@@ -1,0 +1,105 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+
+.box-carousel {
+  padding: 64px 72px;
+  background: #ffffff;
+  border-radius: 80px;
+
+  &-post {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 48px;
+
+    &__content {
+      padding: 64px 0;
+      font-size: pxToRem(18);
+      align-self: center;
+    }
+
+    &__image {
+      &-thumbnail {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .splide__arrows {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+  }
+
+  .splide__arrow {
+    position: initial;
+    padding: 0;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background-color: transparent;
+    font-size: pxToRem(14);
+    color: #377c78;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: none;
+
+    svg {
+      transform: none;
+      height: auto;
+      width: auto;
+    }
+
+    .splide-arrow-text {
+      margin-top: 2px;
+    }
+
+    &:hover {
+      font-weight: 600;
+    }
+
+    &--prev {
+      .splide-arrow-text {
+        margin-left: 4px;
+      }
+    }
+
+    &--next {
+      .splide-arrow-text {
+        margin-right: 4px;
+      }
+
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .splide__pagination {
+    top: initial;
+    bottom: 0;
+    li {
+      margin-right: 16px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .splide__pagination__page {
+    width: 12px;
+    height: 12px;
+    background-color: #d9d9d9;
+    transform: scale(0.66);
+
+    &.is-active,
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.53);
+      transform: scale(1);
+    }
+  }
+}
