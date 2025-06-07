@@ -1,0 +1,67 @@
+.our-team {
+  padding: 64px 0;
+
+  &-row {
+    max-width: 1184px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    flex: 0 0 52%;
+
+    &__heading {
+      margin: 0 0 48px;
+    }
+
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 176px);
+      grid-gap: 48px;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+
+      &-item {
+        position: relative;
+        &__avatar {
+          width: 100%;
+          display: block;
+        }
+
+        &__plus {
+          width: 52px;
+          height: 52px;
+          position: absolute;
+          bottom: 0;
+          right: -20px;
+        }
+      }
+    }
+
+    &__group {
+      &-title {
+        text-align: left;
+        margin: 0 0 48px;
+        color: #113264;
+      }
+    }
+  }
+
+  &-content {
+    flex: 0 0 43%;
+    padding: 48px 0 48px 48px;
+    position: sticky;
+    top: 140px;
+
+    &__title {
+      margin: 0 0 24px;
+    }
+  }
+}
