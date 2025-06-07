@@ -1,11 +1,17 @@
 <section class="grid-boxes">
     <div class="container">
         @if ($field['heading'])
-            <div class="section-title aligncenter">
-                <h2 class="section-title__text">
+            @if (!empty($field['headingType']) && $field['headingType'] === 'small')
+                <p class="text-subheader">
                     {!! $field['heading'] !!}
-                </h2>
-            </div>
+                </p>
+            @else
+                <div class="section-title aligncenter">
+                    <h2 class="section-title__text">
+                        {!! $field['heading'] !!}
+                    </h2>
+                </div>
+            @endif
         @endif
 
         @if (!empty($field['boxes']))

@@ -2909,6 +2909,31 @@
                                     "new_lines": "br"
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_68442b3e23d3c",
+                            "label": "Heading type",
+                            "name": "headingType",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "std": "Standard",
+                                "small": "Small"
+                            },
+                            "default_value": false,
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
                         }
                     ],
                     "min": "",
@@ -3519,5 +3544,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1749297171
+    "modified": 1749298018
 }
