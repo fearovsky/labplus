@@ -2560,6 +2560,31 @@
                             "new_lines": "br"
                         },
                         {
+                            "key": "field_6843faa90d0aa",
+                            "label": "Image size",
+                            "name": "imageSize",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "std": "Standard",
+                                "small": "Small"
+                            },
+                            "default_value": false,
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
                             "key": "field_6832e8ff74b10",
                             "label": "Image",
                             "name": "image",
@@ -3193,5 +3218,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1748894427
+    "modified": 1749285614
 }

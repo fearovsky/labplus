@@ -5,6 +5,7 @@ namespace App\View\Fields;
 class AccordionField extends BaseField
 {
     private string $heading;
+    private string $imageSize;
     private ?array $image;
     private ?array $items;
 
@@ -12,6 +13,7 @@ class AccordionField extends BaseField
     {
         return [
             'heading' => $this->heading,
+            'imageSize' => $this->imageSize,
             'image' => $this->image,
             'items' => $this->items,
         ];
@@ -21,6 +23,7 @@ class AccordionField extends BaseField
     {
         $this->heading = $this->getHeading();
         $this->image = $this->getFieldImage('image', 'full');
+        $this->imageSize = $this->getImageSize();
         $this->items = $this->getItems();
     }
 
@@ -47,5 +50,10 @@ class AccordionField extends BaseField
                 'content' => wp_kses_post($item['content'] ?? ''),
             ];
         }, $items);
+    }
+
+    private function getImageSize(): string
+    {
+        return $this->field['imageSize'] ?? 'std';
     }
 }

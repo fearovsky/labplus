@@ -3,6 +3,25 @@
 
 .accordion-section {
   padding: 64px 0;
+  $accordion: &;
+
+  &--small {
+    max-width: 1100px;
+    margin: 0 auto;
+    #{$accordion}-row {
+      display: flex;
+      gap: 78px;
+    }
+
+    #{$accordion}-image {
+      flex: 0 0 362px;
+    }
+
+    #{$accordion}-content {
+      flex: 1;
+    }
+  }
+
   &-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

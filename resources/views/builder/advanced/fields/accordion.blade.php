@@ -1,4 +1,4 @@
-<section class="accordion-section">
+<section class="accordion-section accordion-section--{{ $field['imageSize'] }}">
     <div class="container">
         @if ($field['heading'])
             <div class="section-title">
