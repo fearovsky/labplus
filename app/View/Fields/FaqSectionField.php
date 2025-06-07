@@ -41,7 +41,8 @@ class FaqSectionField extends BaseField
             return [];
         }
 
-        $faqItems = get_field('list', $this->field['id'] ?? 0);
+        $faqItems = get_field('items', $this->field['list'] ?? 0);
+
         if (empty($faqItems) || !is_array($faqItems)) {
             return [];
         }

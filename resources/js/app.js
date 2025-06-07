@@ -170,6 +170,28 @@ import termsHandler from './termsHandler';
     });
   }
 
+  const faqSections = document.querySelectorAll('.faq-section-list');
+  if (faqSections.length) {
+    faqSections.forEach((item) => {
+      item.addEventListener('click', (e) => {
+        const target = e.target.closest('.faq-section-list__item');
+        if (!target) {
+          return;
+        }
+
+        const currentActive = item.querySelector(
+          '.faq-section-list__item--active'
+        );
+
+        if (currentActive && currentActive !== target) {
+          currentActive.classList.remove('faq-section-list__item--active');
+        }
+
+        target.classList.toggle('faq-section-list__item--active');
+      });
+    });
+  }
+
   calculator('.calculator');
   termsHandler();
 })();

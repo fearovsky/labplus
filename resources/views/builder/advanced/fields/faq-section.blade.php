@@ -17,16 +17,19 @@
 
             <div class="faq-section-items">
                 @if (!empty($field['items']))
-                    <ul class="faq-section-items__list faq-list">
+                    <ul class="faq-section-items__list faq-section-list">
                         @foreach ($field['items'] as $item)
-                            <li class="faq-list__item">
-                                <h4 class="faq-list__item__heading">
-                                    <button class="faq-list__item__heading__button" type="button">
+                            <li class="faq-section-list__item">
+                                <h4 class="faq-section-list__heading h6">
+                                    <button class="faq-section-list__heading-button" type="button">
                                         {{ $item['question'] }}
+
+                                        <span class="faq-section-list__heading-icon">
+                                        </span>
                                     </button>
                                 </h4>
 
-                                <div class="faq-list__item__content">
+                                <div class="faq-section-list__item-content">
                                     {!! $item['answer'] !!}
                                 </div>
                             </li>

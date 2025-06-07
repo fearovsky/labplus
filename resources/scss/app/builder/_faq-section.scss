@@ -1,0 +1,118 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+
+.faq-section {
+  padding: 64px 0;
+  &-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 48px;
+  }
+
+  &-content {
+    flex: 0 0 400px;
+    font-size: pxToRem(18);
+
+    &__heading {
+      margin: 0 0 48px;
+    }
+
+    &__content {
+      & > p {
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &-items {
+    flex: 1;
+  }
+
+  &-list {
+    padding: 0;
+    margin: 0 32px;
+    list-style: none;
+    color: $colorEmerald;
+    $list: &;
+
+    &__heading {
+      margin: 0;
+      padding: 0;
+      font-weight: 600;
+      &-button {
+        border: 0;
+        text-align: left;
+        background: transparent;
+        color: inherit;
+        padding: 16px 32px 16px 0;
+        position: relative;
+        font-weight: 600;
+        min-height: 75px;
+        width: 100%;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: calc(100% + 64px);
+          border-bottom: 1px solid #b6e8d7;
+        }
+      }
+
+      &-icon {
+        width: 20px;
+        height: 24px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease-in-out;
+        &::before,
+        &::after {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          background-color: $colorEmerald;
+          max-width: 15px;
+        }
+
+        &::after {
+          transform: translate(-50%, -50%) rotate(90deg);
+        }
+      }
+    }
+
+    &__item {
+      $item: &;
+      &-content {
+        display: none;
+        margin-top: 40px;
+      }
+
+      &--active {
+        #{$item}-content {
+          display: block;
+        }
+
+        #{$list}__heading-icon {
+          &::after {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+}
