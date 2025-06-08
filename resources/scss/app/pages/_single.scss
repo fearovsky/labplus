@@ -19,8 +19,7 @@
     @extend .h4;
   }
 
-  h4,
-  .h4 {
+  h4 {
     @extend .text-subheader;
     text-align: left;
     color: #113264;

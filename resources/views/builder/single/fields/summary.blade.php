@@ -9,9 +9,9 @@
 
     @if (!empty($field['boxesTitle']))
         <div class="single-summary-boxes">
-            <h3 class="h4 single-summary-boxes__title">
+            <h4 class="single-summary-boxes__title">
                 {!! $field['boxesTitle'] !!}
-            </h3>
+            </h4>
 
             <ul class="single-summary-boxes__list">
                 @foreach ($field['boxes'] as $box)
