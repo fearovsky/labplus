@@ -1,8 +1,35 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+
 .single-heading-content {
   padding: 64px 0;
 
   &__heading {
     margin-top: 0;
     margin-bottom: 48px;
+  }
+
+  figure {
+    width: 100%;
+    margin: 0;
+    img {
+      width: 100%;
+      border-radius: 32px;
+    }
+
+    figcaption {
+      margin-top: 8px;
+      padding: 0 24px;
+      font-size: pxToRem(12);
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #1f5a57;
   }
 }
