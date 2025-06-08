@@ -1,6 +1,6 @@
-<section class="grid-boxes">
+<section class="grid-boxes{{ !empty($class) ? ' grid-boxes--small' : null }}">
     <div class="container">
-        @if ($field['heading'])
+        @if (!empty($field['heading']))
             @if (!empty($field['headingType']) && $field['headingType'] === 'small')
                 <p class="text-subheader">
                     {!! $field['heading'] !!}
