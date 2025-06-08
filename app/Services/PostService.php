@@ -20,4 +20,9 @@ class PostService
             ];
         }, $posts);
     }
+
+    public function getPostTypeName($post): ?string
+    {
+        return null;
+    }
 }

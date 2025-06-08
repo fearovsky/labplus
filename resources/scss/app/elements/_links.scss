@@ -7,6 +7,19 @@
   padding: 12px 20px 11px;
   margin-left: -20px;
   font-weight: 500;
+
+  &--reverse {
+    .link-more__text {
+      flex-direction: row-reverse;
+    }
+
+    .link-more__icon {
+      transform: rotate(180deg);
+      margin-right: 4px;
+      margin-left: 0;
+    }
+  }
+
   &__text {
     position: relative;
     display: flex;
