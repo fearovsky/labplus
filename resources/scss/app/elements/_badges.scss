@@ -5,8 +5,11 @@
   border-radius: 8px;
   transition: background 0.3s ease;
 
-  &:hover {
-    background: #b6e8d7;
+  &[a],
+  &[button] {
+    &:hover {
+      background: #b6e8d7;
+    }
   }
 }
 
