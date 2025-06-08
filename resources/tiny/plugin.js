@@ -38,7 +38,6 @@
       },
     });
 
-    // Add preview styles for editor
     editor.on('init', function () {
       editor.dom.addStyle(`
         hr.custom-separator {
