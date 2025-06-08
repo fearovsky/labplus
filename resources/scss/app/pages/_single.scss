@@ -19,8 +19,11 @@
     @extend .h4;
   }
 
-  h4 {
-    font-size: pxToRem(21);
+  h4,
+  .h4 {
+    @extend .text-subheader;
+    text-align: left;
+    color: #113264;
   }
 
   &-header {
@@ -72,10 +75,11 @@
   }
 
   &-row {
-    margin-top: 300px;
+    margin-top: 240px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: flex-start;
     gap: 48px;
   }
 
@@ -84,9 +88,27 @@
     flex-direction: column;
     align-items: flex-start;
     flex: 0 0 400px;
+    position: sticky;
+    top: 140px;
   }
 
   &-builder {
     flex: 1;
+
+    p {
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  br {
+    content: '';
+    display: block;
+    height: 30px;
   }
 }

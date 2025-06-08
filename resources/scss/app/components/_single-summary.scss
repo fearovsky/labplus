@@ -1,0 +1,37 @@
+.single-summary {
+  &__title {
+    margin: 0 0 48px;
+  }
+
+  &-boxes {
+    margin-top: 64px;
+
+    &__title {
+      margin: 0 0 32px;
+    }
+
+    &__list {
+      padding: 32px 0;
+      list-style-type: none;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 64px 48px;
+    }
+
+    &__item {
+      padding: 0 16px;
+
+      &-icon {
+        height: 48px;
+        width: 48px;
+        margin-bottom: 32px;
+      }
+
+      &-title {
+        margin: 0 0 16px;
+        color: #113264;
+      }
+    }
+  }
+}

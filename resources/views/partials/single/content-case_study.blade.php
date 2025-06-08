@@ -55,6 +55,7 @@
             </aside>
 
             <div class="single-post-builder">
+                @include('builder.single.builder-single')
 
             </div>
         </div>
