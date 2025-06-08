@@ -11,7 +11,7 @@
     }
   }
 
-  .container {
+  .container:not(.single-news-header) {
     max-width: 1184px;
   }
 
@@ -111,6 +111,11 @@
         margin-bottom: 0;
       }
     }
+  }
+
+  &-footer {
+    border-top: 1px solid #b6e8d7;
+    padding: 48px 0 64px;
   }
 
   br {

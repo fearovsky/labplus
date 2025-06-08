@@ -28,6 +28,7 @@ class NewsComposer extends Composer
             'introText' => $this->getIntroText(),
             'date' => $this->getDate(),
             'categories' => $this->getCategories(),
+            'avatar' => $this->getAvatar()
         ];
     }
 
@@ -69,5 +70,19 @@ class NewsComposer extends Composer
         return array_map(function ($category) {
             return $category->name;
         }, $categories);
+    }
+
+    public function getAvatar(): array
+    {
+        $avatar = get_field('authorAvatar');
+        if (empty($avatar)) {
+            return [];
+        }
+
+        return [
+            'image' => $avatar,
+            'name' => get_field('authorName'),
+            'role' => get_field('authorRole'),
+        ];
     }
 }

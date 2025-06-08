@@ -85,15 +85,8 @@
                             "name": "boxes",
                             "type": "repeater",
                             "instructions": "",
-                            "required": 1,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_68454e6263f5c",
-                                        "operator": "!=empty"
-                                    }
-                                ]
-                            ],
+                            "required": 0,
+                            "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -385,5 +378,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1749372713
+    "modified": 1749407874
 }

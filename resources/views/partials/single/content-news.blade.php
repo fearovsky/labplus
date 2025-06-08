@@ -39,6 +39,23 @@
         </div>
     @endsection
 
+    @section('single-post-after-content')
+        @if (!empty($avatar))
+            <div class="testimonial-box-footer single-post-footer">
+                @image($avatar['image'], 'full', ['class' => 'testimonial-box-footer__avatar'])
+
+                <div class="testimonial-box-footer__author">
+                    <p class="testimonial-box-footer__author-name">
+                        {{ $avatar['name'] }}
+                    </p>
+                    <p class="testimonial-box-footer__author-role">
+                        {{ $avatar['role'] }}
+                    </p>
+                </div>
+            </div>
+        @endif
+    @endsection
+
     @include('partials.single.main-content', [
         'archiveLink' => $archiveLink,
         'backToText' => __('Back to Newsroom', 'labplus'),

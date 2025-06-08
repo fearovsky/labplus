@@ -8,6 +8,7 @@
         <div class="single-post-builder">
             @yield('single-post-content')
             @include('builder.single.builder-single')
+            @yield('single-post-after-content')
         </div>
     </div>
 </div>

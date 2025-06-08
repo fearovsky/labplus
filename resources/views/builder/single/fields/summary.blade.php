@@ -7,11 +7,13 @@
         {!! $field['content'] !!}
     </div>
 
-    @if (!empty($field['boxesTitle']))
+    @if (!empty($field['boxes']))
         <div class="single-summary-boxes">
-            <h4 class="single-summary-boxes__title">
-                {!! $field['boxesTitle'] !!}
-            </h4>
+            @if (!empty($field['boxesTitle']))
+                <h4 class="single-summary-boxes__title">
+                    {!! $field['boxesTitle'] !!}
+                </h4>
+            @endif
 
             <ul class="single-summary-boxes__list">
                 @foreach ($field['boxes'] as $box)
