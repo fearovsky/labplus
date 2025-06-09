@@ -1,23 +1,10 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
 
-.single-post-toc:empty::before {
-  content: '';
-  display: block;
-  height: 200px;
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 200% 100%;
-  animation: loading 1.5s infinite;
+.single-post-toc {
+  width: 100%;
 }
 
-@keyframes loading {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
 .toc-list {
   padding: 24px 16px;
   background: rgba(254, 253, 253, 0.5);

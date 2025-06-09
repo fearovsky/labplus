@@ -2,7 +2,11 @@
 @use '../utlities/functions' as *;
 
 .single-heading-content {
-  padding: 64px 0;
+  padding: 48px 0;
+
+  & + .single-heading-content {
+    padding-top: 0;
+  }
 
   &__heading {
     margin-top: 0;
