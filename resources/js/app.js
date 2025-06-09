@@ -3,6 +3,7 @@ import Splide from '@splidejs/splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import calculator from './calculator';
 import termsHandler from './termsHandler';
+import tocInit from './toc';
 
 (() => {
   const logosCarousel = document.querySelectorAll('.splide.logos-carousel');
@@ -211,4 +212,5 @@ import termsHandler from './termsHandler';
 
   calculator('.calculator');
   termsHandler();
+  tocInit('.single-post-toc');
 })();

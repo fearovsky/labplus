@@ -6,6 +6,8 @@
         'class' => 'link-more--reverse',
     ])
 
+    <div class="single-post-toc"></div>
+
     @yield ('single-post-aside-content')
 
     @include('components.cta-block', [
