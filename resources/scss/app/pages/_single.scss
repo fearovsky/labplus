@@ -93,10 +93,31 @@
     flex: 0 0 400px;
     position: sticky;
     top: 140px;
+
+    &__download {
+      width: 100%;
+      padding: 16px;
+    }
   }
 
   &-builder {
     flex: 1;
+
+    &__download {
+      margin-bottom: 64px;
+    }
+
+    & > *:first-child {
+      padding-top: 0;
+      margin-top: 0;
+
+      &.badges-list {
+        & + .single-heading-content {
+          padding-top: 0;
+          margin-top: 16px;
+        }
+      }
+    }
 
     p {
       &:first-of-type {
