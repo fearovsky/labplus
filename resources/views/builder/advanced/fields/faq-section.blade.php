@@ -2,7 +2,7 @@
     <div class="container">
         <div class="faq-section-row">
             <div class="faq-section-content">
-                @if ($field['heading'])
+                @if (!empty($field['heading']))
                     <h2 class="faq-section-content__heading">
                         {!! $field['heading'] !!}
                     </h2>

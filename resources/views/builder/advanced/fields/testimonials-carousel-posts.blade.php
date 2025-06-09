@@ -1,7 +1,7 @@
 <section class="testimonials-carousel-posts">
     <div class="container">
         <div class="box-shadow-white">
-            @if ($field['heading'])
+            @if (!empty($field['heading']))
                 <div class="section-title">
                     <h2 class="section-title__text">
                         {!! $field['heading'] !!}

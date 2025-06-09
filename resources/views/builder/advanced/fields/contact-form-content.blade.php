@@ -2,7 +2,7 @@
     <div class="container">
         <div class="contact-form-content-row">
             <div class="contact-form-content-content">
-                @if ($field['heading'])
+                @if (!empty($field['heading']))
                     <h2 class="contact-form-content-content__title">
                         {{ $field['heading'] }}
                     </h2>

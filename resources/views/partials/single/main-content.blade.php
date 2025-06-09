@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container container--medium">
     <div class="single-post-row">
         @include('partials.single.main-content-aside', [
             'archiveLink' => $archiveLink,
@@ -12,3 +12,17 @@
         </div>
     </div>
 </div>
+
+@include('builder.advanced.fields.testimonials-carousel-posts', [
+    'field' => [
+        'posts' => $posts,
+        'resourceName' => $mappedResources,
+        'resourceLinkText' => $resourceLinkText,
+        'heading' => __('See more posts in Labplus Newsroom', 'labplus'),
+        'link' => [
+            'title' => __('View all posts', 'labplus'),
+            'url' => $archiveLink,
+            'target' => '_self',
+        ],
+    ],
+])

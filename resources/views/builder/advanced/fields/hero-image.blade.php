@@ -2,7 +2,7 @@
     <div class="container hero-section-image-container">
         <div class="hero-section-image-row">
             <div class="hero-section-image-content">
-                @if ($field['heading'])
+                @if (!empty($field['heading']))
                     <h1 class="hero-section-image-content__heading">
                         {!! $field['heading'] !!}
                     </h1>

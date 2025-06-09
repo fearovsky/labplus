@@ -1,6 +1,6 @@
 <section class="members">
     <div class="container">
-        @if ($field['heading'])
+        @if (!empty($field['heading']))
             <div class="section-title section-title--sub">
                 <h3 class="text-subheader">
                     {!! $field['heading'] !!}

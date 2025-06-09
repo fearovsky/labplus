@@ -1,6 +1,6 @@
 <section class="projects">
     <div class="container">
-        @if ($field['heading'])
+        @if (!empty($field['heading']))
             <div class="section-title">
                 <h1 class="section-title__text">
                     {!! $field['heading'] !!}

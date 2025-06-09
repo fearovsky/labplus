@@ -2,14 +2,16 @@
 
 namespace App\View\Composers;
 
+use WP_Query;
+use App\Services\PostService;
 use App\PostType\NewsPostType;
 use Roots\Acorn\View\Composer;
-use App\PostType\CaseStudyPostType;
+use App\Utility\PostTypeUtlity;
 use App\PostType\ResourcePostType;
+use App\PostType\CaseStudyPostType;
 use App\Taxonomy\NewsCategoryTaxonomy;
-use App\Taxonomy\CaseStudyCategoryTaxonomy;
 use App\Taxonomy\ResourceCategoryTaxonomy;
-use WP_Query;
+use App\Taxonomy\CaseStudyCategoryTaxonomy;
 
 class SingleComposer extends Composer
 {
@@ -43,7 +45,9 @@ class SingleComposer extends Composer
             'title' => get_the_title($this->postId),
             'excerpt' => get_the_excerpt($this->postId),
             'archiveLink' => get_post_type_archive_link($this->postType),
-            'posts' => $this->getRelatedPosts()
+            'posts' => $this->getRelatedPosts(),
+            'mappedResources' => PostTypeUtlity::getMappedResource($this->postType),
+            'resourceLinkText' => PostTypeUtlity::getMappedLinkText($this->postType),
         ];
     }
 
@@ -80,15 +84,9 @@ class SingleComposer extends Composer
             return [];
         }
 
-        return array_map(function ($post) {
-            return [
-                'id' => $post->ID,
-                'title' => get_the_title($post->ID),
-                'excerpt' => get_the_excerpt($post->ID),
-                'link' => get_permalink($post->ID),
-                'thumbnail' => get_the_post_thumbnail_url($post->ID, 'medium'),
-            ];
-        }, $query->posts);
+        $serviceClass = app()->make(PostService::class);
+
+        return $serviceClass->transformListToBoxes($query->posts);
     }
 
     private function getTaxonomyBasedOnPostType(): string

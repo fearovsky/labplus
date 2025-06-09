@@ -8,7 +8,7 @@
                     </p>
                 @endif
 
-                @if ($field['heading'])
+                @if (!empty($field['heading']))
                     <h2 class="benefits-overview-content__heading">
                         {!! $field['heading'] !!}
                     </h2>

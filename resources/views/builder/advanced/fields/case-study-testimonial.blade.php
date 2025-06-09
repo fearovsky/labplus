@@ -1,7 +1,7 @@
     @if (!empty($field['items']))
 
         <section class="case-study-testimonial">
-            @if ($field['heading'])
+            @if (!empty($field['heading']))
                 <div class="section-title">
                     <h2 class="section-title__text">
                         {{ $field['heading'] }}

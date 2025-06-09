@@ -11,10 +11,6 @@
     }
   }
 
-  .container:not(.single-news-header) {
-    max-width: 1184px;
-  }
-
   h1 {
     @extend .h2;
   }

@@ -1,6 +1,6 @@
 <section class="box-carousel">
     <div class="container">
-        @if ($field['heading'])
+        @if (!empty($field['heading']))
             <div class="section-title">
                 <h2 class="section-title__text">
                     {!! $field['heading'] !!}

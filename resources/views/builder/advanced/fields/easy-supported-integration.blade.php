@@ -1,7 +1,7 @@
 <section class="easy-supported-integration">
     <div class="container">
         <div class="easy-supported-integration-box box-shadow-white">
-            @if ($field['heading'])
+            @if (!empty($field['heading']))
                 <div class="section-title aligncenter">
                     <h2 class="section-title__text">
                         {{ $field['heading'] }}
