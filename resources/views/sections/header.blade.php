@@ -24,9 +24,16 @@
             <div class="header-main-content">
                 <a class="header-main-logo" href="{{ home_url('/') }}">
                     {{ get_svg('resources.images.logo.logo', ['class' => 'header-main-logo__image']) }}
+                    {{ get_svg('resources.images.logo.logo-white-accent', ['class' => 'header-main-logo__image header-main-logo__image--mobile']) }}
                 </a>
 
                 @if (has_nav_menu('primary_navigation'))
+                    <button class="header-main-hamburger hamburger">
+                        <span class="hamburger__line"></span>
+                        <span class="hamburger__line"></span>
+                        <span class="hamburger__line"></span>
+                    </button>
+
                     <nav class="header-main-nav nav" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
                         {!! wp_nav_menu([
                             'theme_location' => 'primary_navigation',

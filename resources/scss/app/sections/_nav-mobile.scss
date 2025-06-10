@@ -1,0 +1,39 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
+@use '../general/container' as *;
+@use '../elements/buttons' as *;
+
+@include mediaDown(xl) {
+  .nav {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      z-index: -1;
+    }
+
+    &__list {
+      padding: 0;
+    }
+
+    .menu-mega-item {
+      .menu-mega-item__text-description,
+      .menu-mega-item__icon {
+        display: none;
+      }
+    }
+
+    .sub-menu {
+      padding-left: 0;
+    }
+  }
+}

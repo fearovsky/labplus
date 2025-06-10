@@ -17,3 +17,16 @@ $sizes: (
     @content;
   }
 }
+
+@mixin container() {
+  max-width: 1296px;
+  padding: 0 28px;
+  width: calc(100% - 56px);
+  margin: 0 auto;
+  box-sizing: content-box;
+
+  @include mediaUp(lg) {
+    padding: 0 70px;
+    width: calc(100% - 140px);
+  }
+}
