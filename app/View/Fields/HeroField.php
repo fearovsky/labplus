@@ -2,6 +2,8 @@
 
 namespace App\View\Fields;
 
+use App\Services\LogosService;
+
 class HeroField extends BaseField
 {
     private ?array $background;
@@ -63,9 +65,11 @@ class HeroField extends BaseField
             return null;
         }
 
+        $logoServices = app(LogosService::class);
+
         return [
             'title' => $title,
-            'items' => $this->processLogos($this->field['logos']),
+            'items' => $logoServices->getLogosByTaxonomy($this->field['logostaxonomy'], 'logoLight'),
         ];
     }
 

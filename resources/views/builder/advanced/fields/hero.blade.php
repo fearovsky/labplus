@@ -41,7 +41,7 @@
                             <ul class="splide__list">
                                 @foreach ($field['logos']['items'] as $logo)
                                     <li class="splide__slide hero-logos-item">
-                                        <img src="{{ $logo['url'] }}" alt="{{ $logo['alt'] }}"
+                                        <img src="{{ $logo['logo']['url'] }}" alt="{{ $logo['logo']['alt'] }}"
                                             class="hero-logos-item__image">
                                     </li>
                                 @endforeach

@@ -237,38 +237,26 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_682b166600bfc",
+                            "key": "field_6848af42121f7",
                             "label": "Logos",
-                            "name": "logos",
-                            "type": "gallery",
+                            "name": "logostaxonomy",
+                            "type": "taxonomy",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_682b161e00bfb",
-                                        "operator": "!=empty"
-                                    }
-                                ]
-                            ],
+                            "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "array",
-                            "preview_size": "thumbnail",
-                            "insert": "append",
-                            "library": "all",
-                            "min": "",
-                            "max": "",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
+                            "taxonomy": "logo_group",
+                            "field_type": "select",
+                            "allow_null": 0,
+                            "add_term": 1,
+                            "save_terms": 0,
+                            "load_terms": 0,
+                            "return_format": "id",
+                            "multiple": 0
                         }
                     ],
                     "min": "",
@@ -4178,5 +4166,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1749560868
+    "modified": 1749595141
 }

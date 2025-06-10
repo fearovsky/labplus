@@ -35,7 +35,7 @@ class PartnersTaxonomyField extends BaseField
     private function getPartners(): array
     {
         $taxonomy = $this->field['partners'];
-        $logoColor = $this->field['logoColor'] ?? 'light';
+        $logoColor = $this->field['logoColor'] ?? 'logoLight';
 
         $logoServices = app(LogosService::class);
 
