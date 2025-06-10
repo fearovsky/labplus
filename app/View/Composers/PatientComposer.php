@@ -6,6 +6,9 @@ use Roots\Acorn\View\Composer;
 
 class PatientComposer extends Composer
 {
+    private string $healthRaport;
+    private ?int $healthRaportImage = null;
+
     /**
      * List of views served by this composer.
      *
@@ -15,12 +18,24 @@ class PatientComposer extends Composer
         'partials.single.content-patient_story'
     ];
 
+    public function __construct()
+    {
+        $this->proccessFields();
+        add_action('wp_footer', [$this, 'renderModal']);
+    }
+
     public function with(): array
     {
         return [
-            'healthRaport' => $this->getHealthRaport(),
-            'healthRaportImage' => $this->getHealthRaportImage(),
+            'healthRaport' => $this->healthRaport,
+            'healthRaportImage' => $this->healthRaportImage,
         ];
+    }
+
+    protected function proccessFields(): void
+    {
+        $this->healthRaport = $this->getHealthRaport();
+        $this->healthRaportImage = $this->getHealthRaportImage();
     }
 
     /**
@@ -51,5 +66,19 @@ class PatientComposer extends Composer
         }
 
         return absint($healthRaportImage);
+    }
+
+    public function renderModal(): void
+    {
+        if (empty($this->healthRaport)) {
+            return;
+        }
+
+
+        echo view('components.modal', [
+            'title' => __('Interpreted lab test results', 'lab'),
+            'slot' => $this->healthRaport,
+            'modalId' => 'healthRaport',
+        ])->render();
     }
 }

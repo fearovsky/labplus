@@ -4,6 +4,7 @@ import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import calculator from './calculator';
 import termsHandler from './termsHandler';
 import tocInit from './toc';
+import Modal from './modal.js';
 
 (() => {
   const logosCarousel = document.querySelectorAll('.splide.logos-carousel');
@@ -213,4 +214,6 @@ import tocInit from './toc';
   calculator('.calculator');
   termsHandler();
   tocInit('.single-post-toc');
+
+  const modalSystem = new Modal();
 })();

@@ -41,6 +41,7 @@ Application::configure()
         App\Providers\TaxonomyServiceProvider::class,
         App\Providers\MenuProvider::class,
         App\Providers\AjaxProvider::class,
+        App\Providers\PatientProvider::class,
     ])
     ->boot();
 
