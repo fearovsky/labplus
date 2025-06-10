@@ -324,6 +324,52 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_6847ed29739c1": {
+                    "key": "layout_6847ed29739c1",
+                    "name": "health-raport",
+                    "label": "Health raport modal",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6847ed3c739c3",
+                            "label": "Heading",
+                            "name": "heading",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "new_lines": "br"
+                        },
+                        {
+                            "key": "field_6847ed49739c4",
+                            "label": "Information",
+                            "name": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Available only on the patient page",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Dodaj wiersz",
@@ -378,5 +424,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1749407874
+    "modified": 1749544304
 }
