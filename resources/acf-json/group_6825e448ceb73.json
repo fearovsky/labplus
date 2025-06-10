@@ -3937,7 +3937,7 @@
                             "collapsed": "",
                             "min": 0,
                             "max": 0,
-                            "layout": "table",
+                            "layout": "block",
                             "button_label": "",
                             "sub_fields": [
                                 {
@@ -3975,9 +3975,101 @@
                                     "collapsed": "",
                                     "min": 0,
                                     "max": 0,
-                                    "layout": "table",
+                                    "layout": "row",
                                     "button_label": "",
                                     "sub_fields": [
+                                        {
+                                            "key": "field_68482a2edf6b7",
+                                            "label": "Type",
+                                            "name": "type",
+                                            "type": "select",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "choices": {
+                                                "content": "content",
+                                                "downloads": "downloads"
+                                            },
+                                            "default_value": false,
+                                            "allow_null": 0,
+                                            "multiple": 0,
+                                            "ui": 0,
+                                            "return_format": "value",
+                                            "ajax": 0,
+                                            "placeholder": ""
+                                        },
+                                        {
+                                            "key": "field_68482a45df6b8",
+                                            "label": "Downloads file",
+                                            "name": "downloadsFile",
+                                            "type": "repeater",
+                                            "instructions": "",
+                                            "required": 1,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_68482a2edf6b7",
+                                                        "operator": "==",
+                                                        "value": "downloads"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "collapsed": "",
+                                            "min": 0,
+                                            "max": 0,
+                                            "layout": "table",
+                                            "button_label": "",
+                                            "sub_fields": [
+                                                {
+                                                    "key": "field_68482d0b45ad3",
+                                                    "label": "File name",
+                                                    "name": "fileName",
+                                                    "type": "text",
+                                                    "instructions": "",
+                                                    "required": 1,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": "",
+                                                    "prepend": "",
+                                                    "append": "",
+                                                    "maxlength": ""
+                                                },
+                                                {
+                                                    "key": "field_68482a70df6b9",
+                                                    "label": "File",
+                                                    "name": "file",
+                                                    "type": "file",
+                                                    "instructions": "",
+                                                    "required": 1,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "return_format": "url",
+                                                    "library": "all",
+                                                    "min_size": "",
+                                                    "max_size": "",
+                                                    "mime_types": ""
+                                                }
+                                            ]
+                                        },
                                         {
                                             "key": "field_684818cdf1c75",
                                             "label": "Content",
@@ -3985,7 +4077,15 @@
                                             "type": "wysiwyg",
                                             "instructions": "",
                                             "required": 1,
-                                            "conditional_logic": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_68482a2edf6b7",
+                                                        "operator": "==",
+                                                        "value": "content"
+                                                    }
+                                                ]
+                                            ],
                                             "wrapper": {
                                                 "width": "",
                                                 "class": "",
@@ -4004,7 +4104,15 @@
                                             "type": "repeater",
                                             "instructions": "",
                                             "required": 0,
-                                            "conditional_logic": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_68482a2edf6b7",
+                                                        "operator": "==",
+                                                        "value": "content"
+                                                    }
+                                                ]
+                                            ],
                                             "wrapper": {
                                                 "width": "",
                                                 "class": "",
@@ -4070,5 +4178,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1749555425
+    "modified": 1749560868
 }

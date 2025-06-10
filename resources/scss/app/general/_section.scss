@@ -20,6 +20,10 @@
       font-size: pxToRem(18);
       margin-top: 48px;
 
+      br {
+        display: none !important;
+      }
+
       & > p {
         &:first-of-type {
           margin-top: 0;

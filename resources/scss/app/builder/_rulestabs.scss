@@ -1,6 +1,7 @@
 .rules-tab {
   max-width: 870px;
   margin: 0 auto;
+  padding: 64px 0;
 
   &-tabs {
     margin-bottom: 140px;
@@ -42,6 +43,20 @@
 
     &__item {
       margin-bottom: 64px;
+      $item: &;
+
+      &:has(+ #{$item}--downloads) {
+        margin-bottom: 48px;
+      }
+
+      // if -downloads is the next one then margin bottom 48
+      & + &--downloads {
+        margin-top: 48px;
+      }
+
+      &--downloads {
+        margin-bottom: 48px;
+      }
       &:last-child {
         margin-bottom: 0;
       }

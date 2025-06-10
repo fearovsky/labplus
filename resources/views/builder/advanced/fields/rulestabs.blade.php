@@ -32,18 +32,41 @@
                         @if (!empty($tab['rows']))
                             <div class="rules-tab-section__items">
                                 @foreach ($tab['rows'] as $row)
-                                    <div class="rules-tab-section__item">
-                                        <div class="rules-tab-section__content">
-                                            {!! $row['content'] !!}
-                                        </div>
+                                    <div class="rules-tab-section__item rules-tab-section__item--{{ $row['type'] }}">
+                                        @if ($row['type'] === 'content')
+                                            <div class="rules-tab-section__content">
+                                                {!! $row['content'] !!}
+                                            </div>
 
-                                        @if ($row['badges'])
-                                            <ul class="rules-tab-section__badges badges-list">
-                                                @foreach ($row['badges'] as $badge)
-                                                    <li class="rules-tab-section__badge badges-list__item">
-                                                        <span class="badge">
-                                                            {{ $badge['item'] }}
-                                                        </span>
+                                            @if ($row['badges'])
+                                                <ul class="rules-tab-section__badges badges-list">
+                                                    @foreach ($row['badges'] as $badge)
+                                                        <li class="rules-tab-section__badge badges-list__item">
+                                                            <span class="badge">
+                                                                {{ $badge['item'] }}
+                                                            </span>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            @endif
+                                        @elseif (!empty($row['downloadsFile']))
+                                            <ul class="download-list">
+                                                @foreach ($row['downloadsFile'] as $downloadItem)
+                                                    <li class="download-list__item">
+                                                        <a href="{{ $downloadItem['file'] }}"
+                                                            class="download-list__link" download>
+                                                            <span class="download-list__text h6">
+                                                                {{ $downloadItem['fileName'] }}
+                                                            </span>
+
+                                                            <span class="btn btn-secondary btn-icon btn--small">
+                                                                <span class="btn-icon__text">
+                                                                    {{ __('Download', 'labplus') }}
+                                                                </span>
+
+                                                                {{ get_svg('resources.images.icon.fetch', ['class' => 'btn-icon__img']) }}
+                                                            </span>
+                                                        </a>
                                                     </li>
                                                 @endforeach
                                             </ul>
