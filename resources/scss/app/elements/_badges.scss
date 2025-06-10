@@ -4,13 +4,7 @@
   border: 1px solid #b6e8d7;
   border-radius: 8px;
   transition: background 0.3s ease;
-
-  &[a],
-  &[button] {
-    &:hover {
-      background: #b6e8d7;
-    }
-  }
+  display: block;
 }
 
 .badges {
@@ -25,6 +19,20 @@
       margin-right: 16px;
       &:last-child {
         margin-right: 0;
+      }
+
+      button.badge {
+        &:hover {
+          background: #b6e8d7;
+          border-color: #b6e8d7;
+        }
+      }
+
+      &--active {
+        .badge {
+          background: #b6e8d7;
+          border-color: #b6e8d7;
+        }
       }
     }
   }

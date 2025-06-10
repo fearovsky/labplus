@@ -1,3 +1,6 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+
 .section {
   &-title {
     margin-bottom: 64px;
@@ -8,6 +11,24 @@
 
     &--sub {
       margin-bottom: 48px;
+    }
+
+    &__header {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      font-size: pxToRem(18);
+      margin-top: 48px;
+
+      & > p {
+        &:first-of-type {
+          margin-top: 0;
+        }
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
     }
 
     .text-subheader {

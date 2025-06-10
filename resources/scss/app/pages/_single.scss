@@ -5,6 +5,10 @@
 .single-post {
   $single: &;
 
+  .testimonials-carousel-posts {
+    margin-top: 48px;
+  }
+
   &--news {
     #{$single}-row {
       margin-top: 64px;

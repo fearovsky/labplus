@@ -4,6 +4,7 @@ import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import calculator from './calculator';
 import termsHandler from './termsHandler';
 import tocInit from './toc';
+import rulesTabs from './rulesTabs';
 import Modal from './modal.js';
 
 (() => {
@@ -214,6 +215,7 @@ import Modal from './modal.js';
   calculator('.calculator');
   termsHandler();
   tocInit('.single-post-toc');
+  rulesTabs();
 
   const modalSystem = new Modal();
 })();

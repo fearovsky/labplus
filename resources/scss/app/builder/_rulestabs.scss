@@ -1,0 +1,50 @@
+.rules-tab {
+  max-width: 870px;
+  margin: 0 auto;
+
+  &-tabs {
+    margin-bottom: 140px;
+  }
+
+  h5 {
+    margin-bottom: 24px;
+  }
+
+  h6 {
+    margin-bottom: 16px;
+  }
+
+  br {
+    content: '';
+    display: block;
+    height: 30px;
+  }
+
+  p {
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &-section {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+    &__badges {
+      margin-top: 24px;
+    }
+
+    &__item {
+      margin-bottom: 64px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

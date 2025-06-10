@@ -13,16 +13,18 @@
     </div>
 </div>
 
-@include('builder.advanced.fields.testimonials-carousel-posts', [
-    'field' => [
-        'posts' => $posts,
-        'resourceName' => $mappedResources,
-        'resourceLinkText' => $resourceLinkText,
-        'heading' => __('See more posts in Labplus Newsroom', 'labplus'),
-        'link' => [
-            'title' => __('View all posts', 'labplus'),
-            'url' => $archiveLink,
-            'target' => '_self',
+@if (!empty($posts))
+    @include('builder.advanced.fields.testimonials-carousel-posts', [
+        'field' => [
+            'posts' => $posts,
+            'resourceName' => $mappedResources,
+            'resourceLinkText' => $resourceLinkText,
+            'heading' => __('See more posts in Labplus Newsroom', 'labplus'),
+            'link' => [
+                'title' => __('View all posts', 'labplus'),
+                'url' => $archiveLink,
+                'target' => '_self',
+            ],
         ],
-    ],
-])
+    ])
+@endif

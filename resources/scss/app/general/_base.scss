@@ -104,3 +104,10 @@ button {
   filter: drop-shadow(0 0 0.5rem rgba(116, 210, 173, 0.5));
   transition: filter 0.3s ease-in-out;
 }
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
