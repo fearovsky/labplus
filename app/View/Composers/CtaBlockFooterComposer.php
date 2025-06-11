@@ -20,6 +20,7 @@ class CtaBlockFooterComposer extends Composer
     {
         return [
             'field' => $this->getCtaBlock(),
+            'hide' => $this->shouldBeHidden()
         ];
     }
 
@@ -38,7 +39,11 @@ class CtaBlockFooterComposer extends Composer
         $output = [];
 
         foreach ($fieldsToFetch as $field => $mapped) {
-            $outputField = get_field($field, 'option');
+            $outputField = get_field($field, get_the_ID());
+            if (empty($outputField)) {
+                $outputField = get_field($field, 'option');
+            }
+
             if (empty($outputField)) {
                 return [];
             }
@@ -51,5 +56,12 @@ class CtaBlockFooterComposer extends Composer
         }
 
         return $output;
+    }
+
+    private function shouldBeHidden(): bool
+    {
+        $shouldBeDisable = get_field('ctaDisable');
+
+        return !empty($shouldBeDisable) && $shouldBeDisable === true;
     }
 }

@@ -1,5 +1,7 @@
 <footer class="footer">
-    @include('sections.footer.cta-footer')
+    @if (!$hide)
+        @include('sections.footer.cta-footer')
+    @endif
 
     @if ($rulesInformation)
         <div class="footer-outer">

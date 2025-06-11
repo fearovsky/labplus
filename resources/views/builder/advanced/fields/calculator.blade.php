@@ -1,4 +1,4 @@
-<section class="calculator">
+<section class="calculator" id="calculator">
     <div class="container">
         <div class="box-shadow-white calculator-box">
             @if (!empty($field['heading']))

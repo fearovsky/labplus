@@ -28,6 +28,8 @@
   &-copy {
     margin: 32px 0 0;
     text-align: center;
+    color: #fefdfd;
+    opacity: 0.5;
   }
 
   &-main {
@@ -138,6 +140,11 @@
       grid-gap: 70px;
       border-left: 1px solid#1b4845;
       padding-left: 70px;
+
+      a {
+        text-decoration: underline;
+      }
+
       &__list {
         padding: 0;
         margin: 0;

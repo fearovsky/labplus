@@ -32,7 +32,7 @@
                                     </strong>
 
                                     <span class="chess-board-item__summary-text">
-                                        {{ $section['summary']['content'] }}
+                                        {!! $section['summary']['content'] !!}
                                     </span>
                                 </p>
                             @endif

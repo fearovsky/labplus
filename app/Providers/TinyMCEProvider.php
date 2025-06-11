@@ -36,7 +36,7 @@ class TinyMCEProvider extends ServiceProvider
         add_filter('mce_buttons', [$this, 'addTinyMCEButtons']);
         add_action('wp_enqueue_scripts', [$this, 'enqueueFrontendAssets']);
         add_action('admin_init', [$this, 'addAdminEditorStyle']);
-
+        add_filter('mce_buttons', [$this, 'addCustomButtons']);
     }
 
     public function addTinyMCEPlugins(array $plugins): array
@@ -63,5 +63,13 @@ class TinyMCEProvider extends ServiceProvider
     public function addAdminEditorStyle(): void
     {
         add_editor_style('resources/tiny/editor-style.css');
+    }
+
+    public function addCustomButtons($buttons)
+    {
+        $buttons[] = 'superscript';
+        $buttons[] = 'subscript';
+
+        return $buttons;
     }
 }
