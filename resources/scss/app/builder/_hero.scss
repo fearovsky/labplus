@@ -1,5 +1,6 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
 
 .hero {
   background-color: $colorEmerald;
@@ -98,6 +99,21 @@
           rgba(31, 90, 87, 0) 100%
         );
       }
+    }
+  }
+
+  &-video,
+  &-image {
+    display: none;
+    @include mediaUp(xl) {
+      display: block;
+    }
+  }
+
+  &-video {
+    &__video {
+      max-height: calc(100vh - 250px);
+      max-width: 100%;
     }
   }
 }

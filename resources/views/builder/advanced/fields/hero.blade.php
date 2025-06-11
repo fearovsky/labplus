@@ -21,10 +21,19 @@
                 @endif
             </div>
 
-            @if (!empty($field['image']))
-                <div class="hero-image">
-                    <img src="{{ $field['image']['url'] }}" alt="{{ $field['image']['alt'] }}" class="hero-image__img">
 
+            @if ($field['type'] === 'image')
+                @if (!empty($field['image']))
+                    <div class="hero-image">
+                        <img src="{{ $field['image']['url'] }}" alt="{{ $field['image']['alt'] }}"
+                            class="hero-image__img">
+
+                    </div>
+                @endif
+            @else
+                <div class="hero-video">
+                    <video src="{{ $field['video'] }}" autoplay muted loop playsinline
+                        class="hero-video__video"></video>
                 </div>
             @endif
         </div>
