@@ -3,22 +3,6 @@
     "title": "[Theme settings] Archive settings",
     "fields": [
         {
-            "key": "field_6836f7167f7f2",
-            "label": "Posts",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
             "key": "field_6836f71c7f7f3",
             "label": "Resources",
             "name": "",
@@ -480,5 +464,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1748869445
+    "modified": 1749633218
 }

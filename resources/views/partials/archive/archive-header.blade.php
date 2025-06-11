@@ -117,7 +117,7 @@
                                         'title' => $hero['post']['readMore'],
                                     ])
 
-                                    @if (!empty($hero['fileToDownload']))
+                                    @if (!empty($hero['fileToDownload']['url']))
                                         @include('components.link-more-icon', [
                                             'url' => $hero['fileToDownload']['url'],
                                             'target' => '_blank',

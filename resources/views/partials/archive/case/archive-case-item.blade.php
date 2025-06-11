@@ -22,7 +22,7 @@
 
         <h3 class="archive-posts-item__title h6">
             <a href="{{ $item['permalink'] }}" class="archive-posts-item__title-link">
-                {{ $item['title'] }}
+                {!! $item['title'] !!}
             </a>
         </h3>
 

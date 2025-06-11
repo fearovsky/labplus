@@ -1,4 +1,6 @@
 <footer class="footer">
+    @include('sections.footer.cta-footer')
+
     @if ($rulesInformation)
         <div class="footer-outer">
             @include ('components.rules-information', [
