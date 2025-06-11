@@ -123,6 +123,10 @@
       }
     }
 
+    a {
+      text-decoration: underline;
+    }
+
     p {
       &:first-of-type {
         margin-top: 0;

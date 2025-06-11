@@ -3,7 +3,7 @@ import laravel from 'laravel-vite-plugin';
 import { wordpressPlugin, wordpressThemeJson } from '@roots/vite-plugin';
 
 export default defineConfig({
-  base: '/wp-content/themes/lab-plus/public/build/',
+  base: '/wp-content/themes/labplus/public/build/',
   plugins: [
     laravel({
       input: [
