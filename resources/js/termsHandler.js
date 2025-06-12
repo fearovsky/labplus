@@ -8,11 +8,6 @@ async function loadPosts(data = {}) {
       body: JSON.stringify(data),
     });
 
-    if (response.status === 204) {
-      console.log('No posts found');
-      return [];
-    }
-
     const posts = await response.json();
     return posts;
   } catch (error) {
@@ -21,13 +16,23 @@ async function loadPosts(data = {}) {
   }
 }
 
+function ensurePaginationWrapper(wrapper) {
+  let paginationWrapper = document.querySelector('.pagination'); // Adjust selector as needed
+
+  if (!paginationWrapper) {
+    paginationWrapper = document.createElement('div');
+    paginationWrapper.className = 'pagination';
+    wrapper.insertAdjacentElement('afterend', paginationWrapper);
+  }
+
+  return paginationWrapper;
+}
+
 export default () => {
   const termsList = document.querySelector('.archive-terms__list');
   if (!termsList) {
     return;
   }
-
-  const paginationWrapper = document.querySelector('.pagination');
 
   const { taxonomy, posttype } = termsList.dataset;
 
@@ -65,9 +70,12 @@ export default () => {
       term: Number(term),
       paged: paged,
     })
-      .then(({ content, items, pagination }) => {
-        if (items.length === 0) {
-          wrapper.innerHTML = content;
+      .then(({ content, items, pagination, message }) => {
+        currentItemWrapper.classList.add('archive-terms__item--active');
+        activeItemWrapper.classList.remove('archive-terms__item--active');
+
+        if (!items || items.length === 0 || message) {
+          wrapper.innerHTML = message;
           return;
         }
 
@@ -77,10 +85,10 @@ export default () => {
           wrapper.insertAdjacentHTML('beforeend', item);
         });
 
-        paginationWrapper.innerHTML = pagination ?? '';
-
-        currentItemWrapper.classList.add('archive-terms__item--active');
-        activeItemWrapper.classList.remove('archive-terms__item--active');
+        if (pagination) {
+          const paginationWrapper = ensurePaginationWrapper(wrapper);
+          paginationWrapper.innerHTML = pagination ?? '';
+        }
       })
       .finally(() => {
         wrapper.classList.remove('archive-posts--loading');

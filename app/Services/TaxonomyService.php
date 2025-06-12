@@ -38,4 +38,23 @@ class TaxonomyService
 
         return $outputItems;
     }
+
+    public function getAllTerms(string $taxonomy, int $postId)
+    {
+        $terms = get_the_terms($postId, $taxonomy);
+
+        if (is_wp_error($terms) || empty($terms)) {
+            return [];
+        }
+
+        $outputItems = [];
+
+        foreach ($terms as $term) {
+            $outputItems[] = [
+                'name' => $term->name,
+            ];
+        }
+
+        return $outputItems;
+    }
 }

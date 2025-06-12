@@ -84,6 +84,8 @@ ul:not([class]) {
   margin: 0;
 
   li {
+    display: flex;
+    flex-direction: row;
     &::before {
       content: '+';
       font-size: 16px;

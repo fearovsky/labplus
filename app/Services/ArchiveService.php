@@ -3,6 +3,8 @@
 namespace App\Services;
 
 use App\Utility\ImageUtility;
+use App\Taxonomy\NewsCategoryTaxonomy;
+use App\Taxonomy\ResourceCategoryTaxonomy;
 
 class ArchiveService
 {
@@ -130,6 +132,36 @@ class ArchiveService
                 return __('Explore patient story', 'labplus');
             default:
                 return __('Read more', 'labplus');
+        }
+    }
+
+    public function preparedBoxesWithTerms($postType, $posts)
+    {
+        switch ($postType) {
+            case 'resource':
+                return $this->prepareForBoxesAndTerms(
+                    $posts,
+                    ResourceCategoryTaxonomy::getTaxonomy()
+                );
+            case 'news':
+                return $this->prepareForBoxesAndTerms(
+                    $posts,
+                    NewsCategoryTaxonomy::getTaxonomy()
+                );
+            case 'case_study':
+                $items = $this->prepareForBoxes(
+                    $posts
+                );
+
+                if (empty($items)) {
+                    return [];
+                }
+
+                $casestudyService = app(CasestudyService::class);
+                return $casestudyService->appendLogosToPosts($items);
+
+            default:
+                return $this->prepareForBoxes($posts);
         }
     }
 }

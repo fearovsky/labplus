@@ -5,6 +5,10 @@
   padding: 64px 0;
   $projects: &;
 
+  a:not(.btn) {
+    text-decoration: underline;
+  }
+
   &-subtitle {
     margin-top: 0;
     margin-bottom: 32px;

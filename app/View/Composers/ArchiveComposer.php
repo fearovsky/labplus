@@ -19,12 +19,14 @@ class ArchiveComposer extends Composer
 {
     private string $postType;
     private ArchiveService $archiveService;
+    private TaxonomyService $taxonomyService;
 
 
     public function __construct()
     {
         $this->postType = $this->getPostType();
         $this->archiveService = app(ArchiveService::class);
+        $this->taxonomyService = app(TaxonomyService::class);
     }
 
     /**
@@ -157,8 +159,6 @@ class ArchiveComposer extends Composer
 
     private function getTerms(): array
     {
-        $taxonomyService = app(TaxonomyService::class);
-
         switch ($this->postType) {
             case 'post':
                 return get_terms([
@@ -168,21 +168,21 @@ class ArchiveComposer extends Composer
             case 'case_study':
                 return [
                     'taxonomy' => CaseStudyCategoryTaxonomy::getTaxonomy(),
-                    'terms' => $taxonomyService->getAllAndAddGlobalTerms(
+                    'terms' => $this->taxonomyService->getAllAndAddGlobalTerms(
                         CaseStudyCategoryTaxonomy::getTaxonomy()
                     )
                 ];
             case 'news':
                 return [
                     'taxonomy' => NewsCategoryTaxonomy::getTaxonomy(),
-                    'terms' => $taxonomyService->getAllAndAddGlobalTerms(
+                    'terms' => $this->taxonomyService->getAllAndAddGlobalTerms(
                         NewsCategoryTaxonomy::getTaxonomy()
                     )
                 ];
             case 'resource':
                 return [
                     'taxonomy' => ResourceCategoryTaxonomy::getTaxonomy(),
-                    'terms' => $taxonomyService->getAllAndAddGlobalTerms(
+                    'terms' => $this->taxonomyService->getAllAndAddGlobalTerms(
                         ResourceCategoryTaxonomy::getTaxonomy()
                     )
                 ];
@@ -198,32 +198,10 @@ class ArchiveComposer extends Composer
             return [];
         }
 
-        switch ($this->postType) {
-            case 'resource':
-                return $this->archiveService->prepareForBoxesAndTerms(
-                    $wp_query->posts,
-                    ResourceCategoryTaxonomy::getTaxonomy()
-                );
-            case 'news':
-                return $this->archiveService->prepareForBoxesAndTerms(
-                    $wp_query->posts,
-                    NewsCategoryTaxonomy::getTaxonomy()
-                );
-            case 'case_study':
-                $items = $this->archiveService->prepareForBoxes(
-                    $wp_query->posts
-                );
-
-                if (empty($items)) {
-                    return [];
-                }
-
-                $casestudyService = app(CasestudyService::class);
-                return $casestudyService->appendLogosToPosts($items);
-
-            default:
-                return $this->archiveService->prepareForBoxes($wp_query->posts);
-        }
+        return $this->archiveService->prepareForBoxesAndTerms(
+            $wp_query->posts,
+            $this->postType
+        );
     }
 
     private function getPagination(): array

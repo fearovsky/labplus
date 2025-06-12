@@ -1,0 +1,10 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+
+.alert {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  display: block;
+  border-left: 3px solid #b6e8d7;
+  font-weight: 600;
+}

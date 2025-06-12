@@ -34,11 +34,9 @@ class AjaxProvider extends ServiceProvider
         }
 
         $term = absint($request->get_param('term') ?: 0);
-        // $nextPage = absint($request->get_param('paged') ?: 1) + 1;
 
         $args = [
             'post_type' => $postType,
-            // 'paged' => $nextPage,
             'tax_query' => [
                 [
                     'taxonomy' => $taxonomy,
@@ -64,11 +62,11 @@ class AjaxProvider extends ServiceProvider
                         'items' => []
                     ]
                 )->render(),
-            ], 204);
+            ], 200);
         }
 
         $archiveService = app(ArchiveService::class);
-        $posts = $archiveService->prepareForBoxes($query->posts);
+        $posts = $archiveService->preparedBoxesWithTerms($postType, $query->posts);
         $posts = array_map(function ($post) {
             return view(
                 'partials.archive.case.archive-case-item',

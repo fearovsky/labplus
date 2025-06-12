@@ -60,6 +60,10 @@ class CtaBlockFooterComposer extends Composer
 
     private function shouldBeHidden(): bool
     {
+        if (is_404()) {
+            return true;
+        }
+
         $shouldBeDisable = get_field('ctaDisable');
 
         return !empty($shouldBeDisable) && $shouldBeDisable === true;
