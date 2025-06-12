@@ -1,7 +1,10 @@
 .rules {
   padding: 64px 0;
-  max-width: 820px;
   margin: 0 auto;
+
+  .container {
+    max-width: 820px;
+  }
 
   &-groups {
     display: flex;

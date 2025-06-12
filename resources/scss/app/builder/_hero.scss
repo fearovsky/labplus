@@ -114,6 +114,11 @@
     &__video {
       max-height: calc(100vh - 250px);
       max-width: 100%;
+
+      .home & {
+        border-radius: 48px;
+        overflow: hidden;
+      }
     }
   }
 }
