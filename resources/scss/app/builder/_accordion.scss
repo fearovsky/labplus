@@ -53,7 +53,10 @@
           }
         }
         #{$list}__item-content {
-          display: block;
+          max-height: 500px;
+          max-height: max-content;
+          opacity: 1;
+          padding-top: 16px;
         }
       }
 
@@ -100,8 +103,12 @@
       }
 
       &-content {
-        margin-top: 16px;
-        display: none;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding-top: 0;
+        transition: max-height 0.4s ease, opacity 0.3s ease,
+          padding-top 0.3s ease;
         p {
           &:first-child {
             margin-top: 0;
