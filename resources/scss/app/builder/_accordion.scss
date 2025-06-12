@@ -1,5 +1,6 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
 
 .accordion-section {
   padding: 64px 0;
@@ -19,6 +20,15 @@
 
     #{$accordion}-content {
       flex: 1;
+    }
+  }
+
+  &--med {
+    .container {
+      @include mediaUp(xl) {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
     }
   }
 

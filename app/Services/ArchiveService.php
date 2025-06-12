@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use App\Utility\ImageUtility;
+
 class ArchiveService
 {
     public function getCaseStudyPosts(?int $termId = null)
@@ -36,20 +38,36 @@ class ArchiveService
 
         $postsOutput = [];
 
-        foreach ($posts as $caseStudy) {
+        foreach ($posts as $post) {
             $postsOutput[] = [
-                'id' => $caseStudy->ID,
-                'title' => get_the_title($caseStudy),
-                'excerpt' => get_the_excerpt($caseStudy),
-                'thumbnail' => get_the_post_thumbnail($caseStudy, 'full', [
+                'id' => $post->ID,
+                'title' => get_the_title($post),
+                'excerpt' => get_the_excerpt($post),
+                'thumbnail' => get_the_post_thumbnail($post, 'full', [
                     'class' => 'archive-posts-item__thumbnail',
                 ]),
-                'permalink' => get_permalink($caseStudy),
-                'readMoreText' => $this->getReadTextByPostType($caseStudy->post_type),
+                'permalink' => get_permalink($post),
+                'readMoreText' => $this->getReadTextByPostType($post->post_type),
+                'logo' => $this->getCaseStudyTestimonialLogo($post),
             ];
         }
 
         return $postsOutput;
+    }
+
+    private function getCaseStudyTestimonialLogo($post): ?array
+    {
+        $testimonial = get_field('testimonial', $post->ID);
+        if (!$testimonial) {
+            return null;
+        }
+
+        $logo = get_field('logo', $testimonial);
+        if (empty($logo)) {
+            return null;
+        }
+
+        return ImageUtility::getImageSize($logo, 'full');
     }
 
     public function prepareForBoxesAndTerms(array $posts, string $taxonomy): array

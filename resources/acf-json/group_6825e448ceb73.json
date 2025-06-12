@@ -2777,6 +2777,7 @@
                             },
                             "choices": {
                                 "std": "Standard",
+                                "med": "Medium",
                                 "small": "Small"
                             },
                             "default_value": false,
@@ -4226,5 +4227,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1749625036
+    "modified": 1749736798
 }

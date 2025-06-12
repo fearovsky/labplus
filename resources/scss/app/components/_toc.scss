@@ -21,6 +21,12 @@
       margin-bottom: 0;
     }
 
+    &--active {
+      .toc-list__item-link {
+        color: $colorEmerald;
+      }
+    }
+
     &-link {
       text-decoration-line: underline;
       color: #113264;

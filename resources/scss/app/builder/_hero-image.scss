@@ -111,6 +111,9 @@
       background: transparent;
       box-shadow: none;
       border: 0;
+      &-footer {
+        color: #1b4845;
+      }
     }
 
     .splide__pagination {

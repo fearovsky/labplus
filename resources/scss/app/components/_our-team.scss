@@ -1,3 +1,7 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
+
 .our-team {
   padding: 64px 0;
 
@@ -27,6 +31,9 @@
       margin: 0;
       padding: 0;
       list-style-type: none;
+      @include mediaUp(xl) {
+        grid-template-columns: repeat(3, 1fr);
+      }
 
       &-item {
         position: relative;

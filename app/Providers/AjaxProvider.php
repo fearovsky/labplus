@@ -68,7 +68,7 @@ class AjaxProvider extends ServiceProvider
         }
 
         $archiveService = app(ArchiveService::class);
-        $posts = $archiveService->prepareForCaseStudy($query->posts);
+        $posts = $archiveService->prepareForBoxes($query->posts);
         $posts = array_map(function ($post) {
             return view(
                 'partials.archive.case.archive-case-item',

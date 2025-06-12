@@ -67,6 +67,11 @@ class SingleComposer extends Composer
 
     private function getRelatedPosts(): array
     {
+        // if post type is case study return []
+        if ($this->postType === CaseStudyPostType::getPostType()) {
+            return [];
+        }
+
         $query = new WP_Query([
             'post_type' => $this->postType,
             'posts_per_page' => 3,
