@@ -1,7 +1,9 @@
 .rules-tab {
-  max-width: 870px;
-  margin: 0 auto;
   padding: 64px 0;
+
+  .container {
+    max-width: 870px;
+  }
 
   &-tabs {
     margin-bottom: 140px;
