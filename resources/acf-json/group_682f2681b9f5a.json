@@ -130,6 +130,13 @@
                 "operator": "==",
                 "value": "page"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "news"
+            }
         ]
     ],
     "menu_order": 2,
@@ -140,5 +147,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1749681237
+    "modified": 1749741083
 }

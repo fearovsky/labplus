@@ -48,6 +48,7 @@ class SingleComposer extends Composer
             'posts' => $this->getRelatedPosts(),
             'mappedResources' => PostTypeUtlity::getMappedResource($this->postType),
             'resourceLinkText' => PostTypeUtlity::getMappedLinkText($this->postType),
+            'mappedRelatesdPostsText' => PostTypeUtlity::getMappedHeadingForRelatedPosts($this->postType),
         ];
     }
 
@@ -67,23 +68,29 @@ class SingleComposer extends Composer
 
     private function getRelatedPosts(): array
     {
-        // if post type is case study return []
         if ($this->postType === CaseStudyPostType::getPostType()) {
             return [];
         }
 
-        $query = new WP_Query([
+        $args = [
             'post_type' => $this->postType,
             'posts_per_page' => 3,
             'post__not_in' => [$this->postId],
-            'tax_query' => [
+        ];
+
+
+        $taxonomyToSearch = $this->getTaxonomyBasedOnPostType();
+        if (!empty($taxonomyToSearch)) {
+            $args['tax_query'] = [
                 [
-                    'taxonomy' => $this->getTaxonomyBasedOnPostType(),
+                    'taxonomy' => $taxonomyToSearch,
                     'field' => 'term_id',
-                    'terms' => get_the_terms($this->postId, $this->getTaxonomyBasedOnPostType())[0]->term_id ?? [],
+                    'terms' => get_the_terms($this->postId, $taxonomyToSearch)[0]->term_id ?? [],
                 ],
-            ],
-        ]);
+            ];
+        }
+
+        $query = new WP_Query($args);
 
         if (!$query->have_posts()) {
             return [];
@@ -94,7 +101,7 @@ class SingleComposer extends Composer
         return $serviceClass->transformListToBoxes($query->posts);
     }
 
-    private function getTaxonomyBasedOnPostType(): string
+    private function getTaxonomyBasedOnPostType(): ?string
     {
         switch ($this->postType) {
             case NewsPostType::getPostType():
@@ -104,7 +111,7 @@ class SingleComposer extends Composer
             case ResourcePostType::getPostType():
                 return ResourceCategoryTaxonomy::getTaxonomy();
             default:
-                return 'category';
+                return null;
         }
     }
 }

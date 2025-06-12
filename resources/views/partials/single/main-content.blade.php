@@ -19,7 +19,7 @@
             'posts' => $posts,
             'resourceName' => $mappedResources,
             'resourceLinkText' => $resourceLinkText,
-            'heading' => __('See more posts in Labplus Newsroom', 'labplus'),
+            'heading' => $mappedRelatesdPostsText,
             'link' => [
                 'title' => __('View all posts', 'labplus'),
                 'url' => $archiveLink,
