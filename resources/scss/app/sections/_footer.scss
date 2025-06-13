@@ -137,9 +137,10 @@
     &-nav {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-gap: 70px;
+      grid-gap: 10px 70px;
       border-left: 1px solid#1b4845;
       padding-left: 70px;
+      grid-auto-rows: max-content;
 
       a {
         text-decoration: underline;
@@ -156,6 +157,14 @@
             margin-bottom: 0;
           }
         }
+      }
+    }
+
+    &-privacy {
+      grid-column: span 2;
+
+      &__links {
+        display: inline-flex;
       }
     }
   }

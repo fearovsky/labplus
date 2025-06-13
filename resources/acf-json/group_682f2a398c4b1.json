@@ -168,6 +168,68 @@
             "delay": 0
         },
         {
+            "key": "field_684bdf9812ca1",
+            "label": "Privacy text",
+            "name": "footerPrivacyText",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_684bdfa112ca2",
+            "label": "Privacy links",
+            "name": "footerPrivacyLinks",
+            "type": "repeater",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_684bdf9812ca1",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_684bdfa912ca3",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                }
+            ]
+        },
+        {
             "key": "field_682f2f3f7551e",
             "label": "Rules nav first",
             "name": "footerRulesFirstNav",
@@ -257,5 +319,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1748447795
+    "modified": 1749802992
 }

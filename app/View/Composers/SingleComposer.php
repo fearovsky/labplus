@@ -54,15 +54,15 @@ class SingleComposer extends Composer
 
     private function getCtaBlock(): ?array
     {
-        $title = get_field('ctaTitle', $this->postId);
+        $title = get_field('ctaSidebarTitle', $this->postId);
         if (empty($title)) {
             return null;
         }
 
         return [
             'title' => $title,
-            'content' => get_field('ctaContent', $this->postId),
-            'button' => get_field('ctaLink', $this->postId),
+            'content' => get_field('ctaSidebarContent', $this->postId),
+            'button' => get_field('ctaSidebarLink', $this->postId),
         ];
     }
 

@@ -5,7 +5,7 @@
         {
             "key": "field_684549a64de6b",
             "label": "CTA Block title",
-            "name": "ctaTitle",
+            "name": "ctaSidebarTitle",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -24,7 +24,7 @@
         {
             "key": "field_684549bc4de6c",
             "label": "CTA Block content",
-            "name": "ctaContent",
+            "name": "ctaSidebarContent",
             "type": "textarea",
             "instructions": "",
             "required": 1,
@@ -50,7 +50,7 @@
         {
             "key": "field_684549d64de6d",
             "label": "CTA Block link",
-            "name": "ctaLink",
+            "name": "ctaSidebarLink",
             "type": "link",
             "instructions": "",
             "required": 1,
@@ -115,5 +115,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1749372228
+    "modified": 1749801695
 }

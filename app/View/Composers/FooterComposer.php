@@ -33,7 +33,8 @@ class FooterComposer extends Composer
             'boxes' => $this->getBoxes(),
             'informationBoxes' => $this->getInformationBoxes(),
             'informationNav' => $this->getInformationNav(),
-            'socialMedia' => $this->getSocialMedia()
+            'socialMedia' => $this->getSocialMedia(),
+            'privacy' => $this->getPrivacy()
         ];
     }
 
@@ -91,5 +92,18 @@ class FooterComposer extends Composer
         }
 
         return $social;
+    }
+
+    private function getPrivacy(): array
+    {
+        $privacyText = get_field('footerPrivacyText', 'options');
+        if (empty($privacyText)) {
+            return [];
+        }
+
+        return [
+            'text' => $privacyText,
+            'links' => get_field('footerPrivacyLinks', 'options') ?: []
+        ];
     }
 }

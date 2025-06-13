@@ -68,8 +68,38 @@
                     </ul>
                 @endif
 
+
                 @if (!empty($informationNav))
                     <div class="footer-informations-nav">
+                        @if (!empty($privacy))
+                            <div class="footer-informations-privacy">
+                                <p class="footer-informations-privacy__text">
+                                    <span class="footer-informations-privacy__text-title">
+                                        {!! $privacy['text'] !!}
+                                    </span>
+
+                                    <span class="footer-informations-privacy__links">
+                                        (
+                                        @foreach ($privacy['links'] as $item)
+                                            @php
+                                                $link = $item['link'];
+                                            @endphp
+                                            <a class="footer-informations-privacy__links-link"
+                                                href="{{ $link['url'] }}" target="{{ $link['target'] }}">
+                                                {{ $link['title'] }}
+                                            </a>
+
+                                            @if (!$loop->last)
+                                                ,
+                                            @endif
+                                        @endforeach
+                                        )
+                                    </span>
+                                </p>
+
+                            </div>
+                        @endif
+
                         @foreach ($informationNav as $class => $list)
                             <ul class="footer-informations-nav__list footer-informations-nav__list{{ $class }}">
                                 @foreach ($list as $itemNav)
