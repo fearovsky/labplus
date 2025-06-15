@@ -82,7 +82,6 @@
           grid-gap: 48px;
           max-width: 1296px;
           padding: 0 28px;
-          width: calc(100% - 56px);
           margin: 0 auto;
           box-sizing: content-box;
           padding: 0 70px;
@@ -104,7 +103,7 @@
           }
           &::before {
             content: '';
-            width: calc(100vw - 16px);
+            width: 100vw;
             height: 100%;
             background-color: #f1f1f1;
             position: absolute;
@@ -119,6 +118,7 @@
           display: flex;
           flex-direction: row;
           padding: 13px;
+          border-radius: 8px;
 
           &:hover {
             text-decoration: none;
@@ -143,6 +143,8 @@
 
             &-description {
               font-size: pxToRem(12);
+              color: #113264;
+              font-weight: 400;
             }
           }
         }

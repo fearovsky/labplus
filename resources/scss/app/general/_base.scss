@@ -18,6 +18,7 @@ body {
   background-color: $colorPearl;
   color: #113264;
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 a {
@@ -84,16 +85,16 @@ ul:not([class]) {
   margin: 0;
 
   li {
-    display: flex;
-    flex-direction: row;
+    position: relative;
+    padding-left: 1rem;
     &::before {
       content: '+';
       font-size: 16px;
       font-weight: 600;
       color: #74d2ad;
-      display: inline-block;
-      vertical-align: middle;
-      margin-right: 5px;
+      position: absolute;
+      left: 0;
+      top: 0;
     }
   }
 }

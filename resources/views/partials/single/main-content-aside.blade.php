@@ -1,7 +1,7 @@
 <aside class="single-post-aside">
     @include('components.link-more-icon', [
         'url' => $archiveLink,
-        'target' => '_blank',
+        'target' => '_self',
         'title' => $backToText,
         'class' => 'link-more--reverse',
     ])
