@@ -1,5 +1,6 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
 
 .easy-supported-integration {
   padding: 64px 0;
@@ -14,7 +15,10 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     align-items: center;
     grid-gap: 48px;
-    margin-top: 64px;
+    margin-top: 48px;
+    @include mediaUp(xl) {
+      margin-top: 64px;
+    }
   }
 
   &-content {
