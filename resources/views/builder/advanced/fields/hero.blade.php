@@ -14,7 +14,7 @@
                 </p>
 
                 @if (!empty($field['button']))
-                    <a class="hero-content__button btn btn-secondary" href="{{ $field['button']['url'] }}"
+                    <a class="hero-content__button btn btn--big btn-secondary" href="{{ $field['button']['url'] }}"
                         target="{{ $field['button']['target'] }}">
                         {{ $field['button']['text'] }}
                     </a>

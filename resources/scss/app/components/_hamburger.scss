@@ -42,13 +42,6 @@
       }
     }
   }
-
-  // Responsive adjustments
-  @media (max-width: 768px) {
-    padding: 2px;
-    width: 16px;
-    height: 20px;
-  }
 }
 
 // Hamburger Lines
@@ -59,8 +52,4 @@
   background-color: $colorWhite;
   transition: all 0.3s ease;
   transform-origin: center;
-
-  @media (max-width: 768px) {
-    width: 20px;
-  }
 }

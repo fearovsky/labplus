@@ -114,3 +114,8 @@ button {
   flex-direction: column;
   justify-content: space-between;
 }
+
+main,
+footer {
+  display: none;
+}

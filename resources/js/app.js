@@ -6,22 +6,26 @@ import termsHandler from './termsHandler';
 import tocInit from './toc';
 import rulesTabs from './rulesTabs';
 import Modal from './modal.js';
+import navHandler from './navHandler.js';
 
 (() => {
   const logosCarousel = document.querySelectorAll('.splide.logos-carousel');
   if (logosCarousel.length) {
     logosCarousel.forEach((slider) => {
-      console.log(slider);
       new Splide(slider, {
         type: 'loop',
+        autoplay: true,
         perPage: 5,
         perMove: 1,
-        autoplay: true,
         interval: 3000,
-        pauseOnHover: true,
+        pauseOnHover: false,
         arrows: false,
         pagination: false,
         gap: '64px',
+        autoScroll: {
+          speed: 0.5,
+          pauseOnHover: false,
+        },
         breakpoints: {
           1000: {
             perPage: 3,
@@ -30,7 +34,7 @@ import Modal from './modal.js';
             perPage: 2,
           },
         },
-      }).mount();
+      }).mount({ AutoScroll });
     });
   }
 
@@ -68,7 +72,7 @@ import Modal from './modal.js';
         perPage: 1,
         perMove: 1,
         autoplay: true,
-        interval: 23000,
+        interval: 3000,
         pauseOnHover: false,
         arrows: false,
         pagination: false,
@@ -216,6 +220,7 @@ import Modal from './modal.js';
   termsHandler();
   tocInit('.single-post-toc');
   rulesTabs();
+  navHandler();
 
   const modalSystem = new Modal();
 })();

@@ -5,6 +5,12 @@
   padding: 64px 0 96px;
   background-color: $colorWhite;
   border-radius: 64px;
+
+  .btn {
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
+
   &-item {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

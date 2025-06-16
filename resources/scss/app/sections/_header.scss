@@ -40,6 +40,7 @@
     background-color: $colorPearl;
     @include mediaDown(xl) {
       background-color: $colorEmerald;
+      padding-bottom: 0;
     }
 
     .container {
@@ -48,6 +49,9 @@
 
     &-logo {
       margin-right: 36px;
+      @include mediaDown(xl) {
+        margin-bottom: 20px;
+      }
       &__image {
         height: 34px;
         width: auto;
@@ -57,10 +61,6 @@
             display: block;
             height: 42px;
           }
-        }
-
-        &--mobile {
-          display: none;
         }
       }
     }

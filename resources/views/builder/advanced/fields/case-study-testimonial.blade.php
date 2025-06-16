@@ -28,10 +28,6 @@
                                                 {{ $item['title'] }}
                                             </h3>
 
-                                            <p class="case-study-item-content__text">
-                                                {{ $item['excerpt'] }}
-                                            </p>
-
                                             @include('components.link-more-icon', [
                                                 'url' => $item['permalink'],
                                                 'target' => '_blank',
