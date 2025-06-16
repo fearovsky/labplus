@@ -12,6 +12,7 @@
   width: 24px;
   height: 24px;
   transition: all 0.3s ease;
+  margin-bottom: 10px;
 
   @include mediaUp(xl) {
     display: none;
@@ -22,12 +23,11 @@
   }
 
   &:focus {
-    outline: 2px solid $colorWhite;
-    outline-offset: 2px;
+    outline: none;
   }
 
   // Active/Open State Animation
-  &.active {
+  &--active {
     .hamburger__line {
       &:nth-child(1) {
         transform: translateY(7px) rotate(45deg);

@@ -12,6 +12,9 @@
 
   .nav-social {
     margin: 32px 0 48px;
+    @include mediaUp(xl) {
+      display: none;
+    }
     &__list {
       padding: 0;
       list-style-type: none;

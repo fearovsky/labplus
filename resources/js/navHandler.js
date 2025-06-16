@@ -1,8 +1,10 @@
 export default () => {
-  const navList = document.querySelector('.nav__list');
-  if (!navList) {
+  const nav = document.querySelector('.nav');
+  if (!nav) {
     return;
   }
+
+  const hamburger = document.querySelector('.hamburger');
 
   const navListener = (e) => {
     const { target } = e;
@@ -16,5 +18,11 @@ export default () => {
     wrapper.classList.toggle('menu-item--active');
   };
 
-  navList.addEventListener('click', navListener);
+  const toggleHamburger = () => {
+    hamburger.classList.toggle('hamburger--active');
+    nav.classList.toggle('nav--active');
+  };
+
+  nav.addEventListener('click', navListener);
+  hamburger.addEventListener('click', toggleHamburger);
 };
