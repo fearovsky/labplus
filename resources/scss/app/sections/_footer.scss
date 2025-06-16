@@ -1,5 +1,6 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
 
 .footer {
   &-inner {
@@ -101,6 +102,7 @@
   &-informations {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     &-boxes {
       display: flex;
@@ -111,25 +113,33 @@
       max-width: 850px;
       position: relative;
       flex-grow: 1;
+      @include mediaUp(xl) {
+        flex-wrap: wrap;
+      }
       &__item {
         padding: 0;
         margin: 0 30px 0 0;
         list-style: none;
+        width: 100%;
+        margin-bottom: 30px;
 
         &:last-child {
+          margin-bottom: 0;
           margin-right: 0;
         }
 
-        &--first {
-          flex: 0 0 140px;
-        }
+        @include mediaUp(md) {
+          &--first {
+            flex: 0 0 140px;
+          }
 
-        &--second {
-          flex: 0 1 37%;
-        }
+          &--second {
+            flex: 0 1 37%;
+          }
 
-        &--third {
-          flex: 0 1 30%;
+          &--third {
+            flex: 0 1 30%;
+          }
         }
       }
     }
@@ -138,9 +148,19 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 10px 70px;
-      border-left: 1px solid#1b4845;
-      padding-left: 70px;
       grid-auto-rows: max-content;
+      border-top: 1px solid #1b4845;
+      padding-top: 32px;
+      margin-top: 24px;
+      width: 100%;
+      @include mediaUp(xxl) {
+        width: auto;
+        padding-top: 0;
+        margin-top: 0;
+        padding-left: 70px;
+        border-left: 1px solid#1b4845;
+        border-top: 0;
+      }
 
       a {
         text-decoration: underline;

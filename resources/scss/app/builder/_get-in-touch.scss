@@ -37,7 +37,7 @@
       height: 160px;
       filter: drop-shadow(0px 0px 15px rgba(31, 90, 87, 0.5));
       display: none;
-      @include mediaUp(xl) {
+      @include mediaUp(xxl) {
         display: block;
       }
     }
