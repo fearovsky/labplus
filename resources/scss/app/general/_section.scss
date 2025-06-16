@@ -1,9 +1,13 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
 
 .section {
   &-title {
-    margin-bottom: 64px;
+    margin-bottom: 48px;
+    @include mediaUp(lg) {
+      margin-bottom: 64px;
+    }
     &__text {
       text-align: center;
       margin: 0;

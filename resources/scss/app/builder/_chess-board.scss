@@ -1,10 +1,15 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
 
 .chess-board {
-  padding: 64px 0 96px;
   background-color: $colorWhite;
-  border-radius: 64px;
+  padding: 48px 0 64px;
+  border-radius: 48px;
+  @include mediaUp(xl) {
+    border-radius: 64px;
+    padding: 64px 0 96px;
+  }
 
   .btn {
     padding-top: 9px;
@@ -13,18 +18,29 @@
 
   &-item {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 48px;
-    margin-bottom: 96px;
-    font-size: pxToRem(18);
     align-items: flex-start;
+    margin-bottom: 64px;
+    grid-gap: 16px;
     $item: &;
+    @include mediaUp(md) {
+      font-size: pxToRem(18);
+      grid-gap: 48px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mediaUp(xl) {
+      margin-bottom: 96px;
+    }
+
     &:last-child {
       margin-bottom: 0;
     }
 
     &__content {
-      padding: 32px 0;
+      padding: 32px 0 0;
+      @include mediaUp(md) {
+        padding: 32px 0;
+      }
     }
 
     &__pretitle {
@@ -66,36 +82,52 @@
 
     &__thumbnail {
       position: relative;
+      @include mediaDown(md) {
+        order: -1;
+        img {
+          width: 100%;
+          max-width: 500px;
+          margin: 0 auto;
+          border-radius: 64px;
+        }
+      }
 
       &-img {
         display: block;
         box-shadow: 0px 0px 15px rgba(31, 90, 87, 0.25);
-        border-radius: 64px 64px 0px 64px;
+        @include mediaUp(md) {
+          border-radius: 64px 64px 0px 64px;
+        }
       }
 
       &-icon {
-        position: absolute;
-        width: 240px;
-        height: 240px;
-        object-fit: contain;
-        right: -90px;
-        bottom: 0;
+        display: none;
+        @include mediaUp(xl) {
+          display: block;
+          position: absolute;
+          width: 240px;
+          height: 240px;
+          object-fit: contain;
+          right: -90px;
+          bottom: 0;
+        }
       }
     }
+    @include mediaUp(md) {
+      &--right {
+        #{$item}__thumbnail {
+          order: -1;
 
-    &--right {
-      #{$item}__thumbnail {
-        order: -1;
+          &-img {
+            border-radius: 0px 64px 64px 64px;
+          }
 
-        &-img {
-          border-radius: 0px 64px 64px 64px;
-        }
-
-        &-icon {
-          right: initial;
-          bottom: initial;
-          left: -90px;
-          top: 0;
+          &-icon {
+            right: initial;
+            bottom: initial;
+            left: -90px;
+            top: 0;
+          }
         }
       }
     }
