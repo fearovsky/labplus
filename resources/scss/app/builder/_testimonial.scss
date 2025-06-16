@@ -1,31 +1,47 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
 
 .testimonial {
-  padding: 64px 0;
+  padding: 48px 0;
+  @include mediaUp(xl) {
+    padding: 64px 0;
+  }
 
   &-container {
     max-width: 848px;
   }
 
   &-box {
-    padding: 48px 64px;
     background: $colorGHeadingOrange;
     color: #113264;
     border: 1px solid rgba(255, 255, 255, 0.16);
     box-shadow: 0px 0px 15px rgba(31, 90, 87, 0.25);
     border-radius: 32px;
+    padding: 32px;
+    font-size: 14px;
+    @include mediaUp(xl) {
+      font-size: 1rem;
+      padding: 48px 64px;
+    }
 
     &__logo {
       height: 43px;
       width: auto;
       object-fit: contain;
       object-position: left;
-      margin-bottom: 48px;
+      margin-bottom: 16px;
+      @include mediaUp(xl) {
+        margin-bottom: 48px;
+      }
     }
 
     &__content {
-      margin-bottom: 48px;
+      margin-bottom: 24px;
+      @include mediaUp(xl) {
+        font-size: 1rem;
+        margin-bottom: 48px;
+      }
       p {
         &:first-child {
           margin-top: 0;
@@ -43,12 +59,16 @@
       $footer: &;
 
       &__avatar {
-        width: 64px;
-        height: 64px;
         border-radius: 50%;
         object-fit: cover;
         object-position: center;
         margin-right: 20px;
+        width: 48px;
+        height: 48px;
+        @include mediaUp(xl) {
+          width: 64px;
+          height: 64px;
+        }
       }
 
       &__author {
@@ -67,7 +87,9 @@
         }
         &-name {
           font-weight: 600;
-          font-size: pxToRem(18);
+          @include mediaUp(xl) {
+            font-size: pxToRem(18);
+          }
         }
       }
     }
