@@ -1,8 +1,13 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
+@use '../general/container' as *;
 
 .oportunity-carousel {
-  padding: 64px 0 128px;
+  padding: 64px 0;
+  @include mediaUp(xl) {
+    padding: 64px 0 128px;
+  }
 
   .splide__slide {
     opacity: 0.5;
@@ -18,24 +23,35 @@
   .splide__list {
     height: 100%;
   }
-
   &-row {
-    display: flex;
-    // align-items: center;
-    gap: 100px;
+    @include mediaDown(xl) {
+      max-width: 1296px;
+      padding: 0 24px;
+      width: calc(100% - 48px);
+      margin: 0 auto;
+      box-sizing: content-box;
+    }
+    @include mediaUp(xl) {
+      display: flex;
+      gap: 100px;
+    }
   }
 
   &-slider {
-    width: calc(66.66% - 50px);
+    @include mediaUp(xl) {
+      width: calc(66.66% - 50px);
+    }
 
     &__item {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      font-size: pxToRem(18);
       min-height: 100%;
       box-sizing: border-box;
+      @include mediaDown(xl) {
+        font-size: pxToRem(18);
+      }
 
       &-image {
         width: 64px;
@@ -51,8 +67,12 @@
   }
 
   &-image {
+    display: none;
     width: calc(33.33% - 50px);
     position: relative;
+    @include mediaUp(xl) {
+      display: block;
+    }
     &__thumbnail {
       width: 100%;
       height: 100%;

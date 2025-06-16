@@ -57,6 +57,7 @@
       }
     }
   }
+
   @include mediaUp(xl) {
     &__list {
       display: flex;
@@ -66,17 +67,31 @@
       margin: 0;
 
       & > li {
-        margin-right: 16px;
+        margin-right: 6px;
         &:last-child {
           margin-right: 0;
         }
+
         & > a {
           display: block;
+          padding: 12px 10px;
+        }
+      }
+    }
+  }
+
+  @include mediaUp(xxl) {
+    &__list {
+      & > li {
+        margin-right: 16px;
+        & > a {
           padding: 12px 20px;
         }
       }
     }
+  }
 
+  @include mediaUp(xl) {
     .menu-item-has-children {
       & > a {
         &::after {

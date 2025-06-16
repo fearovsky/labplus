@@ -85,6 +85,20 @@ import navHandler from './navHandler.js';
           left: '0',
         },
         gap: '50px',
+        breakpoints: {
+          1000: {
+            padding: {
+              right: '20%',
+              left: '0',
+            },
+          },
+          768: {
+            padding: {
+              right: '0',
+              left: '0',
+            },
+          },
+        },
       }).mount();
     });
   }

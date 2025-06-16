@@ -4,32 +4,47 @@
 
 h1,
 .h1 {
-  font-size: pxToRem(64);
   line-height: 1.15em;
+  font-size: pxToRem(64);
+  @include mediaUp(xl) {
+    font-size: pxToRem(48);
+  }
 }
 
 h2,
 .h2 {
-  font-size: pxToRem(45);
   line-height: 1.2em;
+  font-size: pxToRem(30);
+  @include mediaUp(xl) {
+    font-size: pxToRem(45);
+  }
 }
 
 h3,
 .h3 {
-  font-size: pxToRem(35);
   line-height: 1.3em;
+  font-size: pxToRem(26);
+  @include mediaUp(xl) {
+    font-size: pxToRem(35);
+  }
 }
 
 h4,
 .h4 {
-  font-size: pxToRem(29);
   line-height: 1.35em;
+  font-size: pxToRem(23);
+  @include mediaUp(xl) {
+    font-size: pxToRem(29);
+  }
 }
 
 h5,
 .h5 {
-  font-size: pxToRem(22);
   line-height: 1.35em;
+  font-size: pxToRem(21);
+  @include mediaUp(xl) {
+    font-size: pxToRem(22);
+  }
 }
 
 h6,
