@@ -14,7 +14,7 @@ import navHandler from './navHandler.js';
     logosCarousel.forEach((slider) => {
       new Splide(slider, {
         type: 'loop',
-        autoplay: true,
+        autoplay: false,
         perPage: 5,
         perMove: 1,
         interval: 3000,
@@ -23,7 +23,7 @@ import navHandler from './navHandler.js';
         pagination: false,
         gap: '64px',
         autoScroll: {
-          speed: 0.5,
+          speed: 0.35,
           pauseOnHover: false,
         },
         breakpoints: {
@@ -31,7 +31,11 @@ import navHandler from './navHandler.js';
             perPage: 3,
           },
           768: {
-            perPage: 2,
+            perPage: 1,
+            padding: {
+              right: '15%',
+              left: '15%',
+            },
           },
         },
       }).mount({ AutoScroll });

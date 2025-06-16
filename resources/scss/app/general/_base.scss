@@ -115,7 +115,12 @@ button {
   justify-content: space-between;
 }
 
-main,
 footer {
   display: none;
+}
+
+main {
+  section:nth-child(n + 2) {
+    display: none;
+  }
 }

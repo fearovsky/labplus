@@ -1,5 +1,6 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
 
 h1,
 .h1 {
@@ -39,12 +40,15 @@ h6,
 
 .text {
   &-subheader {
-    font-size: pxToRem(21);
+    font-size: pxToRem(18);
     line-height: 1.5em;
     text-transform: uppercase;
     font-family: $headingFontFamily;
     font-weight: 600;
     text-align: center;
+    @include mediaUp(xl) {
+      font-size: pxToRem(21);
+    }
   }
 }
 
