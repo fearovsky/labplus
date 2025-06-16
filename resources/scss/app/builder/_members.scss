@@ -1,8 +1,12 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
 
 .members {
-  padding: 64px 0;
+  padding: 32px 0;
+  @include mediaUp(lg) {
+    padding: 64px 0;
+  }
   &-list {
     padding: 0;
     margin: 0;

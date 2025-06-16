@@ -60,6 +60,12 @@ import navHandler from './navHandler.js';
         pagination: true,
         padding: '17%',
         gap: '0px',
+        breakpoints: {
+          1000: {
+            gap: '20px',
+            padding: '0',
+          },
+        },
       }).mount();
     });
   }

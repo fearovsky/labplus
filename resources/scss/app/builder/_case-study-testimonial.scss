@@ -1,15 +1,25 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
 
 .case-study {
   &-testimonial {
-    padding: 64px 0;
     overflow-x: hidden;
+    padding: 32px 0;
+    @include mediaUp(lg) {
+      padding: 64px 0;
+    }
     .splide__slide {
-      padding: 50px;
+      padding: 15px;
+      @include mediaUp(lg) {
+        padding: 50px;
+      }
     }
     .splide__track {
-      margin: -50px;
+      margin: -15px 30px;
+      @include mediaUp(lg) {
+        margin: -50px;
+      }
     }
 
     .splide__pagination {
@@ -38,22 +48,28 @@
     }
 
     &-button {
-      margin-top: 64px;
       display: flex;
       align-items: center;
       justify-self: center;
+      margin-top: 32px;
+      @include mediaUp(lg) {
+        margin-top: 64px;
+      }
     }
   }
   &-item {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
     box-shadow: 0px 0px 25px rgba(31, 90, 87, 0.25);
     border-radius: 32px;
     overflow: hidden;
     background: radial-gradient(50% 50% at 50% 50%, #fefdfd 0%, #b6e8d7 100%);
     border: 1px solid rgba(255, 255, 255, 0.16);
     color: #113264;
+    @include mediaUp(md) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
 
     &-content,
     &-testimonial {
@@ -64,7 +80,9 @@
 
     &-content {
       background-color: $colorPearl;
-      flex: 0 0 330px;
+      @include mediaUp(md) {
+        flex: 0 0 330px;
+      }
 
       &__main {
         padding: 16px 24px;
@@ -84,16 +102,25 @@
     }
 
     &-testimonial {
-      padding: 48px;
       justify-content: center;
+      padding: 32px;
+      @include mediaUp(lg) {
+        padding: 48px;
+      }
       &__logo {
         height: 43px;
         width: auto;
-        margin-bottom: 48px;
+        margin-bottom: 32px;
+        @include mediaUp(lg) {
+          margin-bottom: 48px;
+        }
       }
 
       &__footer {
-        margin-top: 48px;
+        margin-top: 32px;
+        @include mediaUp(lg) {
+          margin-top: 48px;
+        }
       }
     }
   }
