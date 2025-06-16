@@ -12,7 +12,7 @@ class MenuProvider extends ServiceProvider
     public function boot(): void
     {
         add_filter('wp_nav_menu_objects', [$this, 'filterMenuItems'], 10, 2);
-        //
+        add_filter('wp_nav_menu_items', [$this, 'addNavItem'], 10, 2);
     }
 
     /**
@@ -51,5 +51,23 @@ class MenuProvider extends ServiceProvider
             'item' => $item,
             'icon' => $icon,
         ])->render();
+    }
+
+    public function addNavItem($items, $args)
+    {
+        if ($args->theme_location !== 'primary_navigation') {
+            return $items;
+        }
+
+        $newItem = view('partials.nav.menu-item')->render();
+        $lastLiStart = strrpos($items, '<li');
+
+        if ($lastLiStart !== false) {
+            $items = substr_replace($items, $newItem, $lastLiStart, 0);
+        } else {
+            $items .= $newItem;
+        }
+
+        return $items;
     }
 }

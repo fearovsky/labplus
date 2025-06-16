@@ -55,6 +55,9 @@
       &__image {
         height: 34px;
         width: auto;
+        &--mobile {
+          display: none;
+        }
         @include mediaDown(xl) {
           display: none;
           &--mobile {
