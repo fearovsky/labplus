@@ -1,12 +1,23 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
+
 .text-icon-grid {
-  padding: 64px 0;
+  padding: 32px 0;
+  @include mediaUp(xl) {
+    padding: 64px 0;
+  }
 
   &-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    grid-gap: 48px 24px;
-    padding: 16px 0;
     margin: 0;
+    padding: 0;
+    grid-gap: 32px;
+    @include mediaUp(xl) {
+      grid-gap: 48px 24px;
+      padding: 16px 0;
+    }
 
     &__item {
       display: flex;
@@ -14,10 +25,13 @@
       align-items: center;
       text-align: center;
       &-icon {
-        height: 64px;
         object-fit: contain;
         width: auto;
         margin-bottom: 16px;
+        height: 48px;
+        @include mediaUp(xl) {
+          height: 64px;
+        }
       }
 
       &-title {
