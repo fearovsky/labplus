@@ -77,7 +77,14 @@ class PatientComposer extends Composer
 
         echo view('components.modal', [
             'title' => __('Interpreted lab test results', 'lab'),
-            'slot' => $this->healthRaport,
+            'slot' => wp_get_attachment_image(
+                $this->healthRaport,
+                'full',
+                false,
+                [
+                    'class' => 'w-full h-auto',
+                ]
+            ),
             'modalId' => 'healthRaport',
         ])->render();
     }

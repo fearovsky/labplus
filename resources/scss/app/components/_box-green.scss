@@ -11,6 +11,19 @@
   color: $colorPearl;
   box-shadow: 0px 0px 15px rgba(31, 90, 87, 0.5);
   border-radius: 64px;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: inherit;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
 }
 
 .box-green-light {

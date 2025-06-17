@@ -9,11 +9,11 @@ class PostTypeUtlity
     public static function getMappedResource(string $postType): string
     {
         return match ($postType) {
-            'news' => 'NewsPostType',
-            'resource' => 'ResourcePostType',
-            'case_study' => 'CaseStudyPostType',
-            PatientStoryPostType::getPostType() => 'PatientStoryPostType',
-            default => 'UnknownPostType',
+            'news' => __('Newsroom', 'labplus'),
+            'resource' => __('Resource', 'labplus'),
+            'case_study' => __('Case Study', 'labplus'),
+            PatientStoryPostType::getPostType() => __('Patient Story', 'labplus'),
+            default => __('Post', 'labplus'),
         };
     }
 

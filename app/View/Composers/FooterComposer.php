@@ -38,8 +38,12 @@ class FooterComposer extends Composer
         ];
     }
 
-    private function getRulesInformation(): string
+    private function getRulesInformation(): ?string
     {
+        if (is_archive()) {
+            return $this->getArchiveRulesInformation();
+        }
+
         $rulesInformation = get_field('rulesinformation');
         return $rulesInformation ? $rulesInformation : '';
     }
@@ -105,5 +109,20 @@ class FooterComposer extends Composer
             'text' => $privacyText,
             'links' => get_field('footerPrivacyLinks', 'options') ?: []
         ];
+    }
+
+    private function getArchiveRulesInformation(): ?string
+    {
+        if (!is_archive()) {
+            return null;
+        }
+
+        return match (get_queried_object()->name) {
+            'resource' => get_field('resourceRules', 'options'),
+            'patient_story' => get_field('patientRules', 'options'),
+            'case_study' => get_field('caseRules', 'options'),
+            'news' => get_field('newsRules', 'options'),
+            default => null,
+        };
     }
 }

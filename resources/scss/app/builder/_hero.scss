@@ -87,6 +87,13 @@
       justify-content: center;
       opacity: 0.6;
       transition: opacity 0.3s ease-in-out;
+      $item: &;
+      &:hover {
+        #{$item}__image {
+          filter: none;
+        }
+      }
+
       &.is-active {
         opacity: 1;
       }

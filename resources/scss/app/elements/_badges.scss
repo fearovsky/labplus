@@ -1,3 +1,5 @@
+@use '../utlities/variables' as *;
+
 .badge {
   padding: 8px 16px;
   background: #fefdfd;
@@ -25,6 +27,7 @@
         &:hover {
           background: #b6e8d7;
           border-color: #b6e8d7;
+          color: $colorEmerald;
         }
       }
 
@@ -32,6 +35,7 @@
         .badge {
           background: #b6e8d7;
           border-color: #b6e8d7;
+          color: $colorEmerald;
         }
       }
     }

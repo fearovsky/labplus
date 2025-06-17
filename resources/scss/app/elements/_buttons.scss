@@ -12,6 +12,11 @@
   font-weight: 500;
   cursor: pointer;
 
+  &:focus,
+  &:focus-visible {
+    outline: none !important;
+  }
+
   &-primary {
     color: $colorWhite;
     background: $colorEmerald;
@@ -26,11 +31,6 @@
         0px 4px 4px rgba(8, 8, 8, 0.08), 0px 7px 80px #74d2ad,
         inset 0px 1px 1px rgba(255, 255, 255, 0.2),
         inset 0px 6px 12px rgba(255, 255, 255, 0.12);
-    }
-
-    &:focus,
-    &:focus-visible {
-      outline: 2px solid #74d2ad;
     }
   }
 

@@ -1,3 +1,5 @@
+@use '../utlities/variables' as *;
+
 .archive {
   &-main {
     padding-top: 64px;
@@ -23,6 +25,7 @@
       &:hover {
         .badge {
           background-color: #b6e8d7;
+          color: rgba(27, 72, 69, 1);
         }
       }
     }

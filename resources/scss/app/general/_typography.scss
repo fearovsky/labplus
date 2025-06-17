@@ -5,9 +5,9 @@
 h1,
 .h1 {
   line-height: 1.15em;
-  font-size: pxToRem(64);
+  font-size: pxToRem(48);
   @include mediaUp(xl) {
-    font-size: pxToRem(48);
+    font-size: pxToRem(64);
   }
 }
 

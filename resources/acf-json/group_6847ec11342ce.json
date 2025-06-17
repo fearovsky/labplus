@@ -6,7 +6,7 @@
             "key": "field_6847ecb5e7f67",
             "label": "Health Raport",
             "name": "healthRaport",
-            "type": "textarea",
+            "type": "image",
             "instructions": "",
             "required": 1,
             "conditional_logic": 0,
@@ -15,11 +15,16 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 4,
-            "new_lines": ""
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
             "key": "field_6847eccbe7f68",
@@ -63,5 +68,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1749544477
+    "modified": 1750166368
 }

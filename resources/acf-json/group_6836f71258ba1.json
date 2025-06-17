@@ -94,6 +94,25 @@
             "ui": 1
         },
         {
+            "key": "field_6851718066202",
+            "label": "Rules information",
+            "name": "resourceRules",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
             "key": "field_6836f71f7f7f4",
             "label": "Patients stories",
             "name": "",
@@ -238,6 +257,25 @@
             ]
         },
         {
+            "key": "field_6851718d66203",
+            "label": "Rules information",
+            "name": "patientRules",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
             "key": "field_6836f7247f7f5",
             "label": "Case studies",
             "name": "",
@@ -356,6 +394,25 @@
             "multiple": 0
         },
         {
+            "key": "field_6851719c66204",
+            "label": "Rules information",
+            "name": "caseRules",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
             "key": "field_6836f7347f7f6",
             "label": "News",
             "name": "",
@@ -445,6 +502,25 @@
             "multiple": 0,
             "return_format": "id",
             "ui": 1
+        },
+        {
+            "key": "field_685171a666205",
+            "label": "Rules information",
+            "name": "newsRules",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         }
     ],
     "location": [
@@ -464,5 +540,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1749633218
+    "modified": 1750167988
 }
