@@ -2764,7 +2764,7 @@
                         },
                         {
                             "key": "field_6843faa90d0aa",
-                            "label": "Image size",
+                            "label": "Video size",
                             "name": "imageSize",
                             "type": "select",
                             "instructions": "",
@@ -2790,9 +2790,9 @@
                         },
                         {
                             "key": "field_6832e8ff74b10",
-                            "label": "Image",
-                            "name": "image",
-                            "type": "image",
+                            "label": "Video",
+                            "name": "video",
+                            "type": "file",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -2801,14 +2801,9 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "array",
-                            "preview_size": "medium",
+                            "return_format": "url",
                             "library": "all",
-                            "min_width": "",
-                            "min_height": "",
                             "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
                             "max_size": "",
                             "mime_types": ""
                         },
@@ -4227,5 +4222,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1749736798
+    "modified": 1750169265
 }

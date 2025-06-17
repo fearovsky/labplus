@@ -9,10 +9,11 @@
         @endif
 
         <div class="accordion-section-row">
-            @if ($field['image'])
+            @if ($field['video'])
                 <div class="accordion-section-image">
-                    <img src="{{ $field['image']['url'] }}" alt="{{ $field['image']['alt'] }}"
-                        class="accordion-section-image__img" />
+                    {{-- Video inline --}}
+                    <video class="accordion-section-image__video" src="{{ $field['video'] }}" autoplay muted loop>
+                    </video>
                 </div>
             @endif
 

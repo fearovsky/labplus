@@ -6,7 +6,7 @@ class AccordionField extends BaseField
 {
     private string $heading;
     private string $imageSize;
-    private ?array $image;
+    private ?string $video;
     private ?array $items;
 
     public function __invoke(): array
@@ -14,7 +14,7 @@ class AccordionField extends BaseField
         return [
             'heading' => $this->heading,
             'imageSize' => $this->imageSize,
-            'image' => $this->image,
+            'video' => $this->video,
             'items' => $this->items,
         ];
     }
@@ -22,7 +22,7 @@ class AccordionField extends BaseField
     protected function proccessFields(): void
     {
         $this->heading = $this->getHeading();
-        $this->image = $this->getFieldImage('image', 'full');
+        $this->video = $this->getVideo();
         $this->imageSize = $this->getImageSize();
         $this->items = $this->getItems();
     }
@@ -30,6 +30,16 @@ class AccordionField extends BaseField
     private function getHeading(): string
     {
         return wp_kses_post($this->field['heading'] ?? '');
+    }
+
+    private function getVideo(): ?string
+    {
+        $video = $this->field['video'] ?? null;
+        if (empty($video)) {
+            return null;
+        }
+
+        return wp_kses_post($video);
     }
 
     private function getItems(): ?array
