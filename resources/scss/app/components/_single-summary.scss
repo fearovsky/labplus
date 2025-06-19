@@ -1,10 +1,18 @@
+@use '../utlities/mixins' as *;
+
 .single-summary {
   &__title {
-    margin: 0 0 48px;
+    margin: 0 0 32px;
+    @include mediaUp(xl) {
+      margin: 0 0 48px;
+    }
   }
 
   &-boxes {
-    margin-top: 64px;
+    margin-top: 48px;
+    @include mediaUp(xl) {
+      margin-top: 64px;
+    }
 
     &__title {
       margin: 0 0 32px;
@@ -15,8 +23,12 @@
       list-style-type: none;
       margin: 0;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 64px 48px;
+      grid-template-columns: 1fr;
+      grid-gap: 30px;
+      @include mediaUp(md) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 64px 48px;
+      }
     }
 
     &__item {

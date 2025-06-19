@@ -1,8 +1,12 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
 
 .single-heading-content {
-  padding: 48px 0;
+  padding: 32px 0;
+  @include mediaUp(lg) {
+    padding: 48px 0;
+  }
 
   & + .single-heading-content {
     padding-top: 0;
@@ -10,11 +14,14 @@
 
   &__heading {
     margin-top: 0;
-    margin-bottom: 48px;
+    margin-bottom: 32px;
+    @include mediaUp(lg) {
+      margin-bottom: 48px;
+    }
   }
 
   figure {
-    width: 100%;
+    width: 100% !important;
     margin: 0;
     img {
       width: 100%;

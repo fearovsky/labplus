@@ -1,8 +1,16 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
 
 .grid-boxes {
   padding: 64px 0;
+
+  &--small {
+    padding: 32px 0;
+    @include mediaUp(xl) {
+      padding: 64px 0;
+    }
+  }
 
   &-list {
     list-style-type: none;

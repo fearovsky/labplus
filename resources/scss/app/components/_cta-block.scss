@@ -1,5 +1,12 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
+
 .cta-block {
-  padding: 24px 16px;
+  padding: 15px 0;
+  @include mediaUp(md) {
+    padding: 24px 16px;
+  }
   &__title {
     margin: 0 0 20px;
   }

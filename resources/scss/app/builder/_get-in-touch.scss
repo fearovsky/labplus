@@ -3,7 +3,7 @@
 @use '../utlities/mixins' as *;
 
 .get-in-touch {
-  padding: 32px 0 64px;
+  padding: 32px 0;
   @include mediaUp(xl) {
     padding: 64px 0 110px;
   }

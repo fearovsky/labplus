@@ -1,17 +1,25 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
 
 .counter-boxes {
-  padding: 64px 0;
+  padding: 32px 0;
+  @include mediaUp(md) {
+    padding: 64px 0;
+  }
 
   &-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    grid-gap: 24px;
     counter-reset: counter-boxes;
-    margin: 64px 0 0;
     padding: 0;
     list-style-type: none;
+    margin: 32px 0 0;
+    grid-gap: 16px;
+    @include mediaUp(md) {
+      grid-gap: 24px;
+      margin: 64px 0 0;
+    }
 
     &__item {
       font-size: pxToRem(18);

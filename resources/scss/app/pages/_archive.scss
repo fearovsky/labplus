@@ -1,8 +1,12 @@
 @use '../utlities/variables' as *;
+@use '../utlities/mixins' as *;
 
 .archive {
   &-main {
-    padding-top: 64px;
+    padding-top: 48px;
+    @include mediaUp(md) {
+      padding-top: 64px;
+    }
   }
 
   &-terms {
@@ -35,10 +39,14 @@
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 48px;
     list-style-type: none;
     position: relative;
+    grid-template-columns: 1fr;
+    grid-gap: 32px;
+    @include mediaUp(sm) {
+      grid-gap: 48px;
+      grid-template-columns: repeat(2, 1fr);
+    }
     &::after {
       content: '';
       width: 100%;

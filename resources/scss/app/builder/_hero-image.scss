@@ -1,13 +1,17 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
 @use '../general/typography' as *;
+@use '../utlities/mixins' as *;
 
 .hero-section-image {
   overflow-x: hidden;
-  padding: 70px 0px 60px;
   background: linear-gradient(173.54deg, #74d2ad -104.98%, #1f5a57 94.91%);
-  border-radius: 0px 0px 64px 64px;
   color: $colorWhite;
+  padding: 70px 0px 60px;
+  border-radius: 0 0 48px 48px;
+  @include mediaUp(md) {
+    border-radius: 0px 0px 64px 64px;
+  }
   $hero: &;
 
   &--video {
@@ -37,22 +41,41 @@
   }
 
   &--smallp {
-    padding: 64px 0 72px;
+    padding: 32px 0;
+    @include mediaUp(md) {
+      padding: 64px 0 72px;
+    }
   }
 
   &-row {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+
+    @include mediaUp(md) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 
   &-content,
   &-thumbnail,
   &-slider,
   &-post {
-    flex: 0 0 48%;
-    width: 48%;
+    flex: 1;
+    @include mediaUp(md) {
+      flex: 0 0 48%;
+      width: 48%;
+    }
+  }
+
+  &-slider {
+    order: -1;
+    margin-bottom: 30px;
+    @include mediaUp(md) {
+      order: initial;
+      margin-bottom: 0;
+    }
   }
 
   &-content {

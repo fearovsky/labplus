@@ -1,5 +1,6 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
 @use '../general/typography' as *;
 
 .single-post {
@@ -85,19 +86,24 @@
   &-row {
     margin-top: 240px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
     gap: 48px;
+    @include mediaUp(md) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
   }
 
   &-aside {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    flex: 0 0 400px;
-    position: sticky;
-    top: 140px;
+    @include mediaUp(md) {
+      flex: 0 0 400px;
+      position: sticky;
+      top: 140px;
+    }
 
     &__download {
       width: 100%;
@@ -148,5 +154,12 @@
     content: '';
     display: block;
     height: 30px;
+  }
+
+  .section-title {
+    margin-bottom: 32px;
+    @include mediaUp(md) {
+      margin-bottom: 48px;
+    }
   }
 }

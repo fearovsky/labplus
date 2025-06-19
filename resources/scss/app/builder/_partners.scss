@@ -1,10 +1,14 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
 
 .partners {
-  padding: 64px 0;
   background-color: $colorPearl;
+  padding: 32px 0;
   $partner: &;
+  @include mediaUp(md) {
+    padding: 64px 0;
+  }
   &-carousel {
     margin-top: 64px;
   }

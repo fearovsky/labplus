@@ -1,12 +1,16 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
 
 .pagination {
   display: flex;
   flex-direction: row;
   justify-content: center;
   list-style-type: none;
-  padding: 64px 0;
+  padding: 32px 0;
+  @include mediaUp(md) {
+    padding: 64px 0;
+  }
   &__item {
     margin-right: 4px;
     &:last-child {
