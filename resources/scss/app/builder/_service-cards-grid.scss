@@ -1,16 +1,23 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
 
 .service-cards-grid {
-  padding: 64px 0;
+  padding: 48px 0;
+  @include mediaUp(md) {
+    padding: 64px 0;
+  }
   $grid: &;
   &__list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 64px;
+    grid-gap: 48px;
     list-style-type: none;
     margin: 0;
     padding: 0;
+    @include mediaUp(md) {
+      grid-gap: 64px;
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
   &__item {
     background: rgba(254, 253, 253, 0.5);
@@ -18,19 +25,21 @@
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
     border-radius: 48px;
     overflow: hidden;
-    &:first-child {
-      grid-column: span 2;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      #{$grid}__content {
-        padding: 70px 32px;
-      }
+    @include mediaUp(md) {
+      &:first-child {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        #{$grid}__content {
+          padding: 70px 32px;
+        }
 
-      #{$grid}__image {
-        order: 2;
-        &-thumbnail {
-          height: 100%;
-          object-fit: cover;
+        #{$grid}__image {
+          order: 2;
+          &-thumbnail {
+            height: 100%;
+            object-fit: cover;
+          }
         }
       }
     }

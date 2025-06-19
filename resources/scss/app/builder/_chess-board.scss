@@ -19,10 +19,11 @@
   &-item {
     display: grid;
     align-items: flex-start;
-    margin-bottom: 64px;
     grid-gap: 16px;
+    margin-bottom: 32px;
     $item: &;
     @include mediaUp(md) {
+      margin-bottom: 64px;
       font-size: pxToRem(18);
       grid-gap: 48px;
       grid-template-columns: repeat(2, 1fr);

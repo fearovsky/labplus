@@ -1,5 +1,6 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
 
 .calculator {
   &-form {
@@ -34,6 +35,10 @@
       position: relative;
       $tooltip: &;
       display: inline-flex;
+      display: none;
+      @include mediaUp(md) {
+        display: block;
+      }
 
       &:hover {
         #{$tooltip}__text {
@@ -126,10 +131,12 @@
       padding: 32px;
       background: #f1f1f1;
       border-radius: 32px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      @include mediaUp(md) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
       margin: 24px 0;
 
       &__subtitle {
@@ -142,12 +149,18 @@
         justify-content: center;
         align-items: flex-end;
         font-weight: 400;
-        margin-bottom: 48px;
+        margin-bottom: 32px;
+        @include mediaUp(md) {
+          margin-bottom: 48px;
+        }
         &__cost {
           font-family: $headingFontFamily;
           color: $colorEmerald;
           margin-right: 16px;
           line-height: 1;
+          @include mediaDown(md) {
+            font-size: pxToRem(40);
+          }
         }
       }
     }

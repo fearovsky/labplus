@@ -179,6 +179,12 @@ import navHandler from './navHandler.js';
         pagination: true,
         padding: '25%',
         gap: '48px',
+        breakpoints: {
+          1000: {
+            padding: '10%',
+            gap: '20px',
+          },
+        },
       }).mount();
     });
   }

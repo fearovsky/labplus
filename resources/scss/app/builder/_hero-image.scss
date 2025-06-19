@@ -1,15 +1,16 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
-@use '../general/typography' as *;
 @use '../utlities/mixins' as *;
+@use '../general/typography' as *;
 
 .hero-section-image {
   overflow-x: hidden;
   background: linear-gradient(173.54deg, #74d2ad -104.98%, #1f5a57 94.91%);
   color: $colorWhite;
-  padding: 70px 0px 60px;
   border-radius: 0 0 48px 48px;
+  padding: 40px 0 30px;
   @include mediaUp(md) {
+    padding: 70px 0px 60px;
     border-radius: 0px 0px 64px 64px;
   }
   $hero: &;
@@ -28,8 +29,17 @@
 
     #{$hero}-row {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 120px;
+      grid-gap: 30px;
+      @include mediaUp(lg) {
+        grid-gap: 60px;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    #{$hero}-thumbnail {
+      @include mediaDown(lg) {
+        order: -1;
+      }
     }
 
     #{$hero}-content,
@@ -69,12 +79,20 @@
     }
   }
 
-  &-slider {
+  &-slider,
+  &-post,
+  &-thumbnail {
     order: -1;
     margin-bottom: 30px;
     @include mediaUp(md) {
       order: initial;
       margin-bottom: 0;
+    }
+  }
+
+  &-thumbnail:not(.hero-section-image-thumbnail--video) {
+    @include mediaDown(md) {
+      display: none;
     }
   }
 
@@ -94,6 +112,7 @@
 
     &__image {
       left: 0;
+      width: 100%;
       max-width: 770px;
       border-radius: 50px;
       overflow: hidden;
@@ -241,6 +260,15 @@
   }
 
   &-boxes {
-    margin-top: 64px;
+    margin-top: 32px;
+    @include mediaUp(md) {
+      margin-top: 64px;
+    }
+
+    @include mediaDown(md) {
+      .grid-boxes-list {
+        grid-gap: 32px;
+      }
+    }
   }
 }

@@ -3,15 +3,20 @@
 @use '../utlities/mixins' as *;
 
 .our-team {
-  padding: 64px 0;
+  padding: 32px 0;
+  @include mediaUp(md) {
+    padding: 64px 0;
+  }
 
   &-row {
     max-width: 1184px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    @include mediaUp(md) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
   }
 
   &-groups {
@@ -31,6 +36,9 @@
       margin: 0;
       padding: 0;
       list-style-type: none;
+      @include mediaUp(md) {
+        grid-template-columns: repeat(2, 1fr);
+      }
       @include mediaUp(xl) {
         grid-template-columns: repeat(3, 1fr);
       }
@@ -63,12 +71,23 @@
 
   &-content {
     flex: 0 0 43%;
-    padding: 48px 0 48px 48px;
     position: sticky;
     top: 140px;
+    padding: 32px 0;
+    @include mediaUp(md) {
+      padding: 48px 0 48px 48px;
+    }
 
     &__title {
       margin: 0 0 24px;
+    }
+
+    &__text {
+      & > p {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
   }
 }

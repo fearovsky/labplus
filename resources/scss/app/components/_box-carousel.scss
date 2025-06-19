@@ -1,23 +1,35 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
 
 .box-carousel {
-  padding: 64px 72px;
   background: #ffffff;
   border-radius: 80px;
+  padding: 48px 24px;
+  @include mediaUp(lg) {
+    padding: 64px 72px;
+  }
 
   &-post {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 48px;
+    grid-gap: 32px;
+    @include mediaUp(lg) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 48px;
+    }
 
     &__content {
-      padding: 64px 0;
       font-size: pxToRem(18);
       align-self: center;
+      @include mediaUp(lg) {
+        padding: 64px 0;
+      }
     }
 
     &__image {
+      @include mediaDown(lg) {
+        order: -1;
+      }
       &-thumbnail {
         width: 100%;
         height: 100%;

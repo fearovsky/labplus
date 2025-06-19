@@ -1,18 +1,24 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
 
 .faq-section {
   padding: 64px 0;
   &-row {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
     gap: 48px;
+    @include mediaUp(md) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &-content {
-    flex: 0 0 400px;
-    font-size: pxToRem(18);
+    @include mediaUp(md) {
+      flex: 0 0 400px;
+      font-size: pxToRem(18);
+    }
 
     &__heading {
       margin: 0 0 48px;
@@ -37,9 +43,11 @@
 
   &-list {
     padding: 0;
-    margin: 0 32px;
     list-style: none;
     color: $colorEmerald;
+    @include mediaUp(md) {
+      margin: 0 32px;
+    }
     $list: &;
 
     &__heading {
@@ -63,8 +71,11 @@
           bottom: 0;
           left: 50%;
           transform: translateX(-50%);
-          width: calc(100% + 64px);
           border-bottom: 1px solid #b6e8d7;
+          width: 100%;
+          @include mediaUp(md) {
+            width: calc(100% + 64px);
+          }
         }
       }
 

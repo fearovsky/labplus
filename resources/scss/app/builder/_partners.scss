@@ -10,7 +10,10 @@
     padding: 64px 0;
   }
   &-carousel {
-    margin-top: 64px;
+    margin-top: 32px;
+    @include mediaUp(md) {
+      margin-top: 64px;
+    }
   }
 
   &-item {

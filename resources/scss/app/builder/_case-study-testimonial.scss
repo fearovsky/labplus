@@ -78,6 +78,10 @@
       align-items: flex-start;
     }
 
+    .wp-post-image {
+      width: 100%;
+    }
+
     &-content {
       background-color: $colorPearl;
       @include mediaUp(md) {
