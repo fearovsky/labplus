@@ -21,11 +21,16 @@
                                 <ul class="our-team-groups__list">
                                     @foreach ($group['members'] as $member)
                                         <li class="our-team-groups__list-item">
-                                            <img src="{{ $member['url'] }}" alt="{{ $member['alt'] }}"
-                                                class="our-team-groups__list-item__avatar">
+                                            <button class="our-team-groups__list-person"
+                                                data-person="{{ $member['id'] }}">
+                                                <div style="position:relative">
+                                                    <img src="{{ $member['image']['url'] }}"
+                                                        alt="{{ $member['image']['alt'] }}"
+                                                        class="our-team-groups__list-item__avatar">
 
-                                            {{ get_svg('resources.images.icon.plus', ['class' => 'our-team-groups__list-item__plus']) }}
-
+                                                    {{ get_svg('resources.images.icon.plus', ['class' => 'our-team-groups__list-item__plus']) }}
+                                                </div>
+                                            </button>
                                         </li>
                                     @endforeach
                                 </ul>

@@ -7,6 +7,7 @@ import tocInit from './toc';
 import rulesTabs from './rulesTabs';
 import Modal from './modal.js';
 import navHandler from './navHandler.js';
+import teamListener from './teamListener.js';
 
 (() => {
   const logosCarousel = document.querySelectorAll('.splide.logos-carousel');
@@ -251,6 +252,7 @@ import navHandler from './navHandler.js';
   tocInit('.single-post-toc');
   rulesTabs();
   navHandler();
+  teamListener();
 
   const modalSystem = new Modal();
 })();

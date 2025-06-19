@@ -61,7 +61,6 @@ class OurTeamField extends BaseField
 
         $groups = [];
         foreach ($this->field['team'] as $group) {
-
             $groups[] = [
                 'title' => $group['title'] ?? '',
                 'members' => $this->transferMembers($group['members'] ?? [])
@@ -80,7 +79,10 @@ class OurTeamField extends BaseField
                 continue;
             }
 
-            $output[] = $this->getImageBySize($avatar, 'full');
+            $output[] = [
+                'id' => $member,
+                'image' => $this->getImageBySize($avatar, 'full')
+            ];
         }
 
         return $output;

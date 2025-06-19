@@ -5,6 +5,7 @@ namespace App\Providers;
 use WP_Query;
 
 use WP_REST_Response;
+use App\PostType\MemberPostType;
 use App\Services\ArchiveService;
 use Illuminate\Support\ServiceProvider;
 
@@ -16,6 +17,12 @@ class AjaxProvider extends ServiceProvider
             register_rest_route('labplus/v1', '/load-posts', [
                 'methods' => 'POST',
                 'callback' => [$this, 'loadPosts'],
+                'permission_callback' => '__return_true',
+            ]);
+
+            register_rest_route('labplus/v1', '/load-person', [
+                'methods' => 'POST',
+                'callback' => [$this, 'loadPerson'],
                 'permission_callback' => '__return_true',
             ]);
         });
@@ -83,6 +90,34 @@ class AjaxProvider extends ServiceProvider
                 ]
             )->render(),
             'content' => 'posts_found',
+        ], 200);
+    }
+
+    public function loadPerson(\WP_REST_Request $request): WP_REST_Response
+    {
+        $id = absint($request->get_param('personId'));
+        if ($id <= 0) {
+            return new WP_REST_Response(['error' => 'Invalid ID'], 400);
+        }
+
+        $person = get_post($id);
+        if (!$person || $person->post_type !== MemberPostType::getPostType()) {
+            return new WP_REST_Response(['error' => 'Person not found'], 404);
+        }
+
+        $content = view(
+            'builder.advanced.fields.subfields.our-team-box',
+            [
+                'name' => get_field('name', $id),
+                'role' => get_field('role', $id),
+                'achievements' => get_field('achievements', $id),
+                'socialmedia' => get_field('social-media', $id),
+                'content' => get_field('content', $person)
+            ]
+        )->render();
+
+        return new WP_REST_Response([
+            'content' => $content
         ], 200);
     }
 }
