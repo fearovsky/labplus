@@ -51,6 +51,7 @@
       margin-bottom: 16px;
       color: inherit;
       letter-spacing: -0.02em;
+      font-size: pxToRem(64);
     }
 
     &__text {
@@ -149,9 +150,30 @@
   }
 
   &-video {
+    display: none;
+    @include mediaUp(xl) {
+      flex-direction: row;
+      display: flex;
+    }
+
+    &__additionalVideo {
+      object-fit: contain;
+      object-position: center;
+      max-width: 250px;
+
+      @media (min-width: 1250px) {
+        max-width: 300px;
+      }
+
+      @media (min-width: 1500px) {
+        max-width: 500px;
+      }
+    }
+
     &__video {
       max-height: calc(100vh - 250px);
       max-width: 100%;
+      flex-shrink: 0;
 
       .home & {
         border-radius: 48px;

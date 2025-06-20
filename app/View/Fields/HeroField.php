@@ -10,6 +10,7 @@ class HeroField extends BaseField
     private string $heading;
     private ?string $content = null;
     private ?string $video = null;
+    private ?string $additionalVideo = null;
     private string $type = 'content';
     private ?array $button;
     private ?array $image;
@@ -26,6 +27,7 @@ class HeroField extends BaseField
             'logos' => $this->logos,
             'type' => $this->type,
             'video' => $this->video,
+            'additionalVideo' => $this->additionalVideo,
         ];
     }
 
@@ -39,6 +41,7 @@ class HeroField extends BaseField
         $this->logos = $this->getLogos();
         $this->type = $this->getType();
         $this->video = $this->getVideo();
+        $this->additionalVideo = $this->field['additionalVideo'] ?? null;
     }
 
     private function getHeading(): string
@@ -88,4 +91,5 @@ class HeroField extends BaseField
     {
         return $this->field['video'] ?? null;
     }
+
 }

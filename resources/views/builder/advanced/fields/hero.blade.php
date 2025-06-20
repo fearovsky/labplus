@@ -34,6 +34,12 @@
                 <div class="hero-video">
                     <video src="{{ $field['video'] }}" autoplay muted loop playsinline
                         class="hero-video__video"></video>
+
+
+                    @if ($field['additionalVideo'])
+                        <video src="{{ $field['additionalVideo'] }}" autoplay muted loop playsinline
+                            class="hero-video__additionalVideo"></video>
+                    @endif
                 </div>
             @endif
         </div>

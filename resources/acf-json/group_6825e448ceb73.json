@@ -239,6 +239,32 @@
                             "mime_types": ""
                         },
                         {
+                            "key": "field_6855ea9f479e5",
+                            "label": "Additional video",
+                            "name": "additionalVideo",
+                            "type": "file",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_6849272271bf8",
+                                        "operator": "!=empty"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "library": "all",
+                            "min_size": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
                             "key": "field_682b10d800bfa",
                             "label": "Button",
                             "name": "button",
@@ -260,7 +286,15 @@
                             "type": "image",
                             "instructions": "",
                             "required": 1,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_6849270f71bf7",
+                                        "operator": "==",
+                                        "value": "image"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -4222,5 +4256,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1750169265
+    "modified": 1750461114
 }

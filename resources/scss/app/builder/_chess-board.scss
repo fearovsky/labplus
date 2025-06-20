@@ -104,11 +104,17 @@
       &-icon {
         display: none;
         position: absolute;
-        width: 240px;
-        height: 240px;
+        width: 160px;
+        height: 160px;
+        right: -60px;
         object-fit: contain;
-        right: -90px;
         bottom: 0;
+        @include mediaUp(xxxl) {
+          width: 240px;
+          height: 240px;
+          right: -90px;
+        }
+
         @include mediaUp(xxl) {
           display: block;
         }

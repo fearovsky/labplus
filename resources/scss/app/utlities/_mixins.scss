@@ -5,6 +5,7 @@ $sizes: (
   'lg': 992px,
   'xl': 1100px,
   'xxl': 1370px,
+  'xxxl': 1600px,
 );
 
 @mixin mediaUp($key) {
