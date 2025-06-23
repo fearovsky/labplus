@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Log1x\SageSvg\Facades\SageSvg;
 use WP_Query;
 
 use WP_REST_Response;
@@ -105,13 +106,26 @@ class AjaxProvider extends ServiceProvider
             return new WP_REST_Response(['error' => 'Person not found'], 404);
         }
 
+
+        $socialMedia = get_field('social-media', $id);
+        $email = get_field('email', $id);
+
+        if ($email && false) {
+            $socialMedia[] = [
+                'link' => [
+                    'url' => sprintf('mailto:%s', $email)
+                ],
+                'icon' => asset('resources/images/icon/mail.svg'),
+            ];
+        }
+
         $content = view(
             'builder.advanced.fields.subfields.our-team-box',
             [
                 'name' => get_field('name', $id),
                 'role' => get_field('role', $id),
                 'achievements' => get_field('achievements', $id),
-                'socialmedia' => get_field('social-media', $id),
+                'socialmedia' => $socialMedia,
                 'content' => get_field('content', $person)
             ]
         )->render();
