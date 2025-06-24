@@ -4,7 +4,7 @@
             <div class="get-in-touch-content">
                 @if ($field['title'])
                     <h2 class="get-in-touch-content__title">
-                        {{ $field['title'] }}
+                        {!! $field['title'] !!}
                     </h2>
                 @endif
 

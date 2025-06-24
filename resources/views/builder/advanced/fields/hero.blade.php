@@ -6,7 +6,7 @@
         <div class="hero-row">
             <div class="hero-content">
                 <h1 class="hero-content__heading">
-                    {{ $field['heading'] }}
+                    {!! $field['heading'] !!}
                 </h1>
 
                 <p class="hero-content__text">

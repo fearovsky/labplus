@@ -21,6 +21,10 @@
 
     &__item {
       margin-right: 16px;
+      .badge {
+        color: rgba(27, 72, 69, 1);
+      }
+
       &:last-child {
         margin-right: 0;
       }

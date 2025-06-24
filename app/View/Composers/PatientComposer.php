@@ -6,7 +6,7 @@ use Roots\Acorn\View\Composer;
 
 class PatientComposer extends Composer
 {
-    private string $healthRaport;
+    private ?string $healthRaport;
     private ?int $healthRaportImage = null;
 
     /**

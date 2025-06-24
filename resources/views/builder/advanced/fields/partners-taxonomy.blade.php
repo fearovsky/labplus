@@ -2,7 +2,7 @@
     <div class="container">
         @if (!empty($field['heading']))
             <p class="text-subheader">
-                {{ $field['heading'] }}
+                {!! $field['heading'] !!}
             </p>
         @endif
 

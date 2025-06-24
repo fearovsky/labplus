@@ -11,7 +11,7 @@
 
                 <div class="contact-member-information-row__content">
                     <h4 class="contact-member-information-row__content-title large">
-                        {{ $field['title'] }}
+                        {!! $field['title'] !!}
                     </h4>
 
                     <div class="contact-member-information-row__content__area">

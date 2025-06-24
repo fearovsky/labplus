@@ -4,7 +4,7 @@
             <div class="contact-form-content-content">
                 @if (!empty($field['heading']))
                     <h2 class="contact-form-content-content__title">
-                        {{ $field['heading'] }}
+                        {!! $field['heading'] !!}
                     </h2>
                 @endif
 

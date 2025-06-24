@@ -23,10 +23,6 @@ export default () => {
       '.our-team-groups__list-person--active'
     );
 
-    if (currentBox) {
-      currentBox.remove();
-    }
-
     if (currentActivePerson) {
       currentActivePerson.classList.remove(
         'our-team-groups__list-person--active'

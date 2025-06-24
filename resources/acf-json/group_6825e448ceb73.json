@@ -3122,8 +3122,9 @@
                             },
                             "post_type": [
                                 "case_study",
-                                "post",
-                                "page"
+                                "patient_story",
+                                "resource",
+                                "news"
                             ],
                             "taxonomy": "",
                             "filters": [
@@ -4256,5 +4257,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1750461114
+    "modified": 1750760599
 }

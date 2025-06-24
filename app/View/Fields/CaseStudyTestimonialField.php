@@ -44,7 +44,7 @@ class CaseStudyTestimonialField extends BaseField
     private function processItem(int $caseStudyItemId): array
     {
         $testimonial = get_field('testimonial', $caseStudyItemId);
-
+        $avatar = get_field('avatar', $testimonial);
         return [
             'title' => get_the_title($caseStudyItemId),
             'excerpt' => get_the_excerpt($caseStudyItemId),

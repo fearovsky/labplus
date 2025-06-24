@@ -42,4 +42,17 @@ export default () => {
       targetSectionElement.classList.add('rules-tab-section--active');
     }
   });
+
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('.rules-tab-section__badges')) {
+      const badgeText = e.target.textContent.trim();
+      const tabButtons = document.querySelectorAll('.rules-tab-tabs .badge');
+
+      tabButtons.forEach((button) => {
+        if (button.textContent.trim() === badgeText) {
+          button.click();
+        }
+      });
+    }
+  });
 };

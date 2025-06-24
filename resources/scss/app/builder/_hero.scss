@@ -90,8 +90,12 @@
       transition: opacity 0.3s ease-in-out;
       $item: &;
       &:hover {
-        #{$item}__image {
-          filter: none;
+        #{$item}__image--dark {
+          display: block;
+        }
+
+        #{$item}__image--light {
+          display: none;
         }
       }
 
@@ -99,10 +103,14 @@
         opacity: 1;
       }
       &__image {
-        filter: brightness(0) invert(1);
         height: 52px;
         @include mediaUp(xl) {
           height: 44px;
+        }
+        $image: &;
+
+        &--dark {
+          display: none;
         }
       }
     }

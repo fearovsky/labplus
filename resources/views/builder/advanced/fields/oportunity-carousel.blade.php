@@ -29,7 +29,7 @@
                                         class="oportunity-carousel-slider__item-image">
 
                                     <h4 class="oportunity-carousel-slider__item-title">
-                                        {{ $field['title'] }}
+                                        {!! $field['title'] !!}
                                     </h4>
 
                                     <p class="oportunity-carousel-slider__item-content">

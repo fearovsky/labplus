@@ -20,10 +20,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    filter: grayscale(1) invert(0) brightness(0.7);
-
-    &:hover {
-      filter: none;
-    }
   }
 }

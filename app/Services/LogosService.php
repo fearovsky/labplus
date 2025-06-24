@@ -28,6 +28,28 @@ class LogosService
         }
 
         return array_map(function ($post) use ($logoType) {
+
+            if ($logoType === 'all') {
+                $logosAllowed = [
+                    'logoLight',
+                    'logoDark'
+                ];
+
+                $logos = [];
+                foreach ($logosAllowed as $logo) {
+                    $logoValue = get_field($logo, $post->ID);
+                    if ($logoValue) {
+                        $logos[$logo] = $logoValue;
+                    }
+                }
+
+                if (empty($logos)) {
+                    return null;
+                }
+
+                return $logos;
+            }
+
             $logo = get_field($logoType, $post->ID);
             if (!$logo) {
                 return null;
