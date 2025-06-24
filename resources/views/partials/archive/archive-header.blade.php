@@ -40,10 +40,9 @@
                                     <li class="splide__slide">
                                         <div class="testimonial-box">
                                             @if (!empty($testimonial['logo']))
-                                                <div class="testimonial-box__logo">
-                                                    <img src="{{ $testimonial['logo']['url'] }}"
-                                                        alt="{{ $testimonial['logo']['alt'] }}">
-                                                </div>
+                                                <img src="{{ $testimonial['logo']['url'] }}"
+                                                    alt="{{ $testimonial['logo']['alt'] }}"
+                                                    class="testimonial-box__logo">
                                             @endif
 
                                             @if (!empty($testimonial['content']))

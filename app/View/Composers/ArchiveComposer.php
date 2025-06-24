@@ -135,7 +135,7 @@ class ArchiveComposer extends Composer
                     return [];
                 }
 
-                return $logoServices->getLogosByTaxonomy($partners, 'logoLight');
+                return $logoServices->getLogosByTaxonomy($partners, 'logoDark');
             case 'post':
                 return get_field('blogPartners', 'option') ?: [];
             default:

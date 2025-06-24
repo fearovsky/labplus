@@ -27,7 +27,7 @@
                                             </p>
 
                                             <h3 class="case-study-item-content__title h5">
-                                                {{ $item['title'] }}
+                                                {!! $item['title'] !!}
                                             </h3>
 
                                             @include('components.link-more-icon', [
