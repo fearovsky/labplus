@@ -33,7 +33,18 @@
       }
 
       &__person {
-        margin-top: 48px;
+        margin-top: 32px;
+
+        &--desktop {
+          display: none;
+        }
+        @include mediaUp(md) {
+          margin-top: 48px;
+          display: block;
+          &--mobile {
+            display: none;
+          }
+        }
       }
     }
   }

@@ -3,14 +3,16 @@
 @use '../utlities/mixins' as *;
 
 .get-in-touch {
-  padding: 32px 0;
+  padding: 32px 0 50px;
+  margin-bottom: -20px;
+  overflow-x: hidden;
   @include mediaUp(xl) {
     padding: 64px 0 110px;
   }
   &-banner {
     background: linear-gradient(180deg, #74d2ad -70.98%, #1f5a57 99.95%);
     box-shadow: 0px 0px 15px rgba(31, 90, 87, 0.5);
-    border-radius: 64px;
+    border-radius: 64px 64px 0 64px;
     color: $colorPearl;
     font-size: pxToRem(18);
     position: relative;
@@ -31,14 +33,16 @@
 
     &__plus {
       position: absolute;
-      bottom: -60px;
-      right: -60px;
-      width: 160px;
-      height: 160px;
       filter: drop-shadow(0px 0px 15px rgba(31, 90, 87, 0.5));
-      display: none;
+      bottom: -30px;
+      right: -30px;
+      width: 80px;
+      height: 80px;
       @include mediaUp(xxl) {
-        display: block;
+        bottom: -60px;
+        right: -60px;
+        width: 160px;
+        height: 160px;
       }
     }
   }
@@ -89,17 +93,20 @@
 
   &-image {
     position: relative;
-    display: none;
-    @include mediaUp(xxl) {
-      display: block;
-    }
-
     &__img {
-      position: absolute;
-      bottom: -48px;
-      left: 50%;
-      transform: translateX(-50%);
-      max-width: calc(100% + 200px);
+      border-radius: 64px;
+      height: 100px;
+    }
+    @include mediaUp(xxl) {
+      &__img {
+        border-radius: 0;
+        height: auto;
+        position: absolute;
+        bottom: -48px;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: calc(100% + 200px);
+      }
     }
   }
 

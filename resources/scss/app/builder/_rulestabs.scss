@@ -1,12 +1,24 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
+
 .rules-tab {
-  padding: 64px 0;
+  padding: 32px 0;
+  @include mediaUp(md) {
+    padding: 64px 0;
+  }
 
   .container {
+    width: 100%;
     max-width: 870px;
+    box-sizing: border-box;
   }
 
   &-tabs {
-    margin-bottom: 140px;
+    margin-bottom: 40px;
+    @include mediaUp(md) {
+      margin-bottom: 140px;
+    }
   }
 
   h5 {

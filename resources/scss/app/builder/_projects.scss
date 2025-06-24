@@ -1,5 +1,6 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
 
 .projects {
   padding: 64px 0;
@@ -16,17 +17,24 @@
 
   &-row {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 48px;
     align-items: center;
-    margin-bottom: 64px;
+    grid-gap: 24px;
+    margin-bottom: 32px;
+    @include mediaUp(md) {
+      grid-gap: 48px;
+      margin-bottom: 64px;
+      grid-template-columns: repeat(2, 1fr);
+    }
     &:last-of-type {
       margin-bottom: 0;
     }
 
     &--alt {
       align-items: flex-start;
-      padding: 64px 0;
+      padding: 32px 0;
+      @include mediaUp(md) {
+        padding: 64px 0;
+      }
 
       #{$projects}-right {
         border-left: 1px solid rgba(0, 0, 0, 0.1);
@@ -37,7 +45,10 @@
 
   &-left {
     &__title {
-      margin: 0 0 48px;
+      margin: 0 0 24px;
+      @include mediaUp(md) {
+        margin: 0 0 48px;
+      }
     }
 
     &__content {
@@ -61,7 +72,10 @@
     }
 
     &__boxes {
-      margin-top: 48px;
+      margin-top: 24px;
+      @include mediaUp(md) {
+        margin-top: 48px;
+      }
     }
   }
 }

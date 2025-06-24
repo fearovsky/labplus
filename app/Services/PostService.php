@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use App\Utility\PostTypeUtlity;
+
 class PostService
 {
     public function transformListToBoxes(array $posts)
@@ -16,6 +18,7 @@ class PostService
                 'thumbnail' => get_the_post_thumbnail($post, 'large', [
                     'class' => 'boxes-grid-item__image-thumbnail',
                 ]),
+                'resourceName' => PostTypeUtlity::getMappedResource($post),
                 'permalink' => get_permalink($post),
             ];
         }, $posts);

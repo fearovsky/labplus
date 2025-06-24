@@ -54,11 +54,9 @@
                             @endif
 
                             <div class="boxes-grid-item__content">
-                                @if ($field['resourceName'])
-                                    <p class="boxes-grid-item__content-category">
-                                        {{ $field['resourceName'] }}
-                                    </p>
-                                @endif
+                                <p class="boxes-grid-item__content-category">
+                                    {{ $field['resourceName'] ?: $item['resourceName'] }}
+                                </p>
 
                                 <h4 class="boxes-grid-item__content-title">
                                     {!! $item['title'] !!}

@@ -1,4 +1,6 @@
 @use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
 
 .badge {
   padding: 8px 16px;
@@ -17,6 +19,8 @@
     list-style-type: none;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
 
     &__item {
       margin-right: 16px;

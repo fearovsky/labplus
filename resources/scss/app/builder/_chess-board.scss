@@ -6,6 +6,7 @@
   background-color: $colorWhite;
   padding: 48px 0 64px;
   border-radius: 48px;
+  overflow-x: hidden;
   @include mediaUp(xl) {
     border-radius: 64px;
     padding: 64px 0 96px;
@@ -82,14 +83,20 @@
     }
 
     &__thumbnail {
-      position: relative;
+      &-wrapepr {
+        background-color: red;
+        position: relative;
+      }
       @include mediaDown(md) {
         order: -1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         img {
           width: 100%;
           max-width: 500px;
           margin: 0 auto;
-          border-radius: 64px;
+          border-radius: 64px 64px 0 64px;
         }
       }
 
@@ -102,21 +109,29 @@
       }
 
       &-icon {
-        display: none;
         position: absolute;
-        width: 160px;
-        height: 160px;
-        right: -60px;
         object-fit: contain;
         bottom: 0;
+        right: -28px;
+        width: 70px;
+        height: 70px;
+
+        @include mediaUp(sm) {
+          width: 100px;
+          height: 100px;
+          right: -40px;
+        }
+
+        @include mediaUp(xxl) {
+          width: 160px;
+          height: 160px;
+          right: -60px;
+        }
+
         @include mediaUp(xxxl) {
           width: 240px;
           height: 240px;
           right: -90px;
-        }
-
-        @include mediaUp(xxl) {
-          display: block;
         }
       }
     }
@@ -139,4 +154,8 @@
       }
     }
   }
+}
+
+.chess-board-item__thumbnail-wrapper {
+  position: relative;
 }

@@ -15,7 +15,7 @@
                 @endif
 
                 @if ($field['contactPerson'])
-                    <div class="contact-form-content-content__person">
+                    <div class="contact-form-content-content__person contact-form-content-content__person--desktop">
                         @include('components.contact-person', [
                             'contactPerson' => $field['contactPerson'],
                         ])
@@ -29,6 +29,14 @@
                         echo do_shortcode($field['formShortcode']);
                     @endphp
                 </div>
+
+                @if ($field['contactPerson'])
+                    <div class="contact-form-content-content__person contact-form-content-content__person--mobile">
+                        @include('components.contact-person', [
+                            'contactPerson' => $field['contactPerson'],
+                        ])
+                    </div>
+                @endif
             @endif
         </div>
     </div>

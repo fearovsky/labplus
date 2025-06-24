@@ -15,6 +15,12 @@
   }
   $hero: &;
 
+  @include mediaDown(md) {
+    .hero-section-image-content__heading {
+      font-size: 2.5rem;
+    }
+  }
+
   &--video {
     #{$hero}-content__preheading {
       color: #b6e8d7;
@@ -82,17 +88,11 @@
   &-slider,
   &-post,
   &-thumbnail {
-    order: -1;
-    margin-bottom: 30px;
+    order: 2;
+    margin-top: 30px;
     @include mediaUp(md) {
       order: initial;
-      margin-bottom: 0;
-    }
-  }
-
-  &-thumbnail:not(.hero-section-image-thumbnail--video) {
-    @include mediaDown(md) {
-      display: none;
+      margin-top: 0;
     }
   }
 
@@ -109,13 +109,20 @@
 
   &-thumbnail {
     position: relative;
-
+    @include mediaDown(md) {
+      margin-top: 20px;
+      order: 2;
+    }
     &__image {
-      left: 0;
-      width: 100%;
-      max-width: 770px;
-      border-radius: 50px;
-      overflow: hidden;
+      max-height: 400px;
+      @include mediaUp(md) {
+        max-height: initial;
+        left: 0;
+        width: 100%;
+        max-width: 770px;
+        border-radius: 50px;
+        overflow: hidden;
+      }
     }
 
     &--video {

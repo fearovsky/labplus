@@ -1,14 +1,23 @@
+@use '../utlities/variables' as *;
+@use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
+
 .rules {
   padding: 64px 0;
   margin: 0 auto;
 
   .container {
     max-width: 820px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   &-groups {
     display: flex;
     flex-direction: column;
-    grid-gap: 64px;
+    gap: 32px;
+    @include mediaUp(sm) {
+      gap: 64px;
+    }
   }
 }

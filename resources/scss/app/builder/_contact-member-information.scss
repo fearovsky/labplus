@@ -1,11 +1,14 @@
 @use '../utlities/variables' as *;
 @use '../utlities/functions' as *;
+@use '../utlities/mixins' as *;
 
 .contact-member-information {
   &__avatar {
     overflow: hidden;
     border-radius: 24px 0 0 24px;
-    flex: 0 0 176px;
+    @include mediaUp(md) {
+      flex: 0 0 176px;
+    }
 
     &-image {
       height: 100%;
@@ -14,22 +17,34 @@
   }
   &-row {
     display: flex;
-    flex-direction: row;
-    gap: 48px;
+    flex-direction: column;
+    grid-gap: 24px;
+    padding: 20px;
+    @include mediaUp(md) {
+      flex-direction: row;
+      gap: 48px;
+    }
 
     &__content {
-      padding: 20px;
-      font-size: pxToRem(18);
-      align-self: center;
+      @include mediaUp(md) {
+        padding: 20px;
+        font-size: pxToRem(18);
+        align-self: center;
+      }
 
       &-title {
         margin: 0;
-        margin-bottom: 24px;
+        margin-bottom: 12px;
+        @include mediaUp(md) {
+          margin-bottom: 24px;
+        }
       }
 
       &__area {
         &-name {
-          font-size: pxToRem(18);
+          @include mediaUp(md) {
+            font-size: pxToRem(18);
+          }
           font-weight: bold;
         }
 

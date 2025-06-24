@@ -21,7 +21,7 @@
 
                             <div class="boxes-grid-item__content">
                                 <p class="boxes-grid-item__content-category">
-                                    {{ __('Labplus solutions', 'labplus') }}
+                                    {{ $item['resourceName'] ?: __('Labplus solutions', 'labplus') }}
                                 </p>
 
                                 <h4 class="boxes-grid-item__content-title">

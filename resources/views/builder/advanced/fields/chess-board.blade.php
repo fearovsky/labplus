@@ -50,10 +50,12 @@
                         </div>
 
                         <div class="chess-board-item__thumbnail">
-                            <img src="{{ $section['image']['url'] }}" alt="{{ $section['image']['alt'] }}"
-                                class="chess-board-item__thumbnail-img" />
+                            <div class="chess-board-item__thumbnail-wrapper">
+                                <img src="{{ $section['image']['url'] }}" alt="{{ $section['image']['alt'] }}"
+                                    class="chess-board-item__thumbnail-img" />
 
-                            {{ get_svg('resources.images.icon.plus', ['class' => 'chess-board-item__thumbnail-icon']) }}
+                                {{ get_svg('resources.images.icon.plus', ['class' => 'chess-board-item__thumbnail-icon']) }}
+                            </div>
                         </div>
                     </div>
                 @endforeach

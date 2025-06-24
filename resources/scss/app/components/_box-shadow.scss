@@ -37,10 +37,17 @@
   position: relative;
   &__plus {
     position: absolute;
-    bottom: -38px;
-    right: -2px;
-    width: 96px;
-    height: 96px;
+    width: 64px;
+    height: 64px;
+    bottom: -26px;
+    right: -26px;
+
+    @include mediaUp(md) {
+      bottom: -38px;
+      right: -2px;
+      width: 96px;
+      height: 96px;
+    }
   }
 }
 

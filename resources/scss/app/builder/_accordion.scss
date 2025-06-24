@@ -110,6 +110,9 @@
         width: 100%;
         text-align: left;
         cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         &::before {
           content: counter(accordion-counter);
           counter-increment: accordion-counter;
@@ -123,6 +126,7 @@
           border-radius: 100px;
           margin-right: 16px;
           font-family: $headingFontFamily;
+          flex-shrink: 0;
         }
 
         &::after {
