@@ -79,7 +79,7 @@ class PatientComposer extends Composer
             'title' => __('Interpreted lab test results', 'lab'),
             'slot' => wp_get_attachment_image(
                 $this->healthRaport,
-                'full',
+                [1920, null],
                 false,
                 [
                     'class' => 'w-full h-auto',
