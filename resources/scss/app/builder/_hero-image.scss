@@ -42,12 +42,6 @@
       }
     }
 
-    #{$hero}-thumbnail {
-      @include mediaDown(lg) {
-        order: -1;
-      }
-    }
-
     #{$hero}-content,
     #{$hero}-thumbnail {
       flex: initial;
