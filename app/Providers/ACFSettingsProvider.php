@@ -113,7 +113,24 @@ class ACFSettingsProvider extends ServiceProvider
         foreach ($filtered_languages as $lang) {
             $class = $lang['current_lang'] ? 'current-lang' : '';
             $new_output .= '<li class="lang-item ' . $class . '">';
-            $new_output .= '<a href="' . $lang['url'] . '">' . $lang['name'] . '</a>';
+            $new_output .= '<a href="' . esc_url($lang['url']) . '">';
+
+            // Show flag if requested
+            if (!empty($args['show_flags']) && !empty($lang['flag'])) {
+                $new_output .= '<img src="' . esc_url($lang['flag']) . '" alt="' . esc_attr($lang['slug']) . '" />';
+
+                // Add space between flag and name if both are shown
+                if (!empty($args['show_names'])) {
+                    $new_output .= ' ';
+                }
+            }
+
+            // Show name if requested (default behavior)
+            if (empty($args['show_flags'])) {
+                $new_output .= esc_html($lang['name']);
+            }
+
+            $new_output .= '</a>';
             $new_output .= '</li>';
         }
 
