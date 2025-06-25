@@ -16,7 +16,10 @@
                 "id": ""
             },
             "post_type": [
-                "post"
+                "patient_story",
+                "resource",
+                "news",
+                "case_study"
             ],
             "taxonomy": "",
             "filters": [
@@ -45,5 +48,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1748447784
+    "modified": 1750845564
 }

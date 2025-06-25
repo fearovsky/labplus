@@ -24,8 +24,7 @@
 
             @if ($field['image'])
                 <div class="hero-section-image-thumbnail">
-                    <img src="{{ $field['image']['url'] }}" alt="{{ $field['image']['alt'] }}"
-                        class="hero-section-image-thumbnail__image">
+                    {!! $field['image'] !!}
                 </div>
             @endif
         </div>

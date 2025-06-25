@@ -40,13 +40,15 @@
 
     &__list {
       display: grid;
-      grid-template-columns: repeat(auto-fill, 176px);
-      grid-gap: 48px;
+      grid-template-columns: repeat(auto-fill, 140px);
       margin: 0;
       padding: 0;
       list-style-type: none;
+      grid-gap: 24px;
       @include mediaUp(md) {
+        grid-gap: 48px;
         grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fill, 176px);
       }
       @include mediaUp(xl) {
         grid-template-columns: repeat(3, 1fr);
@@ -57,10 +59,10 @@
         padding: 0;
         background: transparent;
         transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-        filter: grayscale(100%);
+        filter: grayscale(0%);
         &:hover,
         &--active {
-          filter: grayscale(0%);
+          filter: grayscale(100%);
           transform: scale(1.05);
         }
 

@@ -23,11 +23,6 @@
     gap: 16px;
 
     &__item {
-      margin-right: 16px;
-      &:last-child {
-        margin-right: 0;
-      }
-
       button.badge {
         &:hover {
           background: #b6e8d7;

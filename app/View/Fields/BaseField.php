@@ -39,6 +39,8 @@ abstract class BaseField
         return [
             'url' => $image['sizes'][$fieldSize],
             'alt' => $image['alt'] ?? '',
+            'width' => $image['sizes'][$fieldSize . '-width'] ?? null,
+            'height' => $image['sizes'][$fieldSize . '-height'] ?? null,
         ];
     }
 

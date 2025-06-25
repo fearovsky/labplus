@@ -7,7 +7,7 @@ class HeroImageField extends BaseField
     private string $heading;
     private string $content;
     private ?array $button;
-    private ?array $image;
+    private ?string $image;
 
     public function __invoke(): array
     {
@@ -24,7 +24,9 @@ class HeroImageField extends BaseField
         $this->heading = $this->getHeading();
         $this->content = $this->getContent();
         $this->button = $this->getButton();
-        $this->image = $this->getFieldImage('image', 'large');
+
+        $this->image = $this->getImage();
+
     }
 
     private function getHeading(): string
@@ -48,5 +50,17 @@ class HeroImageField extends BaseField
         }
 
         return null;
+    }
+
+    private function getImage(): ?string
+    {
+        $image = $this->field['image'] ?? null;
+        if (empty($image)) {
+            return null;
+        }
+
+        return wp_get_attachment_image($image['ID'], 'full', false, [
+            'class' => 'hero-section-image-thumbnail__image',
+        ]);
     }
 }
