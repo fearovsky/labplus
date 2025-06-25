@@ -1,23 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-  @include('partials.page-header')
+    @include('partials.page-header')
 
-  @if (! have_posts())
-    <x-alert type="warning">
-      {!! __('Sorry, no results were found.', 'lab') !!}
-    </x-alert>
+    @if (!have_posts())
+        @include('partials.alert', [
+            'type' => 'warning',
+            'content' => __('Sorry, no results were found.', 'lab'),
+        ])
+    @endif
 
-    {!! get_search_form(false) !!}
-  @endif
-
-  @while(have_posts()) @php(the_post())
-    @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
-  @endwhile
-
-  {!! get_the_posts_navigation() !!}
+    @while (have_posts())
+        @php(the_post())
+        @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
+    @endwhile
 @endsection
 
 @section('sidebar')
-  @include('sections.sidebar')
+    @include('sections.sidebar')
 @endsection

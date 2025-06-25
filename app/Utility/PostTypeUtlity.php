@@ -3,11 +3,16 @@
 namespace App\Utility;
 
 use App\PostType\PatientStoryPostType;
+use WP_Post;
 
 class PostTypeUtlity
 {
-    public static function getMappedResource(string $postType): string
+    public static function getMappedResource(WP_Post|string $postType): string
     {
+        if ($postType instanceof WP_Post) {
+            $postType = $postType->post_type;
+        }
+
         return match ($postType) {
             'news' => __('Newsroom', 'labplus'),
             'resource' => __('Resource', 'labplus'),
@@ -17,8 +22,12 @@ class PostTypeUtlity
         };
     }
 
-    public static function getMappedLinkText(string $postType): string
+    public static function getMappedLinkText(WP_Post|string $postType): string
     {
+        if ($postType instanceof WP_Post) {
+            $postType = $postType->post_type;
+        }
+
         return match ($postType) {
             'news' => __('Read more', 'labplus'),
             'resource' => __('View resource', 'labplus'),
@@ -27,8 +36,12 @@ class PostTypeUtlity
         };
     }
 
-    public static function getMappedHeadingForRelatedPosts(string $postType): string
+    public static function getMappedHeadingForRelatedPosts(WP_Post|string $postType): string
     {
+        if ($postType instanceof WP_Post) {
+            $postType = $postType->post_type;
+        }
+
         return match ($postType) {
             'news' => __('See more posts in Labplus Newsroom', 'labplus'),
             'resource' => __('See more resources', 'labplus'),
