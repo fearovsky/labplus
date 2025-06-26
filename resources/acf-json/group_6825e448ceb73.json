@@ -495,10 +495,10 @@
                             "return_format": "array"
                         },
                         {
-                            "key": "field_6844271a964b6",
-                            "label": "Video",
-                            "name": "video",
-                            "type": "oembed",
+                            "key": "field_685dc2bad8e8b",
+                            "label": "Video source",
+                            "name": "videoSource",
+                            "type": "select",
                             "instructions": "",
                             "required": 1,
                             "conditional_logic": 0,
@@ -507,8 +507,68 @@
                                 "class": "",
                                 "id": ""
                             },
+                            "choices": {
+                                "youtube": "youtube",
+                                "self": "self"
+                            },
+                            "default_value": false,
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_6844271a964b6",
+                            "label": "Video",
+                            "name": "video",
+                            "type": "oembed",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_685dc2bad8e8b",
+                                        "operator": "==",
+                                        "value": "youtube"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "width": "",
                             "height": ""
+                        },
+                        {
+                            "key": "field_685dc2d2d8e8c",
+                            "label": "Video self",
+                            "name": "videoSelf",
+                            "type": "file",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_685dc2bad8e8b",
+                                        "operator": "==",
+                                        "value": "self"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "library": "all",
+                            "min_size": "",
+                            "max_size": "",
+                            "mime_types": ""
                         }
                     ],
                     "min": "",
@@ -4249,5 +4309,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1750768916
+    "modified": 1750975395
 }

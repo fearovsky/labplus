@@ -78,11 +78,15 @@ class ArchiveComposer extends Composer
                     'description' => __('Browse our pages', 'labplus'),
                 ];
             case 'patient_story':
+                $patientSource = get_field('patientVideoSource', 'option') ?: 'youtube';
+                $video = $patientSource === 'youtube' ? get_field('patientVideo', 'option') : get_field('patientSelfVideo', 'option');
+
                 return [
                     'title' => get_field('patientHeading', 'option') ?: __('Authentic use cases, responsibly shared', 'labplus'),
                     'content' => get_field('patientContent', 'option') ?: __('Physician-verified patient stories1 highlighting the real-world value of LabTest Checker by Labplus®.', 'labplus'),
                     'button' => get_field('patientLink', 'option') ?: [],
-                    'video' => get_field('patientVideo', 'option') ?: null,
+                    'video' => $video,
+                    'videoSource' => $patientSource,
                     'boxes' => get_field('patientBoxes', 'option') ?: [],
                 ];
             case 'resource':

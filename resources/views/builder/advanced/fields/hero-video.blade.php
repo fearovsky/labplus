@@ -1,3 +1,8 @@
+@php
+    $videoSource = $field['videoSource'] ?: 'youtube';
+    $video = $videoSource === 'youtube' ? $field['video'] : $field['videoSelf'];
+@endphp
+
 <section class="hero-section-image hero-section-image--video">
     <div class="container hero-section-image-container">
         <div class="hero-section-image-row">
@@ -22,9 +27,16 @@
                 @endif
             </div>
 
+
+
             @if ($field['video'])
                 <div class="hero-section-image-thumbnail hero-section-image-thumbnail--video">
-                    {!! $field['video'] !!}
+                    @if ($videoSource === 'self')
+                        <video class="hero-section-image-thumbnail__video" src="{{ $video }}" controls>
+                        </video>
+                    @else
+                        {!! $video !!}
+                    @endif
                 </div>
             @endif
         </div>

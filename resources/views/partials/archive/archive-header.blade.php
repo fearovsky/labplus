@@ -25,7 +25,12 @@
 
             @if (!empty($hero['video']))
                 <div class="hero-section-image-thumbnail hero-section-image-thumbnail--video">
-                    {!! $hero['video'] !!}
+                    @if ($hero['videoSource'] == 'self')
+                        <video class="hero-section-image-thumbnail__video" src="{!! $hero['video'] !!}" controls>
+                        </video>
+                    @else
+                        {!! $hero['video'] !!}
+                    @endif
                 </div>
             @endif
 

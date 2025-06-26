@@ -17,7 +17,7 @@
             ])
         @endif
 
-        <section class="archive-main">
+        <section class="archive-main" id="archive">
             <div class="container">
                 @if (!empty($heading))
                     <div class="section-title">

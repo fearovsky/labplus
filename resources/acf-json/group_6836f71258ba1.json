@@ -182,10 +182,10 @@
             "return_format": "array"
         },
         {
-            "key": "field_683d9945afc93",
-            "label": "Video",
-            "name": "patientVideo",
-            "type": "oembed",
+            "key": "field_685dbb667f03a",
+            "label": "Video source",
+            "name": "patientVideoSource",
+            "type": "select",
             "instructions": "",
             "required": 1,
             "conditional_logic": 0,
@@ -194,8 +194,68 @@
                 "class": "",
                 "id": ""
             },
+            "choices": {
+                "youtube": "youtube",
+                "self": "self"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_683d9945afc93",
+            "label": "Video",
+            "name": "patientVideo",
+            "type": "oembed",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_685dbb667f03a",
+                        "operator": "==",
+                        "value": "youtube"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "width": 320,
             "height": ""
+        },
+        {
+            "key": "field_685dbb597f039",
+            "label": "Video",
+            "name": "patientSelfVideo",
+            "type": "file",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_685dbb667f03a",
+                        "operator": "==",
+                        "value": "self"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
             "key": "field_683da118b917c",
@@ -540,5 +600,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1750167988
+    "modified": 1750973335
 }
