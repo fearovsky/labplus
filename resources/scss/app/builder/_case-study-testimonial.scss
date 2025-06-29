@@ -50,7 +50,7 @@
     &-button {
       display: flex;
       align-items: center;
-      justify-self: center;
+      justify-content: center;
       margin-top: 32px;
       @include mediaUp(lg) {
         margin-top: 64px;
@@ -66,6 +66,7 @@
     background: radial-gradient(50% 50% at 50% 50%, #fefdfd 0%, #b6e8d7 100%);
     border: 1px solid rgba(255, 255, 255, 0.16);
     color: #113264;
+    min-height: 100%;
     @include mediaUp(md) {
       flex-direction: row;
       justify-content: space-between;

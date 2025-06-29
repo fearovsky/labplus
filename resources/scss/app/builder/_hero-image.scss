@@ -108,6 +108,7 @@
       order: 2;
     }
     &__image {
+      width: auto;
       max-height: 400px;
       @include mediaUp(md) {
         max-height: initial;
@@ -120,14 +121,13 @@
     }
 
     &--video {
-      align-self: stretch;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       iframe,
       video {
-        width: 100%;
-        min-height: 460px;
-        height: 100%;
+        max-width: 100%;
         object-fit: contain;
-        background: #fff;
         filter: drop-shadow(0px 0px 15px rgba(31, 90, 87, 0.25));
         border-radius: 32px;
         overflow: hidden;

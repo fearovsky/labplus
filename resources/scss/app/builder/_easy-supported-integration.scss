@@ -12,10 +12,16 @@
 
   &-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     align-items: center;
-    grid-gap: 48px;
-    margin-top: 48px;
+    grid-template-columns: 1fr;
+    grid-gap: 32px;
+    margin-top: 32px;
+    @include mediaUp(md) {
+      grid-gap: 48px;
+      margin-top: 48px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
     @include mediaUp(xl) {
       margin-top: 64px;
     }

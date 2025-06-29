@@ -7,8 +7,11 @@
   padding: 0;
   list-style-type: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 38px;
+  grid-template-columns: 1fr;
+  @include mediaUp(mediaUp) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
   @include mediaUp(xl) {
     grid-gap: 48px;
   }
