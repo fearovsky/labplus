@@ -32,13 +32,13 @@
                 @endif
             @else
                 <div class="hero-video">
-                    <video src="{{ $field['video'] }}" autoplay muted loop playsinline
-                        class="hero-video__video"></video>
+                    <video src="{{ $field['video'] }}#t=0.001" autoplay muted loop playsinline class="hero-video__video"
+                        preload="metadata"></video>
 
 
                     @if ($field['additionalVideo'])
-                        <video src="{{ $field['additionalVideo'] }}" autoplay muted loop playsinline
-                            class="hero-video__additionalVideo"></video>
+                        <video src="{{ $field['additionalVideo'] }}#t=0.001" autoplay muted loop playsinline
+                            class="hero-video__additionalVideo" preload="metadata"></video>
                     @endif
                 </div>
             @endif

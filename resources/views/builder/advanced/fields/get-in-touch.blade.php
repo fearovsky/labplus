@@ -26,8 +26,13 @@
                     <div class="get-in-touch-image">
                         <img src="{{ $field['image']['url'] }}" alt="{{ $field['image']['alt'] }}"
                             class="get-in-touch-image__img">
+
+                        @if (!empty($field['imageMobile']))
+                            {!! $field['imageMobile'] !!}
+                        @endif
                     </div>
                 @endif
+
 
                 <div class="get-in-touch-imageContent">
                     <h3 class="get-in-touch-imageContent__title h5">

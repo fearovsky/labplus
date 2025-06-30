@@ -108,6 +108,13 @@
       top: 140px;
     }
 
+    &__back {
+      display: none;
+      @include mediaUp(md) {
+        display: flex;
+      }
+    }
+
     &__download {
       width: 100%;
       padding: 16px;

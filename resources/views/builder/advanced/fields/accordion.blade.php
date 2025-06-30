@@ -12,7 +12,8 @@
             @if ($field['video'])
                 <div class="accordion-section-image">
                     {{-- Video inline --}}
-                    <video class="accordion-section-image__video" src="{{ $field['video'] }}" autoplay muted loop>
+                    <video class="accordion-section-image__video" src="{{ $field['video'] }}#t=0.001" autoplay muted loop
+                        preload="metadata">
                     </video>
                 </div>
             @endif

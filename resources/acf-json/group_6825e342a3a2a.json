@@ -191,6 +191,30 @@
             "mime_types": ""
         },
         {
+            "key": "field_6862ef2cacfc2",
+            "label": "Image (mobile)",
+            "name": "ctaImageMobile",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_684930412478c",
             "label": "Image title",
             "name": "ctaImageTitle",
@@ -348,5 +372,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1750838165
+    "modified": 1751314229
 }

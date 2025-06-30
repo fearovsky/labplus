@@ -32,7 +32,8 @@
             @if ($field['video'])
                 <div class="hero-section-image-thumbnail hero-section-image-thumbnail--video">
                     @if ($videoSource === 'self')
-                        <video class="hero-section-image-thumbnail__video" src="{{ $video }}" controls>
+                        <video class="hero-section-image-thumbnail__video" src="{{ $video }}#t=0.001" controls
+                            preload="metadata">
                         </video>
                     @else
                         {!! $video !!}

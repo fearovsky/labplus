@@ -94,10 +94,22 @@
   &-image {
     position: relative;
     &__img {
-      border-radius: 64px;
-      height: 100px;
+      display: none;
     }
+
+    &__mobile {
+      display: block;
+      margin-bottom: 1rem;
+      max-width: 300px;
+      max-height: 200px;
+      object-fit: contain;
+      object-position: top left;
+    }
+
     @include mediaUp(xxl) {
+      &__mobile {
+        display: none;
+      }
       &__img {
         border-radius: 0;
         height: auto;
@@ -106,6 +118,7 @@
         left: 50%;
         transform: translateX(-50%);
         max-width: calc(100% + 200px);
+        display: block;
       }
     }
   }

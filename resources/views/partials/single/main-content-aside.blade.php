@@ -3,7 +3,7 @@
         'url' => $archiveLink,
         'target' => '_self',
         'title' => $backToText,
-        'class' => 'link-more--reverse',
+        'class' => 'link-more--reverse single-post-aside__back',
     ])
 
     <div class="single-post-toc"></div>

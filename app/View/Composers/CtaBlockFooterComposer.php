@@ -31,6 +31,7 @@ class CtaBlockFooterComposer extends Composer
             'ctaContent' => 'content',
             'ctaButton' => 'button',
             'ctaImage' => 'image',
+            'ctaImageMobile' => 'imageMobile',
             'ctaImageTitle' => 'titleImage',
             'ctaImageContent' => 'contentImage',
             'ctaLinks' => 'links'
@@ -40,17 +41,26 @@ class CtaBlockFooterComposer extends Composer
 
         foreach ($fieldsToFetch as $field => $mapped) {
             $outputField = get_field($field, get_the_ID());
+
+
             if (empty($outputField)) {
                 $outputField = get_field($field, 'option');
             }
 
             if (empty($outputField)) {
-                return [];
+                continue;
             }
 
             if ($field === 'ctaImage') {
                 $outputField = ImageUtility::getImageSize($outputField, 'full');
             }
+
+            if ($field === 'ctaImageMobile') {
+                $outputField = wp_get_attachment_image($outputField, 'full', false, [
+                    'class' => 'get-in-touch-image__mobile',
+                ]);
+            }
+
 
             $output[$mapped] = $outputField;
         }

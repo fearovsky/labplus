@@ -26,7 +26,8 @@
             @if (!empty($hero['video']))
                 <div class="hero-section-image-thumbnail hero-section-image-thumbnail--video">
                     @if ($hero['videoSource'] == 'self')
-                        <video class="hero-section-image-thumbnail__video" src="{!! $hero['video'] !!}" controls>
+                        <video class="hero-section-image-thumbnail__video" src="{!! $hero['video'] !!}#t=0.001"
+                            controls preload="metadata">
                         </video>
                     @else
                         {!! $hero['video'] !!}
