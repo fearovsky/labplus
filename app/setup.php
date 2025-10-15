@@ -132,6 +132,7 @@ add_action('after_setup_theme', function () {
     add_image_size('full', 1920, 1080, true);
 }, 20);
 
+
 /**
  * Register the theme sidebars.
  *

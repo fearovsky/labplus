@@ -61,7 +61,11 @@
         @include('sections.header')
 
         <main id="main" class="main">
-            @yield('content')
+            @if (isset($password_protected) && $password_protected)
+                @include('partials.password-form')
+            @else
+                @yield('content')
+            @endif
         </main>
 
         @hasSection('sidebar')
